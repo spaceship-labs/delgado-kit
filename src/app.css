@@ -1,107 +1,110 @@
-@import '@fontsource/fira-mono';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 
-:root {
-	font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-mono: 'Fira Mono', monospace;
-	--pure-white: #ffffff;
-	--primary-color: #b9c6d2;
-	--secondary-color: #d0dde9;
-	--tertiary-color: #edf0f8;
-	--accent-color: #ff3e00;
-	--heading-color: rgba(0, 0, 0, 0.7);
-	--text-color: #444444;
-	--background-without-opacity: rgba(255, 255, 255, 0.7);
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
+html,
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 body {
-	min-height: 100vh;
-	margin: 0;
-	background-color: var(--primary-color);
-	background: linear-gradient(
-		180deg,
-		var(--primary-color) 0%,
-		var(--secondary-color) 10.45%,
-		var(--tertiary-color) 41.35%
-	);
-}
-
-body::before {
-	content: '';
-	width: 80vw;
-	height: 100vh;
-	position: absolute;
-	top: 0;
-	left: 10vw;
-	z-index: -1;
-	background: radial-gradient(
-		50% 50% at 50% 50%,
-		var(--pure-white) 0%,
-		rgba(255, 255, 255, 0) 100%
-	);
-	opacity: 0.05;
-}
-
-#svelte {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-}
-
-h1,
-h2,
-p {
-	font-weight: 400;
-	color: var(--heading-color);
-}
-
-p {
-	line-height: 1.5;
+    color: #333;
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Montserrat, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background-color: #F0F0F0;
 }
 
 a {
-	color: var(--accent-color);
-	text-decoration: none;
+    color: rgb(0, 100, 200);
+    text-decoration: none;
 }
 
-a:hover {
-	text-decoration: underline;
-}
-
-h1 {
-	font-size: 2rem;
-	text-align: center;
-}
-
-h2 {
-	font-size: 1rem;
-}
-
-pre {
-	font-size: 16px;
-	font-family: var(--font-mono);
-	background-color: rgba(255, 255, 255, 0.45);
-	border-radius: 3px;
-	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-	padding: 0.5em;
-	overflow-x: auto;
-	color: var(--text-color);
+input.default-input {
+    background: none;
+    border: none;
+    border-bottom: 3px solid #D9D9D9;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
 }
 
 input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-padding: 0.4em 0;
+    padding: 0.4em;
+    margin: 0 0 0.5em 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
 button {
-	font-size: inherit;
-	font-family: inherit;
+    color: #333;
+    background-color: #f4f4f4;
+    outline: none;
 }
 
-button:focus:not(:focus-visible) {
-	outline: none;
+button:disabled {
+    color: #999;
 }
 
-@media (min-width: 720px) {
-	h1 {
-		font-size: 2.4rem;
-	}
+button:not(:disabled):active {
+    background-color: #ddd;
+}
+
+button:focus {
+    border-color: #666;
+}
+
+.button {
+    background-color: #ffcb66;
+    color: black;
+    padding: 11px 34px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.button.mute {
+    background-color: #d8d8d8;
+}
+
+h3.strike-header {
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    color: #757575;
+    position: relative;
+}
+
+h3.strike-header::before {
+    display: block;
+    content: ' ';
+    width: 100%;
+    height: 2px;
+    background-color: #e4e4e4;
+    position: relative;
+    top: 12px;
+    z-index: 0;
+}
+
+h3.strike-header span {
+    display: block;
+    background-color: #F0F0F0;
+    padding: 0 20px;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+}
+
+p.center {
+    text-align: center;
 }
