@@ -3,31 +3,28 @@
 </script>
 
 <script>
-	import Counter from '$lib/Counter.svelte';
+	import CategoryNav from '$lib/CategoryNav.svelte';
+	import AnnouncementsNav from '$lib/AnnouncementsNav.svelte';
+	import OffersBanner from '$lib/OffersBanner.svelte';
+	import ProductRibbon from '$lib/ProductRibbon.svelte';
+	import ProductListing from '$lib/ProductListing.svelte';
+	import SubscriptionForm from '$lib/SubscriptionForm.svelte';
+	import ProductSlider from '$lib/ProductSlider.svelte';
+	import ContactRibbon from '$lib/ContactRibbon.svelte';
 </script>
 
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
 
-<section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</div>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
+	<CategoryNav />
+	<AnnouncementsNav />
+	<OffersBanner />
+	<ProductRibbon />
+	<ProductListing title='Best Buys' />
+	<SubscriptionForm />
+	<ProductSlider />
+	<ContactRibbon />
 
 <style>
 	section {
