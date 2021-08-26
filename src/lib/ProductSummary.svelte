@@ -6,7 +6,7 @@
         <p class='category'>Ejecutivas</p>
         <p class='tag'>50% de desc.</p>
     </header>
-    <p class='center'><img src='/img/temp/product{product}.png' /></p>
+    <p class='center'><img src='/img/temp/product{product}.png' alt='{product}'/></p>
     <h4>OMNIA</h4>
     <h5>SKU: AL-2627</h5>
     <p class='price'>
@@ -56,9 +56,6 @@
 		width: auto;
 		height: auto;
 	}
-	h3{
-		margin: 28px 0 13px;
-	}
 	h4{
 		font-size: 15px;
 		font-weight: bold;
@@ -75,19 +72,8 @@
 	p{
 		margin: 0;
 	}
-	.price{
-		color: #757575;
-		font-size: 20px;
-		line-height: 26px;
-		font-weight: bold;
-		margin: 1px 40px;
-	}
-	.price strong{
-		color: #ee524e;
-	}
-	.price .original-price{
-		text-decoration: line-through;
-		font-size:  18px;
+	.price {
+	    margin: 1px 40px;
 	}
 	.options{
 		margin: 18px 40px 35px;

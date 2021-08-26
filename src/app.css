@@ -108,3 +108,29 @@ h3.strike-header span {
 p.center {
     text-align: center;
 }
+
+.price {
+    color: #757575;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+}
+
+.price strong {
+    color: #ee524e;
+}
+
+.price .original-price {
+    text-decoration: line-through;
+    font-size: 18px;
+}
+.tag{
+    display: inline-block;
+    background-color: #76c082;
+    color: #206a2c;
+    padding: 0 17px;
+    line-height: 25px;
+    font-size: 11px;
+    text-transform: uppercase;
+    width: auto;
+}
