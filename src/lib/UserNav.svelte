@@ -1,5 +1,5 @@
 <nav>
-	<img src='/img/logo.png' alt='Manuel Delgado logo principal' />
+	<a href='/' class='main-logo'><img src='/img/logo.png' alt='Manuel Delgado logo principal' /></a>
 	<form><input type="text" name="product-search" placeholder="Buscar Muebles" class="default-input" /></form>
 	<a class='cart' href='/carrito'>
 		<img src='/img/cart.png' alt='carrito de compras' />
@@ -72,5 +72,8 @@
 	nav p a img{
 		position: relative;
 		top: 13px;
+	}
+	.main-logo{
+		margin-bottom: -4px;
 	}
 </style>

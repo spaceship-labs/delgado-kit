@@ -1,21 +1,21 @@
 <script>
 	export let quantity = 1;
 </script>
-
-<h4>Cantidad</h4>
-<section>
-	<button>-</button>
-	<div>{quantity}</div>
-	<button>+</button>
-</section>
-
+<article>
+	<h4>Cantidad</h4>
+	<section>
+		<button>-</button>
+		<div>{quantity}</div>
+		<button>+</button>
+	</section>
+</article>
 <style>
 	h4{
 		text-transform: uppercase;
 		color: #a2a2a2;
 		font-weight: bold;
 		font-size: 11.5px;
-		margin: 15px 0 7px;
+		margin: 12px 0 7px;
 	}
 	section{
 		display: flex;
@@ -29,6 +29,7 @@
 		margin: 0;
 		padding: 0 12px;
 		height: 43px;
+		border-radius: 0;
 	}
 	section div{
 		width: 66px;
