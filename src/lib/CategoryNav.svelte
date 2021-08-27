@@ -1,12 +1,12 @@
 <nav>
 	<ul>
-		<li><a href='/ofertas' >Ofertas</a></li>
-		<li><a href='/sillas' >Sillas</a></li>
-		<li><a href='/escritorios' class='selected' >Escritorios</a></li>
-		<li><a href='/metalico' >Metalico</a></li>
-		<li><a href='/restaurante' >Restaurante</a></li>
-		<li><a href='/home-office' >Home Office</a></li>
-		<li><a href='/relampago' >Relampago</a></li>
+		<li><a href='/' >Ofertas</a></li>
+		<li><a href='/' >Sillas</a></li>
+		<li><a href='/' class='selected' >Escritorios</a></li>
+		<li><a href='/' >Metalico</a></li>
+		<li><a href='/' >Restaurante</a></li>
+		<li><a href='/' >Home Office</a></li>
+		<li><a href='/' >Relampago</a></li>
 	</ul>
 </nav>
 <style>

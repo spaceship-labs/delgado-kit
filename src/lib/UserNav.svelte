@@ -1,11 +1,11 @@
 <nav>
-	<img src='/img/logo.png' alt='Manuel Delgado logo principal' />
+	<a href='/' class='main-logo'><img src='/img/logo.png' alt='Manuel Delgado logo principal' /></a>
 	<form><input type="text" name="product-search" placeholder="Buscar Muebles" class="default-input" /></form>
-	<a class='cart' href='/carrito'>
+	<a class='cart' href='/cart'>
 		<img src='/img/cart.png' alt='carrito de compras' />
 		<i>2</i>
 	</a>
-	<p>Hola! <a href='/login'>Acceder <img src='/img/user.png' alt='usuario'/></a></p>
+	<p>Hola! <a href='/'>Acceder <img src='/img/user.png' alt='usuario'/></a></p>
 </nav>
 <style>
 	nav{
@@ -72,5 +72,8 @@
 	nav p a img{
 		position: relative;
 		top: 13px;
+	}
+	.main-logo{
+		margin-bottom: -4px;
 	}
 </style>

@@ -5,6 +5,8 @@
 <script>
 	import BreadCrumbs from '$lib/BreadCrumbs.svelte';
 	import ProductDetail from '$lib/ProductDetail.svelte';
+	import ProductSlider from '$lib/ProductSlider.svelte';
+	import ContactRibbon from '$lib/ContactRibbon.svelte';
 </script>
 
 <svelte:head>
@@ -14,6 +16,9 @@
 	<BreadCrumbs />
 	<ProductDetail />
 </main>
+
+<ProductSlider title='Articulos recomendados' />
+<ContactRibbon />
 
 <style>
 	main{

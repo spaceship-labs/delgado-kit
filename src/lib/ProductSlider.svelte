@@ -1,9 +1,10 @@
 <script >
 	import ProductSummary from '$lib/ProductSummary.svelte';
+	export let title = 'Nuevos diseños';
 	let products = [7,8,9]
 </script>
 <section>
-	<h3>Nuevos diseños</h3>
+	<h3>{title}</h3>
 	<div class='products'>
 		{#each products as product}
 			<ProductSummary {product}/>
