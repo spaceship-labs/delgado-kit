@@ -2398,9 +2398,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-618d984b.js",
+      file: assets + "/_app/start-edd7a347.js",
       css: [assets + "/_app/assets/start-61d1577b.css"],
-      js: [assets + "/_app/start-618d984b.js", assets + "/_app/chunks/vendor-af294010.js"]
+      js: [assets + "/_app/start-edd7a347.js", assets + "/_app/chunks/vendor-af294010.js"]
     },
     fetched: void 0,
     floc: false,
@@ -2479,7 +2479,7 @@ var module_lookup = {
     return cart;
   })
 };
-var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-57bf8a78.js", "css": ["assets/pages/__layout.svelte-d335ce58.css"], "js": ["pages/__layout.svelte-57bf8a78.js", "chunks/vendor-af294010.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-e1e7a444.js", "css": [], "js": ["error.svelte-e1e7a444.js", "chunks/vendor-af294010.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-0059bcd1.js", "css": ["assets/pages/index.svelte-8319bdf1.css", "assets/ContactRibbon-8ace12d0.css"], "js": ["pages/index.svelte-0059bcd1.js", "chunks/vendor-af294010.js", "chunks/ContactRibbon-469bd7db.js"], "styles": [] }, "src/routes/product.svelte": { "entry": "pages/product.svelte-47a54bf4.js", "css": ["assets/pages/product.svelte-edcb689c.css", "assets/PolicyInfo.svelte_svelte&type=style&lang-a7bfaab2.css", "assets/ContactRibbon-8ace12d0.css"], "js": ["pages/product.svelte-47a54bf4.js", "chunks/vendor-af294010.js", "chunks/PolicyInfo.svelte_svelte&type=style&lang-04855276.js", "chunks/ContactRibbon-469bd7db.js"], "styles": [] }, "src/routes/cart.svelte": { "entry": "pages/cart.svelte-32e58c26.js", "css": ["assets/pages/cart.svelte-25343472.css", "assets/PolicyInfo.svelte_svelte&type=style&lang-a7bfaab2.css", "assets/ContactRibbon-8ace12d0.css"], "js": ["pages/cart.svelte-32e58c26.js", "chunks/vendor-af294010.js", "chunks/PolicyInfo.svelte_svelte&type=style&lang-04855276.js", "chunks/ContactRibbon-469bd7db.js"], "styles": [] } };
+var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-a2803886.js", "css": ["assets/pages/__layout.svelte-6e362aef.css"], "js": ["pages/__layout.svelte-a2803886.js", "chunks/vendor-af294010.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-e1e7a444.js", "css": [], "js": ["error.svelte-e1e7a444.js", "chunks/vendor-af294010.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-0059bcd1.js", "css": ["assets/pages/index.svelte-8319bdf1.css", "assets/ContactRibbon-8ace12d0.css"], "js": ["pages/index.svelte-0059bcd1.js", "chunks/vendor-af294010.js", "chunks/ContactRibbon-469bd7db.js"], "styles": [] }, "src/routes/product.svelte": { "entry": "pages/product.svelte-47a54bf4.js", "css": ["assets/pages/product.svelte-edcb689c.css", "assets/PolicyInfo.svelte_svelte&type=style&lang-a7bfaab2.css", "assets/ContactRibbon-8ace12d0.css"], "js": ["pages/product.svelte-47a54bf4.js", "chunks/vendor-af294010.js", "chunks/PolicyInfo.svelte_svelte&type=style&lang-04855276.js", "chunks/ContactRibbon-469bd7db.js"], "styles": [] }, "src/routes/cart.svelte": { "entry": "pages/cart.svelte-32e58c26.js", "css": ["assets/pages/cart.svelte-25343472.css", "assets/PolicyInfo.svelte_svelte&type=style&lang-a7bfaab2.css", "assets/ContactRibbon-8ace12d0.css"], "js": ["pages/cart.svelte-32e58c26.js", "chunks/vendor-af294010.js", "chunks/PolicyInfo.svelte_svelte&type=style&lang-04855276.js", "chunks/ContactRibbon-469bd7db.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
