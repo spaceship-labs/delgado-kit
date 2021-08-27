@@ -30,8 +30,8 @@
 	    <PolicyInfo />
 	    
 	    <div class='files'>
-		    <a class='button mute'>ficha tecnica</a>
-		    <a class='button mute'>armado</a>
+		    <a href='/' class='button mute'>ficha tecnica</a>
+		    <a href='/' class='button mute'>armado</a>
 		</div>
 
 		<div class='description'>

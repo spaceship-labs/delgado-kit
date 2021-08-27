@@ -1,12 +1,12 @@
 <nav>
   <ul>
-    <li><a href="/productos">Productos</a></li>
-    <li><a href="/proyectos">Proyectos</a></li>
-    <li><a href="/nosotros">Nosotros</a></li>
-    <li><a href="/sucursales">Sucursales</a></li>
-    <li><a href="/catalogo">Catalogo PDF</a></li>
-    <li><a href="/blog">Blog</a></li>
-    <li><a href="/contacto">Contacto</a></li>
+    <li><a href="/product">Productos</a></li>
+    <li><a href="/">Proyectos</a></li>
+    <li><a href="/">Nosotros</a></li>
+    <li><a href="/">Sucursales</a></li>
+    <li><a href="/">Catalogo PDF</a></li>
+    <li><a href="/">Blog</a></li>
+    <li><a href="/">Contacto</a></li>
   </ul>
 </nav>
 

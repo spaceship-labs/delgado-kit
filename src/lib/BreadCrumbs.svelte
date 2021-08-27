@@ -1,7 +1,7 @@
 <script>
 	export let routes = [
 		{label: 'Inicio', link: '/'},
-		{label: 'Escritorios', link: '/products'},
+		{label: 'Escritorios', link: '/product'},
 	]
 </script>
 <p>

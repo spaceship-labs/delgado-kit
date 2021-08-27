@@ -14,7 +14,7 @@
 	<img src='/img/temp/product0.png' alt='product 0' />
 	<div class='thumbs'>
 		{#each images as image, i}
-			<a href='#' class:selected={i === selected}><img src='{image.thumb}' alt='thumbnail' /></a>
+			<a href='/' class:selected={i === selected}><img src='{image.thumb}' alt='thumbnail' /></a>
 		{/each}
 	</div>
 </section>
