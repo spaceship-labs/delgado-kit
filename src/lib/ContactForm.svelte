@@ -4,7 +4,7 @@
         <div class="layout-col">
           <img src="/img/pinmap.png" alt="pinmap" >
 		  <h3>Te esperamos</h3>
-		  <a class="button" href="/sucursales">VER SUCURSALES</a>
+		  <a class="button" href="/">VER SUCURSALES</a>
 	    </div>
 	</div>
 	<div class="col col2">
