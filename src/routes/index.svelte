@@ -1,5 +1,8 @@
 <script context="module">
 	export const prerender = true;
+    
+    
+   
 </script>
 
 <script>
@@ -9,6 +12,11 @@
 	import SubscriptionForm from '$lib/SubscriptionForm.svelte';
 	import ProductSlider from '$lib/ProductSlider.svelte';
 	import ContactRibbon from '$lib/ContactRibbon.svelte';
+
+	
+
+   
+
 </script>
 
 <svelte:head>
@@ -17,7 +25,9 @@
 
 <OffersBanner />
 <ProductRibbon />
-<ProductListing title='Best Buys' />
+
+<ProductListing title='Best Buys'  collection="Best Buys"/>
+
 <SubscriptionForm />
 <ProductSlider />
 <ContactRibbon />
