@@ -1,20 +1,22 @@
 <script>
-	let images = [
-		{thumb: '/img/temp/product0-thumb.png'},
-		{thumb: '/img/temp/product0-thumb.png'},
-		{thumb: '/img/temp/product0-thumb.png'},
-		{thumb: '/img/temp/product0-thumb.png'},
-	]
+	export let images;
+	console.log(images);
+	// let images = [
+	// 	{thumb: '/img/temp/product0-thumb.png'},
+	// 	{thumb: '/img/temp/product0-thumb.png'},
+	// 	{thumb: '/img/temp/product0-thumb.png'},
+	// 	{thumb: '/img/temp/product0-thumb.png'},
+	// ]
 
-	let selected = 2;
+	let selected = 0;
 
 </script>
 
 <section>
-	<img src='/img/temp/product0.png' alt='product 0' />
+	<img src='{images[0].node.src}' alt='product 0' />
 	<div class='thumbs'>
 		{#each images as image, i}
-			<a href='/' class:selected={i === selected}><img src='{image.thumb}' alt='thumbnail' /></a>
+			<a href='/' class:selected={i === selected}><img src='{image.node.src}' alt='thumbnail-{i}' /></a>
 		{/each}
 	</div>
 </section>
@@ -22,6 +24,11 @@
 <style>
 	section{
 		margin: 11px 0;
+	}
+	section img{
+		max-width: 553px;
+		width: 100%;
+		height: auto;
 	}
 	.thumbs{
 		display: flex;
@@ -37,6 +44,9 @@
 	}
 	.thumbs a img{
 		display: block;
+		height: 83px;
+		width:  83px;
+		object-fit: cover;
 	}
 
 </style>

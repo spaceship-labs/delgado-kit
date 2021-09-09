@@ -1,17 +1,32 @@
 <script>
-	import ProductSummary from '$lib/ProductSummary.svelte';
+	import ProductCard from '$lib/ProductCard.svelte';
+    import {getProducts,getCollection} from '../../store';
+
 	export let title;
-	export let products = [1,2,3,4,5,6];
+    // export let products = getProducts();
+    export let collection = null;
+    
+    //si no recibe collection, regresa todos los productos
+    export let coll = getCollection(collection);
+    
+
 </script>
+
 <div class='container'>
 	{#if title}
 		<h3 class='strike-header'><span>{title}</span></h3>
 	{/if}
+
 	<section>
-		{#each products as product}
-			<ProductSummary {product} />
-		{/each}
+		{#await coll}
+		{:then coll} 
+		  {#each coll.products.edges as product}
+		  	 <ProductCard product={product.node} />
+		  {/each}
+		{/await}
 	</section>
+
+	
 </div>
 <style>
 	.container{

@@ -3,18 +3,50 @@
 	import ColorPicker from '$lib/ColorPicker.svelte';
 	import PolicyInfo from '$lib/PolicyInfo.svelte';
 	import ProductGallery from '$lib/ProductGallery.svelte';
+    
+    export let product;
 
+    console.log(product);
+    let quantity = 0;
+    let productImage = product.images.edges[0].node.src;
+    let productVariants = product.variants.edges.map((v) => v.node);
+    let selectedProduct = productVariants[0].id;
+    let currCode = productVariants[0].priceV2.currencyCode;
+    
+    // obtener el mejor descuento de las variantes
+    let bestDiscount = 0;
+    for(let variant of productVariants){
+      if(variant.compareAtPrice != null){
+        let temp = (100/variant.compareAtPrice*variant.priceV2.amount).toFixed(0); 
+        if(temp > bestDiscount){
+          bestDiscount = temp;
+        }
+      }
+    }
+
+    // console.log(productVariants);
 </script>
 <main>
 	<section>
-		<h1>Mesa Multiusos</h1>
-		<h3>SKU: AL-2627</h3>		
+		<h1>{product.title}</h1>
+
+		{#if productVariants.length < 1 && productVariants[0].sku != null}
+          <h3>SKU: {productVariants[0].sku}</h3>
+        {/if}
         
-        <p class='tag'>50% de desc.</p>
+        {#if bestDiscount > 0}
+          <p class='tag'>{bestDiscount}% de desc.</p>
+        {/if }
         
         <p class='price'>
-	        <strong>$6,128.44 mx</strong>
-	        <span class='original-price'>$8,128.44 mx</span>
+	        {#if productVariants.length > 1}
+    	      <strong>{product.priceRange.minVariantPrice} {currCode} - {product.priceRange.maxVariantPrice} {currCode}</strong>
+    	    {:else}
+              <strong>{productVariants[0].priceV2.amount} {currCode}</strong>
+              {#if productVariants[0].compareAtPrice != null}
+              <span class='original-price'>{productVariants[0].compareAtPrice} {currCode}</span>
+              {/if}
+            {/if}
    		</p>
    		
    		<div class='options'>
@@ -35,32 +67,12 @@
 		</div>
 
 		<div class='description'>
-		    <h3>CARACTERÍSTICAS</h3>
-		    <p>Las mesas multiusos son perfectas para adaptarse a cualquier situación, desde el hogar, como espacio de tareas para los estudiantes hasta las oficinas como áreas de apoyo en impresión y/o copiado, o bien, como función de retorno en los escritorios. </p>
-			<p>Definitivamente aportan la versatilidad que muchas empresas necesitan.</p>
-			<hr/>
-			<h4>CARACTERÍSTICAS TÉCNICAS</h4>
-			<ul>
-				<li>Fácil de armar. No necesita herramientas.</li>
-				<li>Melamina termo-fusionada de 19 mm de espesor.</li>
-				<li>Cantos protegidos con chapa cinta de PVC de 1 mm de espesor.</li>
-				<li>Estructura tubular calibre 20.</li>
-				<li>Estructura terminada en pintura epóxica texturizada en color.</li>
-				<li>Regatón nivelador de altura 100% polipropileno.</li>
-			</ul>
-			<hr/>
-			<h4>Medidas</h4>
-			<ul>
-				<li>Alto: 70 cm / 27.5 in</li>
-				<li>Ancho: 120 cm / 47.2 in</li>
-				<li>Profundo: 60 cm / 23.6 in</li>
-				<li>*Consulta colores disponibles para entrega inmediata*</li>
-			</ul>
+		    {product.description}
 			<p class='note'>Los precios no incluyen IVA</p>
 		</div>
 	</section>
 	<section>
-		<ProductGallery />
+		<ProductGallery images={product.images.edges}/>
 	</section>
 
 </main>
