@@ -4,33 +4,40 @@
 	import PolicyInfo from '$lib/PolicyInfo.svelte';
 	import ProductGallery from '$lib/ProductGallery.svelte';
     
-    export let product;
+  export let product;
 
-    console.log(product);
-    let quantity = 0;
-    let productImage = product.images.edges[0].node.src;
-    let productVariants = product.variants.edges.map((v) => v.node);
-    let selectedProduct = productVariants[0].id;
-    let currCode = productVariants[0].priceV2.currencyCode;
-    
-    // obtener el mejor descuento de las variantes
-    let bestDiscount = 0;
-    for(let variant of productVariants){
-      if(variant.compareAtPrice != null){
-        let temp = (100/variant.compareAtPrice*variant.priceV2.amount).toFixed(0); 
-        if(temp > bestDiscount){
-          bestDiscount = temp;
-        }
+  console.log(product);
+
+  let quantity = 0;
+  let productVariants = [];
+  let selectedProduct;
+  let currCode;
+
+  if(product != null){
+    productVariants = product.variants.edges.map((v) => v.node);
+    selectedProduct = productVariants[0].id;
+    currCode = productVariants[0].priceV2.currencyCode;
+  }
+  
+  // obtener el mejor descuento de las variantes
+  let bestDiscount = 0;
+  for(let variant of productVariants){
+    if(variant.compareAtPrice != null){
+      let temp = (100/variant.compareAtPrice*variant.priceV2.amount).toFixed(0); 
+      if(temp > bestDiscount){
+        bestDiscount = temp;
       }
     }
+  }
 
-    // console.log(productVariants);
+  // console.log(productVariants);
 </script>
 <main>
+	{#if product != null}
 	<section>
 		<h1>{product.title}</h1>
 
-		{#if productVariants.length < 1 && productVariants[0].sku != null}
+		    {#if productVariants.length < 1 && productVariants[0].sku != null}
           <h3>SKU: {productVariants[0].sku}</h3>
         {/if}
         
@@ -74,7 +81,7 @@
 	<section>
 		<ProductGallery images={product.images.edges}/>
 	</section>
-
+  {/if}
 </main>
 
 <style>

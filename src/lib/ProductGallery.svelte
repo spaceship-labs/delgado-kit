@@ -1,12 +1,14 @@
 <script>
 	export let images;
-	console.log(images);
-	// let images = [
+
+	// if(images == null){
+	//   images = [
 	// 	{thumb: '/img/temp/product0-thumb.png'},
 	// 	{thumb: '/img/temp/product0-thumb.png'},
 	// 	{thumb: '/img/temp/product0-thumb.png'},
 	// 	{thumb: '/img/temp/product0-thumb.png'},
-	// ]
+	//   ]
+	// }
 
 	let selected = 0;
 
