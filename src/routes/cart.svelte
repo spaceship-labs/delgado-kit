@@ -10,34 +10,31 @@
 	import CartItem from '$lib/CartItem.svelte';
 	import CartSummary from '$lib/CartSummary.svelte';
 
+	import {removeFromCart, updateCart} from '../../store';
+
+	import { onMount } from 'svelte';
+
+	import { tick } from "svelte";
+    
+    let done = false;
+    let cart;
+    let cartItems = [];
+    onMount(() => {
+        // get cart details from localStorage
+        cart = JSON.parse(localStorage.getItem('cart'));
+        console.log(cart);
+        cartItems = cart.lines.edges;
+
+    });
+
 
 	let routes = [
 		{label: 'Inicio', link: '/'},
 		{label: 'Carrito', link: '/cart'},
 	]
+    
 
-	let products = [
-		{
-			name : 'MESA MULTIUSOS',
-			sku : 'AL-2627',
-			variant : 'COLOR CLARO',
-			discount : '50%',
-			price : '',
-			discountedPrice : '',
-			quantity : '8',
-			img : '/img/temp/product0-mid.png'
-		},
-		{
-			name : 'MESA MULTIUSOS',
-			sku : 'AL-2627',
-			variant : 'COLOR CLARO',
-			discount : '50%',
-			price : '',
-			discountedPrice : '',
-			quantity : '8',
-			img : '/img/temp/product0-mid.png'
-		}
-	]
+
 </script>
 
 <svelte:head>
@@ -48,14 +45,19 @@
 </nav>
 <main>
 	<section>
-		{#each products as product}
-			<CartItem {product}/>
-		{/each}
+		{#if cart != null}
+		  {#each cartItems as product}
+			<CartItem  product={product} removeFromCart={removeFromCart} updateCart={updateCart}/>
+		  {/each}
+
+		{/if}
 		<a href='/products' class='button mute'>añadir mas al carrito</a>	
 		<PolicyInfo />	
 	</section>
 	<section>
-		<CartSummary />
+		{#if cart != null}
+		  <CartSummary estimated={cart.estimatedCost} items={cartItems.length} checkout={cart.checkoutUrl} />
+		{/if}
 	</section>
 </main>
 <ProductSlider />

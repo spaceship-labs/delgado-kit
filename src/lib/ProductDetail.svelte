@@ -5,13 +5,16 @@
 	import ProductGallery from '$lib/ProductGallery.svelte';
     
   export let product;
+  export let addToCart;
 
   console.log(product);
 
-  let quantity = 0;
+  let qty = 1;
   let productVariants = [];
   let selectedProduct;
+  let selected = 0;
   let currCode;
+  let gall;
 
   if(product != null){
     productVariants = product.variants.edges.map((v) => v.node);
@@ -21,13 +24,28 @@
   
   // obtener el mejor descuento de las variantes
   let bestDiscount = 0;
+  let bestVariant = {};
   for(let variant of productVariants){
     if(variant.compareAtPrice != null){
       let temp = (100/variant.compareAtPrice*variant.priceV2.amount).toFixed(0); 
-      if(temp > bestDiscount){
+      if(temp >= bestDiscount){
         bestDiscount = temp;
+        bestVariant = {"amount":variant.priceV2.amount,"compare": variant.compareAtPrice};
       }
     }
+  }
+
+  let getDiscount = function(num){
+    let variant = productVariants[num];
+
+    if(variant.compareAtPrice != null){
+      let temp = (100/variant.compareAtPrice*variant.priceV2.amount).toFixed(0); 
+      return temp;
+    }
+    else{
+    	return 0;
+    }
+    
   }
 
   // console.log(productVariants);
@@ -37,33 +55,33 @@
 	<section>
 		<h1>{product.title}</h1>
 
-		    {#if productVariants.length < 1 && productVariants[0].sku != null}
+		    {#if productVariants[0].sku != null}
           <h3>SKU: {productVariants[0].sku}</h3>
         {/if}
         
-        {#if bestDiscount > 0}
-          <p class='tag'>{bestDiscount}% de desc.</p>
+        {#if getDiscount(selected) > 0}
+          <p class='tag'>{getDiscount(selected)}% de desc.</p>
         {/if }
         
         <p class='price'>
-	        {#if productVariants.length > 1}
-    	      <strong>{product.priceRange.minVariantPrice} {currCode} - {product.priceRange.maxVariantPrice} {currCode}</strong>
-    	    {:else}
-              <strong>{productVariants[0].priceV2.amount} {currCode}</strong>
-              {#if productVariants[0].compareAtPrice != null}
-              <span class='original-price'>{productVariants[0].compareAtPrice} {currCode}</span>
-              {/if}
-            {/if}
+          <strong>{productVariants[selected].priceV2.amount} {currCode}</strong>
+          {#if productVariants[selected].compareAtPrice != null}
+          <span class='original-price'>{productVariants[selected].compareAtPrice} {currCode}</span>
+          {/if}
    		</p>
    		
    		<div class='options'>
-	        <QuantityPicker />
-	        <ColorPicker />
+	        <QuantityPicker   bind:qty={qty} max={productVariants[selected].quantityAvailable}/>
+	        {#if productVariants.length > 0 }
+	          <ColorPicker bind:gall={gall} bind:selected={selected} bind:qty={qty} images={product.images.edges} variants={productVariants} />
+	        {/if}
     	</div>
 
 	    <div class='cart-options'>
-	        <a href='/' class='button mute'>Añadir al carrito </a>
-	        <a href='/' class='button'>Comprar ahora </a>
+	        <a id="addToCart" href="#"
+	           on:click="{()=>{addToCart(productVariants[selected].id,qty)}}" 
+	           class='button mute'>Añadir al carrito </a>
+	        <!-- <a href='/' class='button'>Comprar ahora </a> -->
 	    </div>
 
 	    <PolicyInfo />
@@ -79,7 +97,7 @@
 		</div>
 	</section>
 	<section>
-		<ProductGallery images={product.images.edges}/>
+		<ProductGallery bind:gall={gall} images={product.images.edges}/>
 	</section>
   {/if}
 </main>

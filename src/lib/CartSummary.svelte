@@ -1,3 +1,9 @@
+<script>
+	export let estimated;
+	export let items;
+	export let checkout;
+
+</script>
 <article>
 	<h2>
 		<i class='icon-carrito-01'></i>
@@ -5,24 +11,24 @@
 	</h2>
 	<table>
 		<tr>
-			<td>Subtotal (8 productos)</td>
-			<td>$6128.44</td>
+			<td>Subtotal ({items} productos)</td>
+			<td>${estimated.subtotalAmount.amount} {estimated.subtotalAmount.currencyCode}</td>
 		</tr>
-		<tr class='discount'>
+		<!-- <tr class='discount'>
 			<td>Descuento</td>
 			<td>$2,000</td>
-		</tr>
-		<tr>
+		</tr> -->
+		<!-- <tr>
 			<td>Envio</td>
 			<td>$0.00</td>
-		</tr>
+		</tr> -->
 		<tr class='spacer'></tr>
 		<tr class='total'>
 			<td>TOTAL</td>
-			<td>$6128.44</td>
+			<td>${estimated.totalAmount.amount} {estimated.totalAmount.currencyCode}</td>
 		</tr>
 	</table>
-	<a href='/' class='button'>Pagar</a>
+	<a href='{checkout}' class='button'>Pagar</a>
 </article>
 
 <style>

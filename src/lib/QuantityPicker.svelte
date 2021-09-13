@@ -1,14 +1,37 @@
 <script>
-	export let quantity = 1;
+	export let max;
+	export let qty;
+	export let clicked = false;
+	export let disable = false;
+	// export let min = 1;
+    
+    let updateQty = (num) => {
+      if(disable == true){
+        return;
+      }
+      qty += num;
+      if(qty > max){
+        qty = max;
+      }
+      if(qty < 1){
+        qty = 1;
+      }
+      clicked=true;
+    }
+
+    
+
 </script>
+
 <article>
 	<h4>Cantidad</h4>
 	<section>
-		<button>-</button>
-		<div>{quantity}</div>
-		<button>+</button>
+		<button on:click="{ () => {updateQty(-1)}}">-</button>
+		<div>{qty} / {max}</div>
+		<button on:click="{ () => {updateQty(1)}}">+</button>
 	</section>
 </article>
+
 <style>
 	h4{
 		text-transform: uppercase;

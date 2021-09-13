@@ -1,3 +1,4 @@
+
 <script>
 	import '../app.css';
 	import '../glyphter.css';
@@ -6,6 +7,12 @@
 	import CategoryNav from '$lib/CategoryNav.svelte';
 	import AnnouncementsNav from '$lib/AnnouncementsNav.svelte';
 	import Footer from '$lib/Footer.svelte';
+
+	// Import Swiper Svelte components
+
+    
+	
+
 </script>
 
 <TopNav />
