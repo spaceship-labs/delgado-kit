@@ -1,9 +1,20 @@
+<script>
+	import { onMount } from 'svelte';
+    let count = 0;
+    let cart;
+    onMount(() => {
+        cart = JSON.parse(localStorage.getItem('cart'));
+        if (cart) {
+            count = cart.lines.edges.length;
+        }
+    });
+</script>
 <nav>
 	<a href='/' class='main-logo'><img src='/img/logo.png' alt='Manuel Delgado logo principal' /></a>
 	<form><input type="text" name="product-search" placeholder="Buscar Muebles" class="default-input" /></form>
 	<a class='cart' href='/cart'>
 		<img src='/img/cart.png' alt='carrito de compras' />
-		<i>2</i>
+		<i>{count}</i>
 	</a>
 	<p>Hola! <a href='/'>Acceder <img src='/img/user.png' alt='usuario'/></a></p>
 </nav>

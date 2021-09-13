@@ -1,16 +1,17 @@
 <script>
 	export let product;
-    
     let productVariants = product.variants.edges.map((v) => v.node);
-    let currCode = productVariants[0].priceV2.currencyCode;
+    let currCode = product.priceRange.maxVariantPrice.currencyCode;
     
     // obtener el mejor descuento de las variantes
     let bestDiscount = 0;
+    let bestVariant = {};
     for(let variant of productVariants){
       if(variant.compareAtPrice != null){
-        let temp = (100/variant.compareAtPrice*variant.priceV2.amount).toFixed(0); 
-        if(temp > bestDiscount){
+        let temp = (100/variant.compareAtPrice*variant.price).toFixed(0); 
+        if(temp >= bestDiscount){
           bestDiscount = temp;
+          bestVariant = {"amount":variant.price,"compare": variant.compareAtPrice};
         }
       }
     }
@@ -34,9 +35,16 @@
     {/if}
     <p class='price'>
     	{#if productVariants.length > 1}
-    	  <strong>{product.priceRange.minVariantPrice} {currCode} - {product.priceRange.maxVariantPrice} {currCode}</strong>
+    	  {#if product.priceRange.minVariantPrice.amount != product.priceRange.maxVariantPrice.amount}
+    	    <strong>{product.priceRange.minVariantPrice.amount} {currCode} - {product.priceRange.maxVariantPrice.amount} {currCode}</strong>
+    	  {:else}
+    	    <strong>{bestVariant.amount} {currCode}</strong>
+            {#if bestVariant.compare != null}
+            <span class='original-price'>{bestVariant.compare} {currCode}</span>
+            {/if}
+    	  {/if}
     	{:else}
-          <strong>{productVariants[0].priceV2.amount} {currCode}</strong>
+          <strong>{productVariants[0].price} {currCode}</strong>
           {#if productVariants[0].compareAtPrice != null}
           <span class='original-price'>{productVariants[0].compareAtPrice} {currCode}</span>
           {/if}

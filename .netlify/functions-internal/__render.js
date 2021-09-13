@@ -885,8 +885,8 @@ async function fetch(url, options_) {
       request_.setTimeout(0);
       const headers = fromRawHeaders(response_.rawHeaders);
       if (isRedirect(response_.statusCode)) {
-        const location = headers.get("Location");
-        const locationURL = location === null ? null : new URL(location, request.url);
+        const location2 = headers.get("Location");
+        const locationURL = location2 === null ? null : new URL(location2, request.url);
         switch (request.redirect) {
           case "error":
             reject(new FetchError(`uri requested responds with a redirect, redirect mode is set to error: ${request.url}`, "no-redirect"));
@@ -2419,9 +2419,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-e80b6f52.js",
+      file: assets + "/_app/start-fcb92739.js",
       css: [assets + "/_app/assets/start-61d1577b.css"],
-      js: [assets + "/_app/start-e80b6f52.js", assets + "/_app/chunks/vendor-2b76f189.js"]
+      js: [assets + "/_app/start-fcb92739.js", assets + "/_app/chunks/vendor-b23f36ca.js", assets + "/_app/chunks/preload-helper-ec9aa979.js"]
     },
     fetched: void 0,
     floc: false,
@@ -2451,7 +2451,7 @@ function init(settings = default_settings) {
 var d = decodeURIComponent;
 var empty = () => ({});
 var manifest = {
-  assets: [{ "file": "favicon.png", "size": 1571, "type": "image/png" }, { "file": "fonts/Glyphter.eot", "size": 5600, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Glyphter.svg", "size": 32769, "type": "image/svg+xml" }, { "file": "fonts/Glyphter.ttf", "size": 5432, "type": "font/ttf" }, { "file": "fonts/Glyphter.woff", "size": 3568, "type": "font/woff" }, { "file": "img/arrow-left.svg", "size": 770, "type": "image/svg+xml" }, { "file": "img/arrow-right.svg", "size": 775, "type": "image/svg+xml" }, { "file": "img/buscar.svg", "size": 856, "type": "image/svg+xml" }, { "file": "img/card.png", "size": 398, "type": "image/png" }, { "file": "img/cart.png", "size": 442, "type": "image/png" }, { "file": "img/contacto.jpg", "size": 30638, "type": "image/jpeg" }, { "file": "img/logo.png", "size": 56130, "type": "image/png" }, { "file": "img/mail.svg", "size": 941, "type": "image/svg+xml" }, { "file": "img/package.png", "size": 396, "type": "image/png" }, { "file": "img/pinmap.png", "size": 1287, "type": "image/png" }, { "file": "img/tarjetas.png", "size": 11102, "type": "image/png" }, { "file": "img/telefono.svg", "size": 2295, "type": "image/svg+xml" }, { "file": "img/temp/ad.png", "size": 34194, "type": "image/png" }, { "file": "img/temp/layer-16.png", "size": 3953, "type": "image/png" }, { "file": "img/temp/layer-17.png", "size": 6462, "type": "image/png" }, { "file": "img/temp/layer-18.png", "size": 3181, "type": "image/png" }, { "file": "img/temp/layer-19.png", "size": 5278, "type": "image/png" }, { "file": "img/temp/layer-20.png", "size": 4270, "type": "image/png" }, { "file": "img/temp/layer-21.png", "size": 4124, "type": "image/png" }, { "file": "img/temp/layer-6.png", "size": 7212, "type": "image/png" }, { "file": "img/temp/product0-mid.png", "size": 11507, "type": "image/png" }, { "file": "img/temp/product0-thumb.png", "size": 7299, "type": "image/png" }, { "file": "img/temp/product0.png", "size": 150191, "type": "image/png" }, { "file": "img/temp/product1.png", "size": 48541, "type": "image/png" }, { "file": "img/temp/product2.png", "size": 18925, "type": "image/png" }, { "file": "img/temp/product3.png", "size": 11823, "type": "image/png" }, { "file": "img/temp/product4.png", "size": 14785, "type": "image/png" }, { "file": "img/temp/product5.png", "size": 12273, "type": "image/png" }, { "file": "img/temp/product6.png", "size": 11901, "type": "image/png" }, { "file": "img/temp/product7.png", "size": 50456, "type": "image/png" }, { "file": "img/temp/product8.png", "size": 40988, "type": "image/png" }, { "file": "img/temp/product9.png", "size": 55520, "type": "image/png" }, { "file": "img/user.png", "size": 440, "type": "image/png" }, { "file": "img/van.png", "size": 473, "type": "image/png" }, { "file": "robots.txt", "size": 70, "type": "text/plain" }],
+  assets: [{ "file": "favicon.png", "size": 1571, "type": "image/png" }, { "file": "fonts/Glyphter.eot", "size": 5600, "type": "application/vnd.ms-fontobject" }, { "file": "fonts/Glyphter.svg", "size": 32769, "type": "image/svg+xml" }, { "file": "fonts/Glyphter.ttf", "size": 5432, "type": "font/ttf" }, { "file": "fonts/Glyphter.woff", "size": 3568, "type": "font/woff" }, { "file": "img/arrow-left.svg", "size": 770, "type": "image/svg+xml" }, { "file": "img/arrow-right.svg", "size": 775, "type": "image/svg+xml" }, { "file": "img/buscar.svg", "size": 856, "type": "image/svg+xml" }, { "file": "img/card.png", "size": 398, "type": "image/png" }, { "file": "img/cart.png", "size": 442, "type": "image/png" }, { "file": "img/contacto.jpg", "size": 30638, "type": "image/jpeg" }, { "file": "img/horario.svg", "size": 1273, "type": "image/svg+xml" }, { "file": "img/logo.png", "size": 56130, "type": "image/png" }, { "file": "img/mail.svg", "size": 941, "type": "image/svg+xml" }, { "file": "img/MD_MAP.png", "size": 3575, "type": "image/png" }, { "file": "img/package.png", "size": 396, "type": "image/png" }, { "file": "img/pinmap.png", "size": 1287, "type": "image/png" }, { "file": "img/pinmap.svg", "size": 1288, "type": "image/svg+xml" }, { "file": "img/sucursales/campeche.jpeg", "size": 92095, "type": "image/jpeg" }, { "file": "img/sucursales/campeche2.jpeg", "size": 59987, "type": "image/jpeg" }, { "file": "img/sucursales/campeche3.jpeg", "size": 71920, "type": "image/jpeg" }, { "file": "img/sucursales/cancun10.jpeg", "size": 56600, "type": "image/jpeg" }, { "file": "img/sucursales/cancun11.jpeg", "size": 60640, "type": "image/jpeg" }, { "file": "img/sucursales/cancun12.jpeg", "size": 43388, "type": "image/jpeg" }, { "file": "img/sucursales/cancun13.jpeg", "size": 100507, "type": "image/jpeg" }, { "file": "img/sucursales/cancun2.jpeg", "size": 110185, "type": "image/jpeg" }, { "file": "img/sucursales/cancun3.jpg", "size": 168535, "type": "image/jpeg" }, { "file": "img/sucursales/cancun4.jpeg", "size": 91279, "type": "image/jpeg" }, { "file": "img/sucursales/cancun5.jpeg", "size": 56709, "type": "image/jpeg" }, { "file": "img/sucursales/cancun6.jpeg", "size": 56306, "type": "image/jpeg" }, { "file": "img/sucursales/cancun7.jpeg", "size": 45678, "type": "image/jpeg" }, { "file": "img/sucursales/cancun8.jpeg", "size": 55458, "type": "image/jpeg" }, { "file": "img/sucursales/cancun9.jpeg", "size": 68e3, "type": "image/jpeg" }, { "file": "img/sucursales/centrodistribucion.jpg", "size": 73802, "type": "image/jpeg" }, { "file": "img/sucursales/centrodistribucion2.jpg", "size": 57587, "type": "image/jpeg" }, { "file": "img/sucursales/centrodistribucion3.jpg", "size": 2098327, "type": "image/jpeg" }, { "file": "img/sucursales/chetumal.jpg", "size": 94429, "type": "image/jpeg" }, { "file": "img/sucursales/meridacentro.png", "size": 1574176, "type": "image/png" }, { "file": "img/sucursales/meridacentro2.png", "size": 1574176, "type": "image/png" }, { "file": "img/sucursales/meridacentro3.jfif", "size": 595063, "type": null }, { "file": "img/sucursales/meridacentro4.jfif", "size": 638830, "type": null }, { "file": "img/sucursales/meridacentro5.jfif", "size": 684374, "type": null }, { "file": "img/sucursales/meridanorte.jpg", "size": 281681, "type": "image/jpeg" }, { "file": "img/sucursales/meridanorte2.jpg", "size": 158017, "type": "image/jpeg" }, { "file": "img/sucursales/meridanorte3.jpg", "size": 689972, "type": "image/jpeg" }, { "file": "img/sucursales/meridanorte4.jpg", "size": 215485, "type": "image/jpeg" }, { "file": "img/sucursales/meridanorte5.jpg", "size": 260435, "type": "image/jpeg" }, { "file": "img/sucursales/meridanorte6.jpg", "size": 227183, "type": "image/jpeg" }, { "file": "img/sucursales/meridanorte7.jpg", "size": 212016, "type": "image/jpeg" }, { "file": "img/sucursales/meridanorte8.jpg", "size": 238750, "type": "image/jpeg" }, { "file": "img/sucursales/meridareforma.png", "size": 1780388, "type": "image/png" }, { "file": "img/sucursales/meridareforma10.jpg", "size": 360517, "type": "image/jpeg" }, { "file": "img/sucursales/meridareforma11.jpg", "size": 353684, "type": "image/jpeg" }, { "file": "img/sucursales/meridareforma2.jpg", "size": 449780, "type": "image/jpeg" }, { "file": "img/sucursales/meridareforma3.jpg", "size": 383031, "type": "image/jpeg" }, { "file": "img/sucursales/meridareforma4.jpg", "size": 435581, "type": "image/jpeg" }, { "file": "img/sucursales/meridareforma5.jpg", "size": 394590, "type": "image/jpeg" }, { "file": "img/sucursales/meridareforma6.jpg", "size": 360974, "type": "image/jpeg" }, { "file": "img/sucursales/meridareforma7.jpg", "size": 336096, "type": "image/jpeg" }, { "file": "img/sucursales/meridareforma8.jpg", "size": 391814, "type": "image/jpeg" }, { "file": "img/sucursales/meridareforma9.jpg", "size": 364892, "type": "image/jpeg" }, { "file": "img/sucursales/playadelcarmen.jpeg", "size": 59303, "type": "image/jpeg" }, { "file": "img/sucursales/playadelcarmen2.jpeg", "size": 80338, "type": "image/jpeg" }, { "file": "img/sucursales/playadelcarmen3.jpeg", "size": 116719, "type": "image/jpeg" }, { "file": "img/sucursales/playadelcarmen4.jpeg", "size": 90788, "type": "image/jpeg" }, { "file": "img/sucursales/playadelcarmen5.jpeg", "size": 88350, "type": "image/jpeg" }, { "file": "img/sucursales/playadelcarmen6.jpeg", "size": 87359, "type": "image/jpeg" }, { "file": "img/sucursales/playadelcarmen7.jpeg", "size": 74402, "type": "image/jpeg" }, { "file": "img/sucursales/playadelcarmen8.jpeg", "size": 74234, "type": "image/jpeg" }, { "file": "img/sucursales/playadelcarmen9.jpeg", "size": 84960, "type": "image/jpeg" }, { "file": "img/tarjetas.png", "size": 11102, "type": "image/png" }, { "file": "img/telefono.svg", "size": 2295, "type": "image/svg+xml" }, { "file": "img/temp/ad.png", "size": 34194, "type": "image/png" }, { "file": "img/temp/layer-16.png", "size": 3953, "type": "image/png" }, { "file": "img/temp/layer-17.png", "size": 6462, "type": "image/png" }, { "file": "img/temp/layer-18.png", "size": 3181, "type": "image/png" }, { "file": "img/temp/layer-19.png", "size": 5278, "type": "image/png" }, { "file": "img/temp/layer-20.png", "size": 4270, "type": "image/png" }, { "file": "img/temp/layer-21.png", "size": 4124, "type": "image/png" }, { "file": "img/temp/layer-6.png", "size": 7212, "type": "image/png" }, { "file": "img/temp/product0-mid.png", "size": 11507, "type": "image/png" }, { "file": "img/temp/product0-thumb.png", "size": 7299, "type": "image/png" }, { "file": "img/temp/product0.png", "size": 150191, "type": "image/png" }, { "file": "img/temp/product1.png", "size": 48541, "type": "image/png" }, { "file": "img/temp/product2.png", "size": 18925, "type": "image/png" }, { "file": "img/temp/product3.png", "size": 11823, "type": "image/png" }, { "file": "img/temp/product4.png", "size": 14785, "type": "image/png" }, { "file": "img/temp/product5.png", "size": 12273, "type": "image/png" }, { "file": "img/temp/product6.png", "size": 11901, "type": "image/png" }, { "file": "img/temp/product7.png", "size": 50456, "type": "image/png" }, { "file": "img/temp/product8.png", "size": 40988, "type": "image/png" }, { "file": "img/temp/product9.png", "size": 55520, "type": "image/png" }, { "file": "img/user.png", "size": 440, "type": "image/png" }, { "file": "img/van.png", "size": 473, "type": "image/png" }, { "file": "robots.txt", "size": 70, "type": "text/plain" }],
   layout: "src/routes/__layout.svelte",
   error: ".svelte-kit/build/components/error.svelte",
   routes: [
@@ -2460,6 +2460,13 @@ var manifest = {
       pattern: /^\/$/,
       params: empty,
       a: ["src/routes/__layout.svelte", "src/routes/index.svelte"],
+      b: [".svelte-kit/build/components/error.svelte"]
+    },
+    {
+      type: "page",
+      pattern: /^\/locations\/?$/,
+      params: empty,
+      a: ["src/routes/__layout.svelte", "src/routes/locations.svelte"],
       b: [".svelte-kit/build/components/error.svelte"]
     },
     {
@@ -2489,6 +2496,46 @@ var manifest = {
       params: empty,
       a: ["src/routes/__layout.svelte", "src/routes/cart.svelte"],
       b: [".svelte-kit/build/components/error.svelte"]
+    },
+    {
+      type: "endpoint",
+      pattern: /^\/api\/utils\/createCartWithItem\/?$/,
+      params: empty,
+      load: () => Promise.resolve().then(function() {
+        return createCartWithItem$1;
+      })
+    },
+    {
+      type: "endpoint",
+      pattern: /^\/api\/utils\/postToShopifyAdmin\/?$/,
+      params: empty,
+      load: () => Promise.resolve().then(function() {
+        return postToShopifyAdmin;
+      })
+    },
+    {
+      type: "endpoint",
+      pattern: /^\/api\/utils\/removeItemFromCart\/?$/,
+      params: empty,
+      load: () => Promise.resolve().then(function() {
+        return removeItemFromCart$1;
+      })
+    },
+    {
+      type: "endpoint",
+      pattern: /^\/api\/utils\/addItemToCart\/?$/,
+      params: empty,
+      load: () => Promise.resolve().then(function() {
+        return addItemToCart$1;
+      })
+    },
+    {
+      type: "endpoint",
+      pattern: /^\/api\/utils\/postToShopify\/?$/,
+      params: empty,
+      load: () => Promise.resolve().then(function() {
+        return postToShopify$2;
+      })
     }
   ]
 };
@@ -2508,6 +2555,9 @@ var module_lookup = {
   "src/routes/index.svelte": () => Promise.resolve().then(function() {
     return index;
   }),
+  "src/routes/locations.svelte": () => Promise.resolve().then(function() {
+    return locations;
+  }),
   "src/routes/products.svelte": () => Promise.resolve().then(function() {
     return products;
   }),
@@ -2521,7 +2571,7 @@ var module_lookup = {
     return cart;
   })
 };
-var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-f43fef5b.js", "css": ["assets/pages/__layout.svelte-6e362aef.css"], "js": ["pages/__layout.svelte-f43fef5b.js", "chunks/vendor-2b76f189.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-600d82a9.js", "css": [], "js": ["error.svelte-600d82a9.js", "chunks/vendor-2b76f189.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-079ea88b.js", "css": ["assets/pages/index.svelte-29ebd2ef.css", "assets/ProductListing-985e7439.css", "assets/ProductSlider-6b54c899.css", "assets/ContactRibbon-7c941a1a.css"], "js": ["pages/index.svelte-079ea88b.js", "chunks/vendor-2b76f189.js", "chunks/ProductListing-d57dbb82.js", "chunks/store-c201f4c4.js", "chunks/ProductSlider-91a01a61.js", "chunks/ContactRibbon-165e7503.js"], "styles": [] }, "src/routes/products.svelte": { "entry": "pages/products.svelte-cdc7ef9b.js", "css": ["assets/pages/products.svelte-f50736d5.css", "assets/ContactRibbon-7c941a1a.css", "assets/BreadCrumbs-b92ebd18.css", "assets/ProductListing-985e7439.css"], "js": ["pages/products.svelte-cdc7ef9b.js", "chunks/vendor-2b76f189.js", "chunks/ContactRibbon-165e7503.js", "chunks/BreadCrumbs-1c06fcde.js", "chunks/ProductListing-d57dbb82.js", "chunks/store-c201f4c4.js"], "styles": [] }, "src/routes/contact.svelte": { "entry": "pages/contact.svelte-4be12292.js", "css": ["assets/pages/contact.svelte-2f2bd2c7.css", "assets/ContactRibbon-7c941a1a.css"], "js": ["pages/contact.svelte-4be12292.js", "chunks/vendor-2b76f189.js", "chunks/ContactRibbon-165e7503.js"], "styles": [] }, "src/routes/product/[handle].svelte": { "entry": "pages/product/[handle].svelte-9b00102e.js", "css": ["assets/pages/product/[handle].svelte-7f7239e0.css", "assets/BreadCrumbs-b92ebd18.css", "assets/PolicyInfo-221411eb.css", "assets/ProductSlider-6b54c899.css", "assets/ContactRibbon-7c941a1a.css"], "js": ["pages/product/[handle].svelte-9b00102e.js", "chunks/vendor-2b76f189.js", "chunks/BreadCrumbs-1c06fcde.js", "chunks/PolicyInfo-e7009d7f.js", "chunks/ProductSlider-91a01a61.js", "chunks/ContactRibbon-165e7503.js", "chunks/store-c201f4c4.js"], "styles": [] }, "src/routes/cart.svelte": { "entry": "pages/cart.svelte-cc14c58a.js", "css": ["assets/pages/cart.svelte-f37fb943.css", "assets/BreadCrumbs-b92ebd18.css", "assets/ProductSlider-6b54c899.css", "assets/ContactRibbon-7c941a1a.css", "assets/PolicyInfo-221411eb.css"], "js": ["pages/cart.svelte-cc14c58a.js", "chunks/vendor-2b76f189.js", "chunks/BreadCrumbs-1c06fcde.js", "chunks/ProductSlider-91a01a61.js", "chunks/ContactRibbon-165e7503.js", "chunks/PolicyInfo-e7009d7f.js"], "styles": [] } };
+var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-631dd5a7.js", "css": ["assets/pages/__layout.svelte-6e362aef.css"], "js": ["pages/__layout.svelte-631dd5a7.js", "chunks/vendor-b23f36ca.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-15065709.js", "css": [], "js": ["error.svelte-15065709.js", "chunks/vendor-b23f36ca.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-6e6804c6.js", "css": ["assets/pages/index.svelte-29ebd2ef.css", "assets/ProductListing-985e7439.css", "assets/ProductSlider-6b54c899.css", "assets/ContactRibbon-7c941a1a.css"], "js": ["pages/index.svelte-6e6804c6.js", "chunks/vendor-b23f36ca.js", "chunks/ProductListing-56ee54e9.js", "chunks/store-868c073d.js", "chunks/ProductSlider-48a2b48f.js", "chunks/ContactRibbon-1f46a8d2.js"], "styles": [] }, "src/routes/locations.svelte": { "entry": "pages/locations.svelte-1f0c1f8e.js", "css": ["assets/pages/locations.svelte-62266e71.css", "assets/ContactRibbon-7c941a1a.css"], "js": ["pages/locations.svelte-1f0c1f8e.js", "chunks/vendor-b23f36ca.js", "chunks/ContactRibbon-1f46a8d2.js"], "styles": [] }, "src/routes/products.svelte": { "entry": "pages/products.svelte-6dadf00e.js", "css": ["assets/pages/products.svelte-f50736d5.css", "assets/ContactRibbon-7c941a1a.css", "assets/BreadCrumbs-b92ebd18.css", "assets/ProductListing-985e7439.css"], "js": ["pages/products.svelte-6dadf00e.js", "chunks/vendor-b23f36ca.js", "chunks/ContactRibbon-1f46a8d2.js", "chunks/BreadCrumbs-c674e37c.js", "chunks/ProductListing-56ee54e9.js", "chunks/store-868c073d.js"], "styles": [] }, "src/routes/contact.svelte": { "entry": "pages/contact.svelte-7e76c003.js", "css": ["assets/pages/contact.svelte-2f2bd2c7.css", "assets/ContactRibbon-7c941a1a.css"], "js": ["pages/contact.svelte-7e76c003.js", "chunks/vendor-b23f36ca.js", "chunks/ContactRibbon-1f46a8d2.js"], "styles": [] }, "src/routes/product/[handle].svelte": { "entry": "pages/product/[handle].svelte-208090b1.js", "css": ["assets/pages/product/[handle].svelte-cec64041.css", "assets/BreadCrumbs-b92ebd18.css", "assets/PolicyInfo-221411eb.css", "assets/ProductSlider-6b54c899.css", "assets/ContactRibbon-7c941a1a.css"], "js": ["pages/product/[handle].svelte-208090b1.js", "chunks/vendor-b23f36ca.js", "chunks/BreadCrumbs-c674e37c.js", "chunks/PolicyInfo-86706a72.js", "chunks/preload-helper-ec9aa979.js", "chunks/ProductSlider-48a2b48f.js", "chunks/ContactRibbon-1f46a8d2.js", "chunks/store-868c073d.js"], "styles": [] }, "src/routes/cart.svelte": { "entry": "pages/cart.svelte-a3666a50.js", "css": ["assets/pages/cart.svelte-f7570d43.css", "assets/BreadCrumbs-b92ebd18.css", "assets/ProductSlider-6b54c899.css", "assets/ContactRibbon-7c941a1a.css", "assets/PolicyInfo-221411eb.css"], "js": ["pages/cart.svelte-a3666a50.js", "chunks/vendor-b23f36ca.js", "chunks/BreadCrumbs-c674e37c.js", "chunks/ProductSlider-48a2b48f.js", "chunks/ContactRibbon-1f46a8d2.js", "chunks/PolicyInfo-86706a72.js", "chunks/store-868c073d.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -2538,6 +2588,295 @@ function render(request, {
   const host = request.headers["host"];
   return respond({ ...request, host }, options, { prerender: prerender2 });
 }
+var postToShopify$1 = async ({ query, variables }) => {
+  try {
+    const result = await fetch("https://manueldelgado.myshopify.com/api/2021-10/graphql.json", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Shopify-Storefront-Access-Token": "dbba93fbda31ab8784607c08bf3a1f1b"
+      },
+      body: JSON.stringify({ query, variables })
+    }).then((res) => res.json());
+    if (result.errors) {
+      console.log({ errors: result.errors });
+    } else if (!result || !result.data) {
+      console.log({ result });
+      return "No results found.";
+    }
+    return result.data;
+  } catch (error22) {
+    console.log(error22);
+  }
+};
+var postToShopify$2 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  postToShopify: postToShopify$1
+});
+var createCartWithItem = async ({ itemId, quantity }) => {
+  try {
+    const response = await postToShopify$1({
+      query: `
+        mutation createCart($cartInput: CartInput) {
+          cartCreate(input: $cartInput) {
+            cart {
+              id
+              createdAt
+              updatedAt
+              checkoutUrl
+              lines(first: 10) {
+                edges {
+                  node {
+                    id
+                    merchandise {
+                      ... on ProductVariant {
+                        id
+                        title
+                        quantityAvailable
+                        priceV2 {
+                          amount
+                          currencyCode
+                        }
+                        compareAtPrice
+                        product {
+                          title
+                          handle
+                        }
+                        image{
+                          src
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              attributes {
+                key
+                value
+              }
+              estimatedCost {
+                totalAmount {
+                  amount
+                  currencyCode
+                }
+                subtotalAmount {
+                  amount
+                  currencyCode
+                }
+                totalTaxAmount {
+                  amount
+                  currencyCode
+                }
+                totalDutyAmount {
+                  amount
+                  currencyCode
+                }
+              }
+            }
+          }
+        }
+
+      `,
+      variables: {
+        cartInput: {
+          lines: [
+            {
+              quantity,
+              merchandiseId: itemId
+            }
+          ]
+        }
+      }
+    });
+    return response;
+  } catch (error22) {
+    console.log(error22);
+  }
+};
+var createCartWithItem$1 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  createCartWithItem
+});
+var postToShopify = async ({ query, variables }) => {
+  console.log("admin");
+  try {
+    const result = await fetch("https://manueldelgado.myshopify.com/admin/api/2021-10/graphql.json", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Shopify-Access-Token": "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"
+      },
+      body: JSON.stringify({ query, variables })
+    }).then((res) => res.json());
+    if (result.errors) {
+      console.log(result.errors);
+    } else if (!result || !result.data) {
+      console.log({ result });
+      return "No results found.";
+    }
+    return result.data;
+  } catch (error22) {
+    console.log(error22);
+  }
+};
+var postToShopifyAdmin = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  postToShopify
+});
+var removeItemFromCart = async ({ cartId, lineId }) => {
+  try {
+    const shopifyResponse = await postToShopify$1({
+      query: `
+        mutation removeItemFromCart($cartId: ID!, $lineIds: [ID!]!) {
+          cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
+            cart {
+              id
+              checkoutUrl
+              lines(first: 10) {
+                edges {
+                  node {
+                    id
+                    quantity
+                    merchandise {
+                      ... on ProductVariant {
+                        id
+                        title
+                        quantityAvailable
+                        priceV2 {
+                          amount
+                          currencyCode
+                        }
+                        compareAtPrice
+                        product {
+                          title
+                          handle
+                        }
+                        image{
+                          src
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              estimatedCost {
+                totalAmount {
+                  amount
+                  currencyCode
+                }
+                subtotalAmount {
+                  amount
+                  currencyCode
+                }
+                totalTaxAmount {
+                  amount
+                  currencyCode
+                }
+                totalDutyAmount {
+                  amount
+                  currencyCode
+                }
+              }
+            }
+          }
+        }
+      `,
+      variables: {
+        cartId,
+        lineIds: [lineId]
+      }
+    });
+    return shopifyResponse;
+  } catch (error22) {
+    console.log(error22);
+  }
+};
+var removeItemFromCart$1 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  removeItemFromCart
+});
+var addItemToCart = async ({ cartId, itemId, quantity }) => {
+  try {
+    const shopifyResponse = postToShopify$1({
+      query: `
+        mutation addItemToCart($cartId: ID!, $lines: [CartLineInput!]!) {
+          cartLinesAdd(cartId: $cartId, lines: $lines) {
+            cart {
+              id
+              checkoutUrl
+              lines(first: 10) {
+                edges {
+                  node {
+                    id
+                    quantity
+                    merchandise {
+                      ... on ProductVariant {
+                        id
+                        title
+                        quantityAvailable
+                        priceV2 {
+                          amount
+                          currencyCode
+                        }
+                        compareAtPrice
+                        product {
+                          title
+                          handle
+                        }
+                        image{
+                          src
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              estimatedCost {
+                totalAmount {
+                  amount
+                  currencyCode
+                }
+                subtotalAmount {
+                  amount
+                  currencyCode
+                }
+                totalTaxAmount {
+                  amount
+                  currencyCode
+                }
+                totalDutyAmount {
+                  amount
+                  currencyCode
+                }
+              }
+            }
+          }
+        }
+      `,
+      variables: {
+        cartId,
+        lines: [
+          {
+            merchandiseId: itemId,
+            quantity
+          }
+        ]
+      }
+    });
+    return shopifyResponse;
+  } catch (error22) {
+    console.log(error22);
+  }
+};
+var addItemToCart$1 = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  addItemToCart
+});
 var css$p = {
   code: "nav.svelte-h3d4yo.svelte-h3d4yo{background-color:#E5E5E5}ul.svelte-h3d4yo.svelte-h3d4yo{display:flex;list-style:none;margin:0 auto;max-width:866px}ul.svelte-h3d4yo li.svelte-h3d4yo{text-align:center;flex:1}ul.svelte-h3d4yo li a.svelte-h3d4yo{line-height:41px;color:#767676;text-transform:uppercase;font-size:13px;font-weight:500;display:block}",
   map: '{"version":3,"file":"TopNav.svelte","sources":["TopNav.svelte"],"sourcesContent":["<nav>\\r\\n  <ul>\\r\\n    <li><a href=\\"/products\\">Productos</a></li>\\r\\n    <li><a href=\\"/\\">Proyectos</a></li>\\r\\n    <li><a href=\\"/\\">Nosotros</a></li>\\r\\n    <li><a href=\\"/\\">Sucursales</a></li>\\r\\n    <li><a href=\\"/\\">Catalogo PDF</a></li>\\r\\n    <li><a href=\\"/\\">Blog</a></li>\\r\\n    <li><a href=\\"/contact\\">Contacto</a></li>\\r\\n  </ul>\\r\\n</nav>\\r\\n\\r\\n<style>\\r\\n\\tnav{\\r\\n\\t\\tbackground-color: #E5E5E5;\\r\\n\\t}\\r\\n\\tul{\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tlist-style: none;\\r\\n\\t\\tmargin: 0 auto;\\r\\n\\t\\tmax-width: 866px;\\r\\n\\t}\\r\\n\\tul li{\\r\\n\\t\\ttext-align: center;\\r\\n\\t\\tflex: 1;\\r\\n\\t}\\r\\n\\tul li a{\\r\\n\\t\\tline-height: 41px;\\r\\n\\t\\tcolor: #767676;\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tfont-size: 13px;\\r\\n\\t\\tfont-weight: 500;\\r\\n\\t\\tdisplay: block;\\r\\n\\t}\\r\\n\\r\\n\\r\\n</style>"],"names":[],"mappings":"AAaC,+BAAG,CAAC,AACH,gBAAgB,CAAE,OAAO,AAC1B,CAAC,AACD,8BAAE,CAAC,AACF,OAAO,CAAE,IAAI,CACb,UAAU,CAAE,IAAI,CAChB,MAAM,CAAE,CAAC,CAAC,IAAI,CACd,SAAS,CAAE,KAAK,AACjB,CAAC,AACD,gBAAE,CAAC,gBAAE,CAAC,AACL,UAAU,CAAE,MAAM,CAClB,IAAI,CAAE,CAAC,AACR,CAAC,AACD,gBAAE,CAAC,EAAE,CAAC,eAAC,CAAC,AACP,WAAW,CAAE,IAAI,CACjB,KAAK,CAAE,OAAO,CACd,cAAc,CAAE,SAAS,CACzB,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,GAAG,CAChB,OAAO,CAAE,KAAK,AACf,CAAC"}'
@@ -2555,14 +2894,15 @@ var TopNav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 var css$o = {
   code: "nav.svelte-mgunnz.svelte-mgunnz{display:flex;border-bottom:2px solid #E5E5E5;margin:0 auto;max-width:1359px;padding:4px 40px 0px 40px}nav.svelte-mgunnz form.svelte-mgunnz{margin-left:auto;padding-top:38px;padding-right:55px;position:relative}nav.svelte-mgunnz form input.svelte-mgunnz{padding-right:35px;width:297px;position:relative}nav.svelte-mgunnz form.svelte-mgunnz:after{content:'';background-image:url('/img/buscar.svg');background-size:contain;background-repeat:no-repeat;width:25px;height:25px;position:absolute;right:65px;top:45px}nav.svelte-mgunnz .cart.svelte-mgunnz{margin:43px 75px 0 0;position:relative}nav.svelte-mgunnz .cart i.svelte-mgunnz{font-style:normal;font-weight:bold;background-color:#001a47;position:absolute;top:-19px;right:-27px;color:white;width:34px;height:34px;border-radius:25px;display:block;line-height:35px;text-align:center}nav.svelte-mgunnz p.svelte-mgunnz{font-size:16px;font-weight:bold;color:#767676;margin-top:28px;margin-right:70px}nav.svelte-mgunnz p a.svelte-mgunnz{color:#d36e36}nav.svelte-mgunnz p a img.svelte-mgunnz{position:relative;top:13px}.main-logo.svelte-mgunnz.svelte-mgunnz{margin-bottom:-4px}",
-  map: `{"version":3,"file":"UserNav.svelte","sources":["UserNav.svelte"],"sourcesContent":["<nav>\\r\\n\\t<a href='/' class='main-logo'><img src='/img/logo.png' alt='Manuel Delgado logo principal' /></a>\\r\\n\\t<form><input type=\\"text\\" name=\\"product-search\\" placeholder=\\"Buscar Muebles\\" class=\\"default-input\\" /></form>\\r\\n\\t<a class='cart' href='/cart'>\\r\\n\\t\\t<img src='/img/cart.png' alt='carrito de compras' />\\r\\n\\t\\t<i>2</i>\\r\\n\\t</a>\\r\\n\\t<p>Hola! <a href='/'>Acceder <img src='/img/user.png' alt='usuario'/></a></p>\\r\\n</nav>\\r\\n<style>\\r\\n\\tnav{\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tborder-bottom: 2px solid #E5E5E5;\\r\\n\\t\\tmargin: 0 auto;\\r\\n\\t\\tmax-width: 1359px;\\r\\n\\t\\tpadding: 4px 40px 0px 40px;\\r\\n\\t}\\r\\n\\r\\n\\tnav form{\\r\\n\\t\\tmargin-left: auto;\\r\\n\\t\\tpadding-top: 38px;\\r\\n\\t\\tpadding-right: 55px;\\r\\n\\t\\tposition: relative;\\r\\n\\t}\\r\\n\\tnav form input{\\r\\n\\t\\tpadding-right: 35px;\\r\\n\\t\\twidth: 297px;\\r\\n\\t\\tposition: relative;\\r\\n\\t}\\r\\n\\tnav form:after{\\r\\n\\t\\tcontent: '';\\r\\n\\t\\tbackground-image: url('/img/buscar.svg');\\r\\n\\t\\tbackground-size: contain;\\r\\n\\t\\tbackground-repeat: no-repeat;\\r\\n\\t\\twidth: 25px;\\r\\n\\t\\theight: 25px;\\r\\n\\t\\tposition: absolute;\\r\\n\\t\\tright: 65px;\\r\\n\\t\\ttop: 45px;\\r\\n\\r\\n\\t}\\r\\n\\tnav .cart{\\r\\n\\t\\tmargin: 43px 75px 0 0;\\r\\n\\t\\tposition: relative;\\r\\n\\t}\\r\\n\\tnav .cart i{\\r\\n\\t\\tfont-style: normal;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tbackground-color: #001a47;\\r\\n\\t\\tposition: absolute;\\r\\n\\t\\ttop: -19px;\\r\\n\\t\\tright: -27px;\\r\\n\\t\\tcolor: white;\\r\\n\\t\\twidth: 34px;\\r\\n\\t\\theight: 34px;\\r\\n\\t\\tborder-radius: 25px;\\r\\n\\t\\tdisplay: block;\\r\\n\\t\\tline-height: 35px;\\r\\n\\t\\ttext-align: center;\\r\\n\\t}\\r\\n\\tnav p{\\r\\n\\t\\tfont-size: 16px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tcolor: #767676;\\r\\n\\t\\tmargin-top: 28px;\\r\\n\\t\\tmargin-right: 70px;\\r\\n\\r\\n\\t}\\r\\n\\tnav p a{\\r\\n\\t\\tcolor: #d36e36;\\r\\n\\t}\\r\\n\\tnav p a img{\\r\\n\\t\\tposition: relative;\\r\\n\\t\\ttop: 13px;\\r\\n\\t}\\r\\n\\t.main-logo{\\r\\n\\t\\tmargin-bottom: -4px;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AAUC,+BAAG,CAAC,AACH,OAAO,CAAE,IAAI,CACb,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAChC,MAAM,CAAE,CAAC,CAAC,IAAI,CACd,SAAS,CAAE,MAAM,CACjB,OAAO,CAAE,GAAG,CAAC,IAAI,CAAC,GAAG,CAAC,IAAI,AAC3B,CAAC,AAED,iBAAG,CAAC,kBAAI,CAAC,AACR,WAAW,CAAE,IAAI,CACjB,WAAW,CAAE,IAAI,CACjB,aAAa,CAAE,IAAI,CACnB,QAAQ,CAAE,QAAQ,AACnB,CAAC,AACD,iBAAG,CAAC,IAAI,CAAC,mBAAK,CAAC,AACd,aAAa,CAAE,IAAI,CACnB,KAAK,CAAE,KAAK,CACZ,QAAQ,CAAE,QAAQ,AACnB,CAAC,AACD,iBAAG,CAAC,kBAAI,MAAM,CAAC,AACd,OAAO,CAAE,EAAE,CACX,gBAAgB,CAAE,IAAI,iBAAiB,CAAC,CACxC,eAAe,CAAE,OAAO,CACxB,iBAAiB,CAAE,SAAS,CAC5B,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,QAAQ,CAAE,QAAQ,CAClB,KAAK,CAAE,IAAI,CACX,GAAG,CAAE,IAAI,AAEV,CAAC,AACD,iBAAG,CAAC,mBAAK,CAAC,AACT,MAAM,CAAE,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CACrB,QAAQ,CAAE,QAAQ,AACnB,CAAC,AACD,iBAAG,CAAC,KAAK,CAAC,eAAC,CAAC,AACX,UAAU,CAAE,MAAM,CAClB,WAAW,CAAE,IAAI,CACjB,gBAAgB,CAAE,OAAO,CACzB,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,KAAK,CACV,KAAK,CAAE,KAAK,CACZ,KAAK,CAAE,KAAK,CACZ,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,aAAa,CAAE,IAAI,CACnB,OAAO,CAAE,KAAK,CACd,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,MAAM,AACnB,CAAC,AACD,iBAAG,CAAC,eAAC,CAAC,AACL,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,KAAK,CAAE,OAAO,CACd,UAAU,CAAE,IAAI,CAChB,YAAY,CAAE,IAAI,AAEnB,CAAC,AACD,iBAAG,CAAC,CAAC,CAAC,eAAC,CAAC,AACP,KAAK,CAAE,OAAO,AACf,CAAC,AACD,iBAAG,CAAC,CAAC,CAAC,CAAC,CAAC,iBAAG,CAAC,AACX,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,IAAI,AACV,CAAC,AACD,sCAAU,CAAC,AACV,aAAa,CAAE,IAAI,AACpB,CAAC"}`
+  map: `{"version":3,"file":"UserNav.svelte","sources":["UserNav.svelte"],"sourcesContent":["<script>\\r\\n\\timport { onMount } from 'svelte';\\r\\n    let count = 0;\\r\\n    let cart;\\r\\n    onMount(() => {\\r\\n        cart = JSON.parse(localStorage.getItem('cart'));\\r\\n        if (cart) {\\r\\n            count = cart.lines.edges.length;\\r\\n        }\\r\\n    });\\r\\n<\/script>\\r\\n<nav>\\r\\n\\t<a href='/' class='main-logo'><img src='/img/logo.png' alt='Manuel Delgado logo principal' /></a>\\r\\n\\t<form><input type=\\"text\\" name=\\"product-search\\" placeholder=\\"Buscar Muebles\\" class=\\"default-input\\" /></form>\\r\\n\\t<a class='cart' href='/cart'>\\r\\n\\t\\t<img src='/img/cart.png' alt='carrito de compras' />\\r\\n\\t\\t<i>{count}</i>\\r\\n\\t</a>\\r\\n\\t<p>Hola! <a href='/'>Acceder <img src='/img/user.png' alt='usuario'/></a></p>\\r\\n</nav>\\r\\n<style>\\r\\n\\tnav{\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tborder-bottom: 2px solid #E5E5E5;\\r\\n\\t\\tmargin: 0 auto;\\r\\n\\t\\tmax-width: 1359px;\\r\\n\\t\\tpadding: 4px 40px 0px 40px;\\r\\n\\t}\\r\\n\\r\\n\\tnav form{\\r\\n\\t\\tmargin-left: auto;\\r\\n\\t\\tpadding-top: 38px;\\r\\n\\t\\tpadding-right: 55px;\\r\\n\\t\\tposition: relative;\\r\\n\\t}\\r\\n\\tnav form input{\\r\\n\\t\\tpadding-right: 35px;\\r\\n\\t\\twidth: 297px;\\r\\n\\t\\tposition: relative;\\r\\n\\t}\\r\\n\\tnav form:after{\\r\\n\\t\\tcontent: '';\\r\\n\\t\\tbackground-image: url('/img/buscar.svg');\\r\\n\\t\\tbackground-size: contain;\\r\\n\\t\\tbackground-repeat: no-repeat;\\r\\n\\t\\twidth: 25px;\\r\\n\\t\\theight: 25px;\\r\\n\\t\\tposition: absolute;\\r\\n\\t\\tright: 65px;\\r\\n\\t\\ttop: 45px;\\r\\n\\r\\n\\t}\\r\\n\\tnav .cart{\\r\\n\\t\\tmargin: 43px 75px 0 0;\\r\\n\\t\\tposition: relative;\\r\\n\\t}\\r\\n\\tnav .cart i{\\r\\n\\t\\tfont-style: normal;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tbackground-color: #001a47;\\r\\n\\t\\tposition: absolute;\\r\\n\\t\\ttop: -19px;\\r\\n\\t\\tright: -27px;\\r\\n\\t\\tcolor: white;\\r\\n\\t\\twidth: 34px;\\r\\n\\t\\theight: 34px;\\r\\n\\t\\tborder-radius: 25px;\\r\\n\\t\\tdisplay: block;\\r\\n\\t\\tline-height: 35px;\\r\\n\\t\\ttext-align: center;\\r\\n\\t}\\r\\n\\tnav p{\\r\\n\\t\\tfont-size: 16px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tcolor: #767676;\\r\\n\\t\\tmargin-top: 28px;\\r\\n\\t\\tmargin-right: 70px;\\r\\n\\r\\n\\t}\\r\\n\\tnav p a{\\r\\n\\t\\tcolor: #d36e36;\\r\\n\\t}\\r\\n\\tnav p a img{\\r\\n\\t\\tposition: relative;\\r\\n\\t\\ttop: 13px;\\r\\n\\t}\\r\\n\\t.main-logo{\\r\\n\\t\\tmargin-bottom: -4px;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AAqBC,+BAAG,CAAC,AACH,OAAO,CAAE,IAAI,CACb,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAChC,MAAM,CAAE,CAAC,CAAC,IAAI,CACd,SAAS,CAAE,MAAM,CACjB,OAAO,CAAE,GAAG,CAAC,IAAI,CAAC,GAAG,CAAC,IAAI,AAC3B,CAAC,AAED,iBAAG,CAAC,kBAAI,CAAC,AACR,WAAW,CAAE,IAAI,CACjB,WAAW,CAAE,IAAI,CACjB,aAAa,CAAE,IAAI,CACnB,QAAQ,CAAE,QAAQ,AACnB,CAAC,AACD,iBAAG,CAAC,IAAI,CAAC,mBAAK,CAAC,AACd,aAAa,CAAE,IAAI,CACnB,KAAK,CAAE,KAAK,CACZ,QAAQ,CAAE,QAAQ,AACnB,CAAC,AACD,iBAAG,CAAC,kBAAI,MAAM,CAAC,AACd,OAAO,CAAE,EAAE,CACX,gBAAgB,CAAE,IAAI,iBAAiB,CAAC,CACxC,eAAe,CAAE,OAAO,CACxB,iBAAiB,CAAE,SAAS,CAC5B,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,QAAQ,CAAE,QAAQ,CAClB,KAAK,CAAE,IAAI,CACX,GAAG,CAAE,IAAI,AAEV,CAAC,AACD,iBAAG,CAAC,mBAAK,CAAC,AACT,MAAM,CAAE,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CACrB,QAAQ,CAAE,QAAQ,AACnB,CAAC,AACD,iBAAG,CAAC,KAAK,CAAC,eAAC,CAAC,AACX,UAAU,CAAE,MAAM,CAClB,WAAW,CAAE,IAAI,CACjB,gBAAgB,CAAE,OAAO,CACzB,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,KAAK,CACV,KAAK,CAAE,KAAK,CACZ,KAAK,CAAE,KAAK,CACZ,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,aAAa,CAAE,IAAI,CACnB,OAAO,CAAE,KAAK,CACd,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,MAAM,AACnB,CAAC,AACD,iBAAG,CAAC,eAAC,CAAC,AACL,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,KAAK,CAAE,OAAO,CACd,UAAU,CAAE,IAAI,CAChB,YAAY,CAAE,IAAI,AAEnB,CAAC,AACD,iBAAG,CAAC,CAAC,CAAC,eAAC,CAAC,AACP,KAAK,CAAE,OAAO,AACf,CAAC,AACD,iBAAG,CAAC,CAAC,CAAC,CAAC,CAAC,iBAAG,CAAC,AACX,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,IAAI,AACV,CAAC,AACD,sCAAU,CAAC,AACV,aAAa,CAAE,IAAI,AACpB,CAAC"}`
 };
 var UserNav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let count = 0;
   $$result.css.add(css$o);
   return `<nav class="${"svelte-mgunnz"}"><a href="${"/"}" class="${"main-logo svelte-mgunnz"}"><img src="${"/img/logo.png"}" alt="${"Manuel Delgado logo principal"}" class="${"svelte-mgunnz"}"></a>
 	<form class="${"svelte-mgunnz"}"><input type="${"text"}" name="${"product-search"}" placeholder="${"Buscar Muebles"}" class="${"default-input svelte-mgunnz"}"></form>
 	<a class="${"cart svelte-mgunnz"}" href="${"/cart"}"><img src="${"/img/cart.png"}" alt="${"carrito de compras"}" class="${"svelte-mgunnz"}">
-		<i class="${"svelte-mgunnz"}">2</i></a>
+		<i class="${"svelte-mgunnz"}">${escape2(count)}</i></a>
 	<p class="${"svelte-mgunnz"}">Hola! <a href="${"/"}" class="${"svelte-mgunnz"}">Acceder <img src="${"/img/user.png"}" alt="${"usuario"}" class="${"svelte-mgunnz"}"></a></p>
 </nav>`;
 });
@@ -2704,18 +3044,23 @@ var ProductRibbon = create_ssr_component(($$result, $$props, $$bindings, slots) 
 });
 var css$i = {
   code: "article.svelte-arf72x.svelte-arf72x{background-color:white;border-radius:20px;width:calc(33.33% - 17.33px);margin-right:26px;margin-bottom:28px;min-width:410px}article.svelte-arf72x.svelte-arf72x:nth-child(3n+3){margin-right:0}article.svelte-arf72x header.svelte-arf72x{display:flex;color:#757575;font-weight:bold;font-size:13px;padding:30px 21px 26px}article.svelte-arf72x header .category.svelte-arf72x{flex:1;text-transform:capitalize}article.svelte-arf72x header .tag.svelte-arf72x{display:block;background-color:#76c082;color:#206a2c;padding:0 17px;line-height:25px;font-size:11px;text-transform:uppercase;margin-top:-6px}article.svelte-arf72x img.svelte-arf72x{max-height:240px;width:auto;height:auto}h4.svelte-arf72x.svelte-arf72x{font-size:15px;font-weight:bold;color:#757575;line-height:23px;margin:5px 40px 0px}h5.svelte-arf72x.svelte-arf72x{font-size:13px;line-height:20px;font-weight:bold;margin:0 40px}p.svelte-arf72x.svelte-arf72x{margin:0}.price.svelte-arf72x.svelte-arf72x{margin:1px 40px}.options.svelte-arf72x.svelte-arf72x{margin:18px 40px 35px}.options.svelte-arf72x .button.svelte-arf72x{display:inline-block;font-size:11.5px;padding:12px 19px 9px;text-align:center}.options.svelte-arf72x .button.svelte-arf72x:first-child{margin-right:12px}",
-  map: `{"version":3,"file":"ProductCard.svelte","sources":["ProductCard.svelte"],"sourcesContent":["<script>\\r\\n\\texport let product;\\r\\n    \\r\\n    let productVariants = product.variants.edges.map((v) => v.node);\\r\\n    let currCode = productVariants[0].priceV2.currencyCode;\\r\\n    \\r\\n    // obtener el mejor descuento de las variantes\\r\\n    let bestDiscount = 0;\\r\\n    for(let variant of productVariants){\\r\\n      if(variant.compareAtPrice != null){\\r\\n        let temp = (100/variant.compareAtPrice*variant.priceV2.amount).toFixed(0); \\r\\n        if(temp > bestDiscount){\\r\\n          bestDiscount = temp;\\r\\n        }\\r\\n      }\\r\\n    }\\r\\n\\r\\n\\r\\n\\r\\n<\/script>\\r\\n<article>\\r\\n<a href=\\"{\`/product/\${product.handle}\`}\\">\\r\\n    <header>\\r\\n        <p class='category'>{product.productType}</p>\\r\\n        {#if bestDiscount > 0}\\r\\n        <p class='tag'>{bestDiscount}% de desc.</p>\\r\\n        {/if }\\r\\n    </header>\\r\\n    <p class='center'><img src='{product.images.edges[0].node.src}' alt='{product.handle}'/></p>\\r\\n    <h4>{product.title}</h4>\\r\\n    \\r\\n    {#if productVariants.length < 1 && productVariants[0].sku != null}\\r\\n        <h5>SKU: {productVariants[0].sku}</h5>\\r\\n    {/if}\\r\\n    <p class='price'>\\r\\n    \\t{#if productVariants.length > 1}\\r\\n    \\t  <strong>{product.priceRange.minVariantPrice} {currCode} - {product.priceRange.maxVariantPrice} {currCode}</strong>\\r\\n    \\t{:else}\\r\\n          <strong>{productVariants[0].priceV2.amount} {currCode}</strong>\\r\\n          {#if productVariants[0].compareAtPrice != null}\\r\\n          <span class='original-price'>{productVariants[0].compareAtPrice} {currCode}</span>\\r\\n          {/if}\\r\\n        {/if}\\r\\n    </p>\\r\\n    <p class='options'>\\r\\n        <a href='/' class='button mute'>A\xF1adir al carrito </a>\\r\\n        <a href='/' class='button'>Comprar ahora </a>\\r\\n    </p>\\r\\n  </a>\\r\\n</article>\\r\\n<style>\\r\\n\\tarticle{\\r\\n\\t\\tbackground-color: white;\\r\\n\\t\\tborder-radius: 20px;\\r\\n\\t\\twidth: calc(33.33% - 17.33px);\\r\\n\\t\\tmargin-right: 26px;\\r\\n\\t\\tmargin-bottom: 28px;\\r\\n\\t\\tmin-width: 410px;\\r\\n\\t}\\r\\n\\tarticle:nth-child(3n+3){\\r\\n\\t\\tmargin-right: 0;\\r\\n\\t}\\r\\n\\r\\n\\tarticle header{\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tcolor: #757575;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tfont-size: 13px;\\r\\n\\t\\tpadding: 30px 21px 26px;\\r\\n\\t}\\r\\n\\tarticle header .category{\\r\\n\\t\\tflex: 1;\\r\\n\\t\\ttext-transform: capitalize;\\r\\n\\t}\\r\\n\\tarticle header .tag{\\r\\n\\t\\tdisplay: block;\\r\\n\\t\\tbackground-color: #76c082;\\r\\n\\t\\tcolor: #206a2c;\\r\\n\\t\\tpadding: 0 17px;\\r\\n\\t\\tline-height: 25px;\\r\\n\\t\\tfont-size: 11px;\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tmargin-top: -6px;\\r\\n\\t}\\r\\n\\tarticle img{\\r\\n\\t\\tmax-height: 240px;\\r\\n\\t\\twidth: auto;\\r\\n\\t\\theight: auto;\\r\\n\\t}\\r\\n\\th4{\\r\\n\\t\\tfont-size: 15px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tcolor: #757575;\\r\\n\\t\\tline-height: 23px;\\r\\n\\t\\tmargin: 5px 40px 0px;\\r\\n\\t}\\r\\n\\th5{\\r\\n\\t\\tfont-size: 13px;\\r\\n\\t\\tline-height: 20px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tmargin: 0 40px;\\r\\n\\t}\\r\\n\\tp{\\r\\n\\t\\tmargin: 0;\\r\\n\\t}\\r\\n\\t.price {\\r\\n\\t    margin: 1px 40px;\\r\\n\\t}\\r\\n\\t.options{\\r\\n\\t\\tmargin: 18px 40px 35px;\\r\\n\\t}\\r\\n\\t.options .button{\\r\\n\\t\\tdisplay: inline-block;\\r\\n\\t\\tfont-size: 11.5px;\\r\\n\\t\\tpadding: 12px 19px 9px;\\r\\n\\t\\ttext-align: center;\\r\\n\\t}\\r\\n\\t.options .button:first-child{\\r\\n\\t\\tmargin-right: 12px;\\r\\n\\t}\\r\\n</style>\\r\\n"],"names":[],"mappings":"AAmDC,mCAAO,CAAC,AACP,gBAAgB,CAAE,KAAK,CACvB,aAAa,CAAE,IAAI,CACnB,KAAK,CAAE,KAAK,MAAM,CAAC,CAAC,CAAC,OAAO,CAAC,CAC7B,YAAY,CAAE,IAAI,CAClB,aAAa,CAAE,IAAI,CACnB,SAAS,CAAE,KAAK,AACjB,CAAC,AACD,mCAAO,WAAW,IAAI,CAAC,CAAC,AACvB,YAAY,CAAE,CAAC,AAChB,CAAC,AAED,qBAAO,CAAC,oBAAM,CAAC,AACd,OAAO,CAAE,IAAI,CACb,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,IAAI,CACjB,SAAS,CAAE,IAAI,CACf,OAAO,CAAE,IAAI,CAAC,IAAI,CAAC,IAAI,AACxB,CAAC,AACD,qBAAO,CAAC,MAAM,CAAC,uBAAS,CAAC,AACxB,IAAI,CAAE,CAAC,CACP,cAAc,CAAE,UAAU,AAC3B,CAAC,AACD,qBAAO,CAAC,MAAM,CAAC,kBAAI,CAAC,AACnB,OAAO,CAAE,KAAK,CACd,gBAAgB,CAAE,OAAO,CACzB,KAAK,CAAE,OAAO,CACd,OAAO,CAAE,CAAC,CAAC,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,SAAS,CAAE,IAAI,CACf,cAAc,CAAE,SAAS,CACzB,UAAU,CAAE,IAAI,AACjB,CAAC,AACD,qBAAO,CAAC,iBAAG,CAAC,AACX,UAAU,CAAE,KAAK,CACjB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AACb,CAAC,AACD,8BAAE,CAAC,AACF,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,IAAI,CACjB,MAAM,CAAE,GAAG,CAAC,IAAI,CAAC,GAAG,AACrB,CAAC,AACD,8BAAE,CAAC,AACF,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,WAAW,CAAE,IAAI,CACjB,MAAM,CAAE,CAAC,CAAC,IAAI,AACf,CAAC,AACD,6BAAC,CAAC,AACD,MAAM,CAAE,CAAC,AACV,CAAC,AACD,MAAM,4BAAC,CAAC,AACJ,MAAM,CAAE,GAAG,CAAC,IAAI,AACpB,CAAC,AACD,oCAAQ,CAAC,AACR,MAAM,CAAE,IAAI,CAAC,IAAI,CAAC,IAAI,AACvB,CAAC,AACD,sBAAQ,CAAC,qBAAO,CAAC,AAChB,OAAO,CAAE,YAAY,CACrB,SAAS,CAAE,MAAM,CACjB,OAAO,CAAE,IAAI,CAAC,IAAI,CAAC,GAAG,CACtB,UAAU,CAAE,MAAM,AACnB,CAAC,AACD,sBAAQ,CAAC,qBAAO,YAAY,CAAC,AAC5B,YAAY,CAAE,IAAI,AACnB,CAAC"}`
+  map: `{"version":3,"file":"ProductCard.svelte","sources":["ProductCard.svelte"],"sourcesContent":["<script>\\r\\n\\texport let product;\\r\\n    let productVariants = product.variants.edges.map((v) => v.node);\\r\\n    let currCode = product.priceRange.maxVariantPrice.currencyCode;\\r\\n    \\r\\n    // obtener el mejor descuento de las variantes\\r\\n    let bestDiscount = 0;\\r\\n    let bestVariant = {};\\r\\n    for(let variant of productVariants){\\r\\n      if(variant.compareAtPrice != null){\\r\\n        let temp = (100/variant.compareAtPrice*variant.price).toFixed(0); \\r\\n        if(temp >= bestDiscount){\\r\\n          bestDiscount = temp;\\r\\n          bestVariant = {\\"amount\\":variant.price,\\"compare\\": variant.compareAtPrice};\\r\\n        }\\r\\n      }\\r\\n    }\\r\\n\\r\\n\\r\\n\\r\\n<\/script>\\r\\n<article>\\r\\n<a href=\\"{\`/product/\${product.handle}\`}\\">\\r\\n    <header>\\r\\n        <p class='category'>{product.productType}</p>\\r\\n        {#if bestDiscount > 0}\\r\\n        <p class='tag'>{bestDiscount}% de desc.</p>\\r\\n        {/if }\\r\\n    </header>\\r\\n    <p class='center'><img src='{product.images.edges[0].node.src}' alt='{product.handle}'/></p>\\r\\n    <h4>{product.title}</h4>\\r\\n    \\r\\n    {#if productVariants.length < 1 && productVariants[0].sku != null}\\r\\n        <h5>SKU: {productVariants[0].sku}</h5>\\r\\n    {/if}\\r\\n    <p class='price'>\\r\\n    \\t{#if productVariants.length > 1}\\r\\n    \\t  {#if product.priceRange.minVariantPrice.amount != product.priceRange.maxVariantPrice.amount}\\r\\n    \\t    <strong>{product.priceRange.minVariantPrice.amount} {currCode} - {product.priceRange.maxVariantPrice.amount} {currCode}</strong>\\r\\n    \\t  {:else}\\r\\n    \\t    <strong>{bestVariant.amount} {currCode}</strong>\\r\\n            {#if bestVariant.compare != null}\\r\\n            <span class='original-price'>{bestVariant.compare} {currCode}</span>\\r\\n            {/if}\\r\\n    \\t  {/if}\\r\\n    \\t{:else}\\r\\n          <strong>{productVariants[0].price} {currCode}</strong>\\r\\n          {#if productVariants[0].compareAtPrice != null}\\r\\n          <span class='original-price'>{productVariants[0].compareAtPrice} {currCode}</span>\\r\\n          {/if}\\r\\n        {/if}\\r\\n    </p>\\r\\n    <p class='options'>\\r\\n        <a href='/' class='button mute'>A\xF1adir al carrito </a>\\r\\n        <a href='/' class='button'>Comprar ahora </a>\\r\\n    </p>\\r\\n  </a>\\r\\n</article>\\r\\n<style>\\r\\n\\tarticle{\\r\\n\\t\\tbackground-color: white;\\r\\n\\t\\tborder-radius: 20px;\\r\\n\\t\\twidth: calc(33.33% - 17.33px);\\r\\n\\t\\tmargin-right: 26px;\\r\\n\\t\\tmargin-bottom: 28px;\\r\\n\\t\\tmin-width: 410px;\\r\\n\\t}\\r\\n\\tarticle:nth-child(3n+3){\\r\\n\\t\\tmargin-right: 0;\\r\\n\\t}\\r\\n\\r\\n\\tarticle header{\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tcolor: #757575;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tfont-size: 13px;\\r\\n\\t\\tpadding: 30px 21px 26px;\\r\\n\\t}\\r\\n\\tarticle header .category{\\r\\n\\t\\tflex: 1;\\r\\n\\t\\ttext-transform: capitalize;\\r\\n\\t}\\r\\n\\tarticle header .tag{\\r\\n\\t\\tdisplay: block;\\r\\n\\t\\tbackground-color: #76c082;\\r\\n\\t\\tcolor: #206a2c;\\r\\n\\t\\tpadding: 0 17px;\\r\\n\\t\\tline-height: 25px;\\r\\n\\t\\tfont-size: 11px;\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tmargin-top: -6px;\\r\\n\\t}\\r\\n\\tarticle img{\\r\\n\\t\\tmax-height: 240px;\\r\\n\\t\\twidth: auto;\\r\\n\\t\\theight: auto;\\r\\n\\t}\\r\\n\\th4{\\r\\n\\t\\tfont-size: 15px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tcolor: #757575;\\r\\n\\t\\tline-height: 23px;\\r\\n\\t\\tmargin: 5px 40px 0px;\\r\\n\\t}\\r\\n\\th5{\\r\\n\\t\\tfont-size: 13px;\\r\\n\\t\\tline-height: 20px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tmargin: 0 40px;\\r\\n\\t}\\r\\n\\tp{\\r\\n\\t\\tmargin: 0;\\r\\n\\t}\\r\\n\\t.price {\\r\\n\\t    margin: 1px 40px;\\r\\n\\t}\\r\\n\\t.options{\\r\\n\\t\\tmargin: 18px 40px 35px;\\r\\n\\t}\\r\\n\\t.options .button{\\r\\n\\t\\tdisplay: inline-block;\\r\\n\\t\\tfont-size: 11.5px;\\r\\n\\t\\tpadding: 12px 19px 9px;\\r\\n\\t\\ttext-align: center;\\r\\n\\t}\\r\\n\\t.options .button:first-child{\\r\\n\\t\\tmargin-right: 12px;\\r\\n\\t}\\r\\n</style>\\r\\n"],"names":[],"mappings":"AA2DC,mCAAO,CAAC,AACP,gBAAgB,CAAE,KAAK,CACvB,aAAa,CAAE,IAAI,CACnB,KAAK,CAAE,KAAK,MAAM,CAAC,CAAC,CAAC,OAAO,CAAC,CAC7B,YAAY,CAAE,IAAI,CAClB,aAAa,CAAE,IAAI,CACnB,SAAS,CAAE,KAAK,AACjB,CAAC,AACD,mCAAO,WAAW,IAAI,CAAC,CAAC,AACvB,YAAY,CAAE,CAAC,AAChB,CAAC,AAED,qBAAO,CAAC,oBAAM,CAAC,AACd,OAAO,CAAE,IAAI,CACb,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,IAAI,CACjB,SAAS,CAAE,IAAI,CACf,OAAO,CAAE,IAAI,CAAC,IAAI,CAAC,IAAI,AACxB,CAAC,AACD,qBAAO,CAAC,MAAM,CAAC,uBAAS,CAAC,AACxB,IAAI,CAAE,CAAC,CACP,cAAc,CAAE,UAAU,AAC3B,CAAC,AACD,qBAAO,CAAC,MAAM,CAAC,kBAAI,CAAC,AACnB,OAAO,CAAE,KAAK,CACd,gBAAgB,CAAE,OAAO,CACzB,KAAK,CAAE,OAAO,CACd,OAAO,CAAE,CAAC,CAAC,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,SAAS,CAAE,IAAI,CACf,cAAc,CAAE,SAAS,CACzB,UAAU,CAAE,IAAI,AACjB,CAAC,AACD,qBAAO,CAAC,iBAAG,CAAC,AACX,UAAU,CAAE,KAAK,CACjB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AACb,CAAC,AACD,8BAAE,CAAC,AACF,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,IAAI,CACjB,MAAM,CAAE,GAAG,CAAC,IAAI,CAAC,GAAG,AACrB,CAAC,AACD,8BAAE,CAAC,AACF,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,WAAW,CAAE,IAAI,CACjB,MAAM,CAAE,CAAC,CAAC,IAAI,AACf,CAAC,AACD,6BAAC,CAAC,AACD,MAAM,CAAE,CAAC,AACV,CAAC,AACD,MAAM,4BAAC,CAAC,AACJ,MAAM,CAAE,GAAG,CAAC,IAAI,AACpB,CAAC,AACD,oCAAQ,CAAC,AACR,MAAM,CAAE,IAAI,CAAC,IAAI,CAAC,IAAI,AACvB,CAAC,AACD,sBAAQ,CAAC,qBAAO,CAAC,AAChB,OAAO,CAAE,YAAY,CACrB,SAAS,CAAE,MAAM,CACjB,OAAO,CAAE,IAAI,CAAC,IAAI,CAAC,GAAG,CACtB,UAAU,CAAE,MAAM,AACnB,CAAC,AACD,sBAAQ,CAAC,qBAAO,YAAY,CAAC,AAC5B,YAAY,CAAE,IAAI,AACnB,CAAC"}`
 };
 var ProductCard = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { product } = $$props;
   let productVariants = product.variants.edges.map((v) => v.node);
-  let currCode = productVariants[0].priceV2.currencyCode;
+  let currCode = product.priceRange.maxVariantPrice.currencyCode;
   let bestDiscount = 0;
+  let bestVariant = {};
   for (let variant of productVariants) {
     if (variant.compareAtPrice != null) {
-      let temp = (100 / variant.compareAtPrice * variant.priceV2.amount).toFixed(0);
-      if (temp > bestDiscount) {
+      let temp = (100 / variant.compareAtPrice * variant.price).toFixed(0);
+      if (temp >= bestDiscount) {
         bestDiscount = temp;
+        bestVariant = {
+          "amount": variant.price,
+          "compare": variant.compareAtPrice
+        };
       }
     }
   }
@@ -2728,36 +3073,16 @@ var ProductCard = create_ssr_component(($$result, $$props, $$bindings, slots) =>
     <h4 class="${"svelte-arf72x"}">${escape2(product.title)}</h4>
     
     ${productVariants.length < 1 && productVariants[0].sku != null ? `<h5 class="${"svelte-arf72x"}">SKU: ${escape2(productVariants[0].sku)}</h5>` : ``}
-    <p class="${"price svelte-arf72x"}">${productVariants.length > 1 ? `<strong>${escape2(product.priceRange.minVariantPrice)} ${escape2(currCode)} - ${escape2(product.priceRange.maxVariantPrice)} ${escape2(currCode)}</strong>` : `<strong>${escape2(productVariants[0].priceV2.amount)} ${escape2(currCode)}</strong>
+    <p class="${"price svelte-arf72x"}">${productVariants.length > 1 ? `${product.priceRange.minVariantPrice.amount != product.priceRange.maxVariantPrice.amount ? `<strong>${escape2(product.priceRange.minVariantPrice.amount)} ${escape2(currCode)} - ${escape2(product.priceRange.maxVariantPrice.amount)} ${escape2(currCode)}</strong>` : `<strong>${escape2(bestVariant.amount)} ${escape2(currCode)}</strong>
+            ${bestVariant.compare != null ? `<span class="${"original-price"}">${escape2(bestVariant.compare)} ${escape2(currCode)}</span>` : ``}`}` : `<strong>${escape2(productVariants[0].price)} ${escape2(currCode)}</strong>
           ${productVariants[0].compareAtPrice != null ? `<span class="${"original-price"}">${escape2(productVariants[0].compareAtPrice)} ${escape2(currCode)}</span>` : ``}`}</p>
     <p class="${"options svelte-arf72x"}"><a href="${"/"}" class="${"button mute svelte-arf72x"}">A\xF1adir al carrito </a>
         <a href="${"/"}" class="${"button svelte-arf72x"}">Comprar ahora </a></p></a>
 </article>`;
 });
-var postToShopify = async ({ query, variables }) => {
-  try {
-    const result = await fetch("https://manueldelgado.myshopify.com/api/2021-07/graphql.json", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Shopify-Storefront-Access-Token": "dbba93fbda31ab8784607c08bf3a1f1b"
-      },
-      body: JSON.stringify({ query, variables })
-    }).then((res) => res.json());
-    if (result.errors) {
-      console.log({ errors: result.errors });
-    } else if (!result || !result.data) {
-      console.log({ result });
-      return "No results found.";
-    }
-    return result.data;
-  } catch (error22) {
-    console.log(error22);
-  }
-};
 var getProducts = async () => {
   try {
-    const shopifyResponse = await postToShopify({
+    const shopifyResponse = await postToShopify$1({
       query: `{
          products(sortKey: TITLE, first: 100) {
           edges {
@@ -2803,6 +3128,9 @@ var getProducts = async () => {
               }
             }
           }
+          pageInfo {
+            hasNextPage
+          }
         }
     }
       `
@@ -2817,7 +3145,7 @@ var getCollection = async (title = null) => {
     return getProducts();
   }
   try {
-    const shopifyResponse = await postToShopify({
+    const shopifyResponse = await postToShopify$1({
       query: `{
               collections(first: 100) {
                 edges {
@@ -2838,12 +3166,8 @@ var getCollection = async (title = null) => {
                               node {
                                 id
                                 title
-                                quantityAvailable
                                 sku
-                                priceV2 {
-                                  amount
-                                  currencyCode
-                                }
+                                price
                                 compareAtPrice
                               }
                             }
@@ -2868,6 +3192,9 @@ var getCollection = async (title = null) => {
                           }
                         }
                       }
+                      pageInfo {
+                        hasNextPage
+                      }
                     }
                   }
                 }
@@ -2887,7 +3214,7 @@ var getCollection = async (title = null) => {
 };
 var getProductDetails = async (handle2) => {
   try {
-    const shopifyResponse = await postToShopify({
+    const shopifyResponse = await postToShopify$1({
       query: ` 
         query getProduct($handle: String!) {
           productByHandle(handle: $handle) {
@@ -2907,6 +3234,9 @@ var getProductDetails = async (handle2) => {
                     currencyCode
                   }
                   compareAtPrice
+                  image{
+                    id
+                  }
                 }
               }
             }
@@ -2925,6 +3255,7 @@ var getProductDetails = async (handle2) => {
                 node {
                   src
                   altText
+                  id
                 }
               }
             }
@@ -2938,6 +3269,41 @@ var getProductDetails = async (handle2) => {
     return shopifyResponse.productByHandle;
   } catch (error22) {
     console.log(error22);
+  }
+};
+var addToCart = async (itemId, quantity) => {
+  try {
+    let cartId = localStorage.getItem("cartId");
+    if (cartId) {
+      console.log("Adding item to existing cart...");
+      const data = await addItemToCart({
+        cartId,
+        itemId,
+        quantity
+      }).then((data2) => {
+        console.log(data2.cartLinesAdd.cart);
+        if (data2.cartLinesAdd.cart.id) {
+          localStorage.setItem("cartId", data2.cartLinesAdd.cart.id);
+          localStorage.setItem("cart", JSON.stringify(data2.cartLinesAdd.cart));
+          location.reload();
+        }
+      });
+    } else {
+      console.log("Creating new cart with item...");
+      const data = await createCartWithItem({
+        itemId,
+        quantity
+      }).then((data2) => {
+        console.log(data2.cartCreate.cart);
+        if (data2.cartCreate.cart.id) {
+          localStorage.setItem("cartId", data2.cartCreate.cart.id);
+          localStorage.setItem("cart", JSON.stringify(data2.cartCreate.cart));
+          location.reload();
+        }
+      });
+    }
+  } catch (e) {
+    console.log(e);
   }
 };
 var css$h = {
@@ -3031,7 +3397,7 @@ var ContactRibbon = create_ssr_component(($$result, $$props, $$bindings, slots) 
 		<article class="${"svelte-74wzye"}"><h4 class="${"svelte-74wzye"}">Directorio de Sucursales</h4></article></div>
 </section>`;
 });
-var prerender$3 = true;
+var prerender$4 = true;
 var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${$$result.head += `${$$result.title = `<title>In\xEDcio - Manuel Delgado</title>`, ""}`, ""}
 
@@ -3051,9 +3417,165 @@ var index = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Routes,
-  prerender: prerender$3
+  prerender: prerender$4
 });
 var css$c = {
+  code: "section.svelte-1vuywbf.svelte-1vuywbf{padding:0 0 0 40px}h2.svelte-1vuywbf.svelte-1vuywbf{font-size:31px;line-height:34px;font-weight:bold;margin-bottom:46px;margin-top:53px;letter-spacing:1.6px;text-transform:uppercase;color:#757575}.layout-row.svelte-1vuywbf.svelte-1vuywbf{-webkit-box-sizing:border-box;box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-ms-flex-line-pack:start;align-content:flex-start}.layout-row.svelte-1vuywbf>.svelte-1vuywbf{max-width:100%;-webkit-box-sizing:border-box;box-sizing:border-box}.col2.svelte-1vuywbf.svelte-1vuywbf{width:673px;height:100vh;max-height:924px;min-height:500px;position:sticky;top:0px}.col2.svelte-1vuywbf iframe.svelte-1vuywbf{width:100%;height:100%}.col1.svelte-1vuywbf.svelte-1vuywbf{position:relative;width:calc(100% - 673px);padding-right:50px;padding-bottom:50px}.col1.svelte-1vuywbf .sucursal.svelte-1vuywbf{margin-bottom:49px}.sucursal.svelte-1vuywbf .slider.svelte-1vuywbf{width:269px;min-height:220px;position:relative;border-radius:23px;overflow:hidden}.sucursal.svelte-1vuywbf .slider img.svelte-1vuywbf{object-fit:cover;position:absolute;width:100%;height:100%}.sucursal.svelte-1vuywbf .slider .next.svelte-1vuywbf,.sucursal.svelte-1vuywbf .slider .prev.svelte-1vuywbf{position:absolute;top:0;bottom:0;margin:auto;z-index:2;border-radius:50%;background-color:white;width:28px;height:28px;cursor:pointer}.sucursal.svelte-1vuywbf .slider .next img.svelte-1vuywbf,.sucursal.svelte-1vuywbf .slider .prev img.svelte-1vuywbf{width:60%;height:60%;position:absolute;left:0;top:0;right:0;bottom:0;margin:auto}.sucursal.svelte-1vuywbf .slider .next.svelte-1vuywbf{right:7px}.sucursal.svelte-1vuywbf .slider .prev.svelte-1vuywbf{left:7px}.sucursal.svelte-1vuywbf .infoHolder.svelte-1vuywbf{width:calc(100% - 269px);max-width:417px;padding-left:28px}.sucursal.svelte-1vuywbf .infoHolder h3.svelte-1vuywbf{font-size:18px;line-height:20px;font-weight:bold;margin-bottom:12px;margin-top:0px;letter-spacing:1.6px;text-transform:uppercase;color:#757575}.sucursal.svelte-1vuywbf .infoHolder div.svelte-1vuywbf{position:relative;border-bottom:2px solid #e4e4e4;min-height:49px}.sucursal.svelte-1vuywbf .infoHolder div img.svelte-1vuywbf{width:23px;height:23px;position:absolute;left:2px;top:5px;margin:auto}.sucursal.svelte-1vuywbf .infoHolder div p.svelte-1vuywbf{font-size:13px;line-height:18px;padding-left:48px;padding-right:20px;color:#757575}@media only screen and (max-width: 1338px){.col1.svelte-1vuywbf.svelte-1vuywbf{width:60%}.col2.svelte-1vuywbf.svelte-1vuywbf{width:40%}}@media only screen and (max-width: 940px){.col1.svelte-1vuywbf.svelte-1vuywbf,.col2.svelte-1vuywbf.svelte-1vuywbf{width:100%}.col1.svelte-1vuywbf.svelte-1vuywbf{padding-left:40px;padding-right:40px}.col2.svelte-1vuywbf.svelte-1vuywbf{position:relative;height:500px}section.svelte-1vuywbf.svelte-1vuywbf{padding:0 0 0 0px}}@media only screen and (max-width: 650px){.col1.svelte-1vuywbf .sucursal .slider.svelte-1vuywbf{width:100%;margin-bottom:20px}.col1.svelte-1vuywbf .sucursal .infoHolder.svelte-1vuywbf{width:100%;max-width:100%;padding-right:40px}}",
+  map: '{"version":3,"file":"LocationList.svelte","sources":["LocationList.svelte"],"sourcesContent":["<section class=\\"layout-row\\">\\r\\n\\t<div class=\\"col col1\\">\\r\\n     <h2>Nuestras sucursales</h2>  \\r\\n     \\r\\n     <!-- sucursal -->\\r\\n     <div class=\\"sucursal layout-row\\" >\\r\\n     \\t <div class=\\"slider\\">\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridanorte.jpg\\" alt=\\"merida norte\\" >\\r\\n     \\t \\t <!-- <img src=\\"/img/sucursales/meridanorte2.jpg\\" alt=\\"merida norte 2\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridanorte3.jpg\\" alt=\\"merida norte 3\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridanorte4.jpg\\" alt=\\"merida norte 4\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridanorte5.jpg\\" alt=\\"merida norte 5\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridanorte6.jpg\\" alt=\\"merida norte 6\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridanorte7.jpg\\" alt=\\"merida norte 7\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridanorte8.jpg\\" alt=\\"merida norte 8\\" > -->\\r\\n     \\t \\t \\r\\n     \\t \\t <div class=\\"prev\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-left.svg\\" alt=\\"prev\\" >\\r\\n     \\t \\t </div>\\r\\n     \\t \\t <div class=\\"next\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-right.svg\\" alt=\\"next\\" >\\r\\n     \\t \\t </div>\\r\\n\\r\\n     \\t </div>\\r\\n     \\t <div class=\\"infoHolder\\" >\\r\\n     \\t \\t <h3>M\xE9rida Norte</h3>\\r\\n\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/pinmap.svg\\" alt=\\"pinmap\\" >\\r\\n         \\t<p>Calle 54 No. 210 x 33 Esquina Col. Benito Ju\xE1rez Norte (atr\xE1s de The Home Depot y a un Costado de la Escuela de PostGrado)</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/horario.svg\\" alt=\\"horario\\" >\\r\\n         \\t<p>Horario: Lunes a Viernes de 9am a 8 pm / Sabados de 10am a 8pm</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/telefono.svg\\" alt=\\"telefono\\" >\\r\\n         \\t<p>Tel(s). 9999484019 <br> atencion@delgadoycia.mx</p>\\r\\n         </div>\\r\\n\\r\\n     \\t </div>\\r\\n     </div>\\r\\n\\r\\n\\r\\n\\r\\n     <!-- sucursal -->\\r\\n     <div class=\\"sucursal layout-row\\" >\\r\\n     \\t <div class=\\"slider\\">\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridareforma.png\\" alt=\\"merida reforma\\" >\\r\\n     \\t \\t <!-- <img src=\\"/img/sucursales/meridareforma2.jpg\\" alt=\\"merida reforma 2\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridareforma3.jpg\\" alt=\\"merida reforma 3\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridareforma4.jpg\\" alt=\\"merida reforma 4\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridareforma5.jpg\\" alt=\\"merida reforma 5\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridareforma6.jpg\\" alt=\\"merida reforma 6\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridareforma7.jpg\\" alt=\\"merida reforma 7\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridareforma8.jpg\\" alt=\\"merida reforma 8\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridareforma9.jpg\\" alt=\\"merida reforma 9\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridareforma10.jpg\\" alt=\\"merida reforma 10\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridareforma11.jpg\\" alt=\\"merida reforma 11\\" > -->\\r\\n     \\t \\t \\r\\n     \\t \\t <div class=\\"prev\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-left.svg\\" alt=\\"prev\\" >\\r\\n     \\t \\t </div>\\r\\n     \\t \\t <div class=\\"next\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-right.svg\\" alt=\\"next\\" >\\r\\n     \\t \\t </div>\\r\\n\\r\\n     \\t </div>\\r\\n     \\t <div class=\\"infoHolder\\" >\\r\\n     \\t \\t <h3>M\xC9RIDA REFORMA</h3>\\r\\n\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/pinmap.svg\\" alt=\\"pinmap\\" >\\r\\n         \\t<p>Av. Reforma C. 72 con 43 esquina a 200 metros de la SSP Col. Centro </p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/horario.svg\\" alt=\\"horario\\" >\\r\\n         \\t<p>Horario: Lunes a Viernes de 9am a 7 pm / Sabados de 9:00am a 2:00pm</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/telefono.svg\\" alt=\\"telefono\\" >\\r\\n         \\t<p>Tel(s). 9999203630 <br> ventasreforma@manueldelgado.mx</p>\\r\\n         </div>\\r\\n\\r\\n     \\t </div>\\r\\n     </div>\\r\\n\\r\\n\\r\\n     <!-- sucursal -->\\r\\n     <div class=\\"sucursal layout-row\\" >\\r\\n     \\t <div class=\\"slider\\">\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridacentro.png\\" alt=\\"merida centro \\" >\\r\\n     \\t \\t <!-- <img src=\\"/img/sucursales/meridacentro2.png\\" alt=\\"merida centro 2\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridacentro3.jiff\\" alt=\\"merida centro 3\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridacentro4.jiff\\" alt=\\"merida centro 4\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/meridacentro5.jiff\\" alt=\\"merida centro 5\\" > -->\\r\\n     \\t \\t \\r\\n     \\t \\t <div class=\\"prev\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-left.svg\\" alt=\\"prev\\" >\\r\\n     \\t \\t </div>\\r\\n     \\t \\t <div class=\\"next\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-right.svg\\" alt=\\"next\\" >\\r\\n     \\t \\t </div>\\r\\n\\r\\n     \\t </div>\\r\\n     \\t <div class=\\"infoHolder\\" >\\r\\n     \\t \\t <h3>M\xE9rida Centro</h3>\\r\\n\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/pinmap.svg\\" alt=\\"pinmap\\" >\\r\\n         \\t<p>Calle 68 No. 450-A entre 49 y 51 Col. Centro. M\xE9rida, Yucat\xE1n</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/horario.svg\\" alt=\\"horario\\" >\\r\\n         \\t<p>Horario: Lunes a Viernes de 9am a 7 pm / Sabados de 9:00am a 2:00pm</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/telefono.svg\\" alt=\\"telefono\\" >\\r\\n         \\t<p>Tel(s). 9999238380 <br> ventascentro@manueldelgado.mx</p>\\r\\n         </div>\\r\\n\\r\\n     \\t </div>\\r\\n     </div>\\r\\n\\r\\n\\r\\n     <!-- sucursal -->\\r\\n     <div class=\\"sucursal layout-row\\" >\\r\\n     \\t <div class=\\"slider\\">\\r\\n     \\t \\t <img src=\\"/img/sucursales/cancun2.jpeg\\" alt=\\"cancun 2\\" >\\r\\n     \\t \\t <!-- <img src=\\"/img/sucursales/cancun3.jpeg\\" alt=\\"cancun 3\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/cancun4.jpg\\" alt=\\"cancun 4\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/cancun5.jpeg\\" alt=\\"cancun 5\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/cancun6.jpeg\\" alt=\\"cancun 6\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/cancun7.jpeg\\" alt=\\"cancun 7\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/cancun8.jpeg\\" alt=\\"cancun 8\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/cancun9.jpeg\\" alt=\\"cancun 9\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/cancun10.jpeg\\" alt=\\"cancun 10\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/cancun11.jpeg\\" alt=\\"cancun 11\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/cancun12.jpeg\\" alt=\\"cancun 12\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/cancun13.jpeg\\" alt=\\"cancun 13\\" > -->\\r\\n     \\t \\t \\r\\n     \\t \\t <div class=\\"prev\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-left.svg\\" alt=\\"prev\\" >\\r\\n     \\t \\t </div>\\r\\n     \\t \\t <div class=\\"next\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-right.svg\\" alt=\\"next\\" >\\r\\n     \\t \\t </div>\\r\\n\\r\\n     \\t </div>\\r\\n     \\t <div class=\\"infoHolder\\" >\\r\\n     \\t \\t <h3>Canc\xFAn</h3>\\r\\n\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/pinmap.svg\\" alt=\\"pinmap\\" >\\r\\n         \\t<p>Av. Uxmal, No. 108 por Chich\xE9n Itz\xE1 Canc\xFAn, Quintana Roo</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/horario.svg\\" alt=\\"horario\\" >\\r\\n         \\t<p>Horario: Lunes a Viernes de 9am a 7 pm / Sabados de 9:00am a 1:00pm</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/telefono.svg\\" alt=\\"telefono\\" >\\r\\n         \\t<p>Tel(s). (998) 884-8050 <br> ventascancun@delgadoycia.mx</p>\\r\\n         </div>\\r\\n\\r\\n     \\t </div>\\r\\n     </div>\\r\\n\\r\\n\\r\\n     <!-- sucursal -->\\r\\n     <div class=\\"sucursal layout-row\\" >\\r\\n     \\t <div class=\\"slider\\">\\r\\n     \\t \\t <img src=\\"/img/sucursales/playadelcarmen.jpeg\\" alt=\\"playa del carmen \\" >\\r\\n     \\t \\t <!-- <img src=\\"/img/sucursales/playadelcarmen2.jpeg\\" alt=\\"playa del carmen 2\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/playadelcarmen3.jpeg\\" alt=\\"playa del carmen 3\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/playadelcarmen4.jpeg\\" alt=\\"playa del carmen 4\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/playadelcarmen5.jpeg\\" alt=\\"playa del carmen 5\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/playadelcarmen6.jpeg\\" alt=\\"playa del carmen 6\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/playadelcarmen7.jpeg\\" alt=\\"playa del carmen 7\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/playadelcarmen8.jpeg\\" alt=\\"playa del carmen 8\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/playadelcarmen9.jpeg\\" alt=\\"playa del carmen 9\\" > -->\\r\\n     \\t \\t \\r\\n     \\t \\t <div class=\\"prev\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-left.svg\\" alt=\\"prev\\" >\\r\\n     \\t \\t </div>\\r\\n     \\t \\t <div class=\\"next\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-right.svg\\" alt=\\"next\\" >\\r\\n     \\t \\t </div>\\r\\n\\r\\n     \\t </div>\\r\\n     \\t <div class=\\"infoHolder\\" >\\r\\n     \\t \\t <h3>PLAYA DEL CARMEN</h3>\\r\\n\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/pinmap.svg\\" alt=\\"pinmap\\" >\\r\\n         \\t<p>Calle 45, lote 3, Manzana 10 entre 30 y 34 Playa del Carmen, Quintana Roo</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/horario.svg\\" alt=\\"horario\\" >\\r\\n         \\t<p>Horario: Lunes a Viernes de 9am a 7 pm / Sabados de 9:00am a 1:00pm</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/telefono.svg\\" alt=\\"telefono\\" >\\r\\n         \\t<p>Tel(s). (984) 873-3479 <br> ventasplaya@delgadoycia.mx</p>\\r\\n         </div>\\r\\n\\r\\n     \\t </div>\\r\\n     </div>\\r\\n\\r\\n\\r\\n     <!-- sucursal -->\\r\\n     <div class=\\"sucursal layout-row\\" >\\r\\n     \\t <div class=\\"slider\\">\\r\\n     \\t \\t <img src=\\"/img/sucursales/chetumal.jpg\\" alt=\\"chetumal\\" >\\r\\n     \\t \\t \\r\\n     \\t \\t <div class=\\"prev\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-left.svg\\" alt=\\"prev\\" >\\r\\n     \\t \\t </div>\\r\\n     \\t \\t <div class=\\"next\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-right.svg\\" alt=\\"next\\" >\\r\\n     \\t \\t </div>\\r\\n\\r\\n     \\t </div>\\r\\n     \\t <div class=\\"infoHolder\\" >\\r\\n     \\t \\t <h3>CHETUMAL</h3>\\r\\n\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/pinmap.svg\\" alt=\\"pinmap\\" >\\r\\n         \\t<p>marcador google maps manuel delgado Av. Venustiano Carranza 233, por Av. Benito Juarez Col. Centro. Chetumal, Quintana Roo</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/horario.svg\\" alt=\\"horario\\" >\\r\\n         \\t<p>Horario: Lunes a Viernes de 9am a 7 pm / Sabados de 9:00am a 2:00pm</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/telefono.svg\\" alt=\\"telefono\\" >\\r\\n         \\t<p>Tel(s). (983) 832-2323 <br> ventaschetumal@delgadoycia.mx</p>\\r\\n         </div>\\r\\n\\r\\n     \\t </div>\\r\\n     </div>\\r\\n\\r\\n\\r\\n     <!-- sucursal -->\\r\\n     <div class=\\"sucursal layout-row\\" >\\r\\n     \\t <div class=\\"slider\\">\\r\\n     \\t \\t <img src=\\"/img/sucursales/campeche.jpeg\\" alt=\\"campeche\\" >\\r\\n     \\t \\t <!-- <img src=\\"/img/sucursales/campeche2.jpeg\\" alt=\\"campeche 2\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/campeche3.jpeg\\" alt=\\"campeche 3\\" > -->\\r\\n     \\t \\t \\r\\n     \\t \\t <div class=\\"prev\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-left.svg\\" alt=\\"prev\\" >\\r\\n     \\t \\t </div>\\r\\n     \\t \\t <div class=\\"next\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-right.svg\\" alt=\\"next\\" >\\r\\n     \\t \\t </div>\\r\\n\\r\\n     \\t </div>\\r\\n     \\t <div class=\\"infoHolder\\" >\\r\\n     \\t \\t <h3>Campeche</h3>\\r\\n\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/pinmap.svg\\" alt=\\"pinmap\\" >\\r\\n         \\t<p>Avenida luis Donaldo Colosio lote 12 Entre Calle Ciruelo y Calle Belem Fracc. San juan Campeche, Campeche </p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/horario.svg\\" alt=\\"horario\\" >\\r\\n         \\t<p>Horario: Lunes a Viernes de 9am a 7 pm / Sabados de 9:00am a 2:00pm</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/telefono.svg\\" alt=\\"telefono\\" >\\r\\n         \\t<p>Tel(s). (981) 811-11109 <br> ventascampeche@delgadoycia.mx</p>\\r\\n         </div>\\r\\n\\r\\n     \\t </div>\\r\\n     </div>\\r\\n\\r\\n\\r\\n     <!-- sucursal -->\\r\\n     <div class=\\"sucursal layout-row\\" >\\r\\n     \\t <div class=\\"slider\\">\\r\\n     \\t \\t <img src=\\"/img/sucursales/centrodistribucion.jpg\\" alt=\\"centro de distribucion\\" >\\r\\n     \\t \\t<!--  <img src=\\"/img/sucursales/centrodistribucion2.jpg\\" alt=\\"centro de distribucion 2\\" >\\r\\n     \\t \\t <img src=\\"/img/sucursales/centrodistribucion3.jpg\\" alt=\\"centro de distribucion 3\\" > -->\\r\\n     \\t \\t \\r\\n     \\t \\t <div class=\\"prev\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-left.svg\\" alt=\\"prev\\" >\\r\\n     \\t \\t </div>\\r\\n     \\t \\t <div class=\\"next\\">\\r\\n     \\t \\t \\t<img src=\\"/img/arrow-right.svg\\" alt=\\"next\\" >\\r\\n     \\t \\t </div>\\r\\n\\r\\n     \\t </div>\\r\\n     \\t <div class=\\"infoHolder\\" >\\r\\n     \\t \\t <h3>centro de distribucion</h3>\\r\\n\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/pinmap.svg\\" alt=\\"pinmap\\" >\\r\\n         \\t<p>CARRETERA PROGRESO KM 19.5 ENTRADA TAMANCHE M\xE9rida, Yucat\xE1n</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/horario.svg\\" alt=\\"horario\\" >\\r\\n         \\t<p>Horario:  Lunes a Viernes de 9am a 6:30 pm / Sabados de 9:00am a 2:00pm</p>\\r\\n         </div>\\r\\n         <div>\\r\\n         \\t<img src=\\"/img/telefono.svg\\" alt=\\"telefono\\" >\\r\\n         \\t<p>Tel(s). 9992 782777 <br> atencion@delgadoycia.mx</p>\\r\\n         </div>\\r\\n\\r\\n     \\t </div>\\r\\n     </div>\\r\\n\\r\\n\\r\\n\\t</div>\\r\\n\\t<div class=\\"col col2\\">\\r\\n\\t\\t<iframe src=\\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20154.740016717802!2d-86.84050594881973!3d21.16708925039532!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf5e15ed82a0317a3!2sManuel%20Delgado!5e0!3m2!1ses-419!2smx!4v1630373939182!5m2!1ses-419!2smx\\"  style=\\"border:0;\\" allowfullscreen=\\"\\" loading=\\"lazy\\"></iframe>\\r\\n\\t\\t\\r\\n\\t</div>\\r\\n</section>\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n<style>\\r\\n    \\r\\n\\tsection{\\r\\n\\t\\tpadding: 0 0 0 40px;\\r\\n\\t}\\r\\n\\t\\r\\n\\th2{\\r\\n\\t\\tfont-size: 31px;\\r\\n\\t\\tline-height: 34px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tmargin-bottom: 46px;\\r\\n\\t\\tmargin-top: 53px;\\r\\n\\t\\tletter-spacing: 1.6px;\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tcolor: #757575;\\r\\n\\t}\\r\\n    \\r\\n    .layout-col{\\r\\n       -webkit-box-sizing: border-box;\\r\\n       box-sizing: border-box;\\r\\n       display: -webkit-box;\\r\\n       display: -ms-flexbox;\\r\\n       display: flex;\\r\\n       \\r\\n       -webkit-box-pack: start;\\r\\n       -ms-flex-pack: start;\\r\\n       justify-content: flex-start;\\r\\n\\r\\n       -webkit-box-align: center;\\r\\n       -ms-flex-align: center;\\r\\n       align-items: center;\\r\\n       -ms-flex-line-pack:center;\\r\\n       align-content:center;\\r\\n\\r\\n       -webkit-box-orient: vertical;\\r\\n       -webkit-box-direction: normal;\\r\\n       -ms-flex-direction: column;\\r\\n       flex-direction: column;\\r\\n    }\\r\\n\\t.layout-row{\\r\\n\\t\\t-webkit-box-sizing: border-box;\\r\\n        box-sizing: border-box;\\r\\n        display: -webkit-box;\\r\\n        display: -ms-flexbox;\\r\\n        display: flex;\\r\\n\\r\\n        -webkit-box-orient: horizontal;\\r\\n        -webkit-box-direction: normal;\\r\\n        -ms-flex-direction: row;\\r\\n        flex-direction: row;\\r\\n      \\r\\n        -ms-flex-wrap: wrap;\\r\\n        flex-wrap: wrap;\\r\\n      \\r\\n        -webkit-box-pack: start;\\r\\n        -ms-flex-pack: start;\\r\\n      \\r\\n        justify-content: flex-start;\\r\\n        -webkit-box-align: start;\\r\\n        -ms-flex-align: start;\\r\\n        align-items: flex-start;\\r\\n        -ms-flex-line-pack: start;\\r\\n        align-content: flex-start; \\r\\n\\t}\\r\\n\\t.layout-row > *,\\r\\n\\t.layout-col > *{\\r\\n      max-width: 100%;\\r\\n      -webkit-box-sizing: border-box;\\r\\n      box-sizing: border-box;\\r\\n    }\\r\\n\\t.col2{\\r\\n\\t   width: 673px;\\r\\n\\t   height: 100vh;\\r\\n\\t   max-height: 924px;\\r\\n\\t   min-height: 500px;\\r\\n\\t   position: sticky;\\r\\n     top: 0px;\\r\\n\\t}\\r\\n\\t.col2 iframe{\\r\\n\\t\\t width: 100%;\\r\\n\\t\\t height: 100%;\\r\\n\\t}\\r\\n\\t\\r\\n    \\r\\n  .col1{\\r\\n     position: relative;\\r\\n     width: calc(100% - 673px);\\r\\n     padding-right: 50px;\\r\\n     padding-bottom: 50px;\\r\\n  }\\r\\n  .col1 .sucursal{\\r\\n  \\tmargin-bottom: 49px;\\r\\n  }\\r\\n\\t.sucursal .slider{\\r\\n\\t\\twidth: 269px;\\r\\n\\t\\tmin-height: 220px;\\r\\n\\t\\tposition: relative;\\r\\n\\t\\tborder-radius: 23px;\\r\\n\\t\\toverflow: hidden;\\r\\n\\t}\\r\\n\\t.sucursal .slider img{\\r\\n\\t   object-fit: cover;\\r\\n\\t   position: absolute;\\r\\n\\t   width: 100%;\\r\\n\\t   height: 100%;\\r\\n\\t}\\r\\n\\t.sucursal .slider .next,\\r\\n\\t.sucursal .slider .prev{\\r\\n\\t   position: absolute;\\r\\n\\t   top: 0;\\r\\n\\t   bottom: 0;\\r\\n\\t   margin: auto;\\r\\n\\t   z-index: 2;\\r\\n\\t   border-radius: 50%;\\r\\n\\t   background-color: white;\\r\\n\\t   width: 28px;\\r\\n\\t   height: 28px;\\r\\n\\t   cursor: pointer;\\r\\n\\t}\\r\\n\\t.sucursal .slider .next img,\\r\\n\\t.sucursal .slider .prev img{\\r\\n    width: 60%;\\r\\n    height: 60%;\\r\\n    position: absolute;\\r\\n    left: 0;\\r\\n    top: 0;\\r\\n    right: 0;\\r\\n    bottom: 0;\\r\\n    margin: auto;\\r\\n\\t}\\r\\n\\t.sucursal .slider .next{\\r\\n     right: 7px;\\r\\n\\t}\\r\\n\\t.sucursal .slider .prev{\\r\\n     left: 7px;\\r\\n\\t}\\r\\n\\t.sucursal .infoHolder{\\r\\n\\t\\twidth: calc(100% - 269px);\\r\\n\\t\\tmax-width: 417px;\\r\\n\\t\\tpadding-left: 28px;\\r\\n\\t}\\r\\n\\t.sucursal .infoHolder h3{\\r\\n\\t\\tfont-size: 18px;\\r\\n\\t\\tline-height: 20px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tmargin-bottom: 12px;\\r\\n\\t\\tmargin-top: 0px;\\r\\n\\t\\tletter-spacing: 1.6px;\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tcolor: #757575;\\r\\n\\t}\\r\\n\\t.sucursal .infoHolder div{\\r\\n\\t\\tposition: relative;\\r\\n\\t\\tborder-bottom: 2px solid #e4e4e4;\\r\\n\\t\\tmin-height: 49px;\\r\\n\\t}\\r\\n\\t.sucursal .infoHolder div img{\\r\\n\\t\\twidth: 23px;\\r\\n    height: 23px;\\r\\n    position: absolute;\\r\\n    left: 2px;\\r\\n    top: 5px;\\r\\n    margin: auto;\\r\\n\\t}\\r\\n\\t.sucursal .infoHolder div p{\\r\\n    font-size: 13px;\\r\\n    line-height: 18px;\\r\\n    padding-left: 48px;\\r\\n    padding-right: 20px;\\r\\n    color: #757575;\\r\\n\\t}\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\t@media only screen and (max-width: 1338px){\\r\\n\\t\\t.col1{\\r\\n\\t\\t\\twidth: 60%;\\r\\n\\t\\t}\\r\\n    .col2{\\r\\n      width: 40%;\\r\\n    }\\r\\n\\t}\\r\\n\\t@media only screen and (max-width: 940px){\\r\\n    .col1,\\r\\n    .col2{\\r\\n      width: 100%;\\r\\n    }\\r\\n    .col1{\\r\\n      padding-left: 40px;\\r\\n      padding-right: 40px;\\r\\n    }\\r\\n    .col2{\\r\\n      position: relative;\\r\\n      height: 500px;\\r\\n    }\\r\\n    section{\\r\\n\\t\\t  padding: 0 0 0 0px;\\r\\n\\t  }\\r\\n\\t}\\r\\n\\t@media only screen and (max-width: 650px){\\r\\n    .col1 .sucursal .slider{\\r\\n      width: 100%;\\r\\n      margin-bottom: 20px;\\r\\n    }\\r\\n    .col1 .sucursal .infoHolder{\\r\\n      width: 100%;\\r\\n      max-width: 100%;\\r\\n      padding-right: 40px;\\r\\n    }\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"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"}'
+};
+var LocationList = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  $$result.css.add(css$c);
+  return `<section class="${"layout-row svelte-1vuywbf"}"><div class="${"col col1 svelte-1vuywbf"}"><h2 class="${"svelte-1vuywbf"}">Nuestras sucursales</h2>  
+     
+     
+     <div class="${"sucursal layout-row svelte-1vuywbf"}"><div class="${"slider svelte-1vuywbf"}"><img src="${"/img/sucursales/meridanorte.jpg"}" alt="${"merida norte"}" class="${"svelte-1vuywbf"}">
+     	 	 
+     	 	 
+     	 	 <div class="${"prev svelte-1vuywbf"}"><img src="${"/img/arrow-left.svg"}" alt="${"prev"}" class="${"svelte-1vuywbf"}"></div>
+     	 	 <div class="${"next svelte-1vuywbf"}"><img src="${"/img/arrow-right.svg"}" alt="${"next"}" class="${"svelte-1vuywbf"}"></div></div>
+     	 <div class="${"infoHolder svelte-1vuywbf"}"><h3 class="${"svelte-1vuywbf"}">M\xE9rida Norte</h3>
+
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/pinmap.svg"}" alt="${"pinmap"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Calle 54 No. 210 x 33 Esquina Col. Benito Ju\xE1rez Norte (atr\xE1s de The Home Depot y a un Costado de la Escuela de PostGrado)</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/horario.svg"}" alt="${"horario"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Horario: Lunes a Viernes de 9am a 8 pm / Sabados de 10am a 8pm</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/telefono.svg"}" alt="${"telefono"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Tel(s). 9999484019 <br> atencion@delgadoycia.mx</p></div></div></div>
+
+
+
+     
+     <div class="${"sucursal layout-row svelte-1vuywbf"}"><div class="${"slider svelte-1vuywbf"}"><img src="${"/img/sucursales/meridareforma.png"}" alt="${"merida reforma"}" class="${"svelte-1vuywbf"}">
+     	 	 
+     	 	 
+     	 	 <div class="${"prev svelte-1vuywbf"}"><img src="${"/img/arrow-left.svg"}" alt="${"prev"}" class="${"svelte-1vuywbf"}"></div>
+     	 	 <div class="${"next svelte-1vuywbf"}"><img src="${"/img/arrow-right.svg"}" alt="${"next"}" class="${"svelte-1vuywbf"}"></div></div>
+     	 <div class="${"infoHolder svelte-1vuywbf"}"><h3 class="${"svelte-1vuywbf"}">M\xC9RIDA REFORMA</h3>
+
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/pinmap.svg"}" alt="${"pinmap"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Av. Reforma C. 72 con 43 esquina a 200 metros de la SSP Col. Centro </p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/horario.svg"}" alt="${"horario"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Horario: Lunes a Viernes de 9am a 7 pm / Sabados de 9:00am a 2:00pm</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/telefono.svg"}" alt="${"telefono"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Tel(s). 9999203630 <br> ventasreforma@manueldelgado.mx</p></div></div></div>
+
+
+     
+     <div class="${"sucursal layout-row svelte-1vuywbf"}"><div class="${"slider svelte-1vuywbf"}"><img src="${"/img/sucursales/meridacentro.png"}" alt="${"merida centro "}" class="${"svelte-1vuywbf"}">
+     	 	 
+     	 	 
+     	 	 <div class="${"prev svelte-1vuywbf"}"><img src="${"/img/arrow-left.svg"}" alt="${"prev"}" class="${"svelte-1vuywbf"}"></div>
+     	 	 <div class="${"next svelte-1vuywbf"}"><img src="${"/img/arrow-right.svg"}" alt="${"next"}" class="${"svelte-1vuywbf"}"></div></div>
+     	 <div class="${"infoHolder svelte-1vuywbf"}"><h3 class="${"svelte-1vuywbf"}">M\xE9rida Centro</h3>
+
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/pinmap.svg"}" alt="${"pinmap"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Calle 68 No. 450-A entre 49 y 51 Col. Centro. M\xE9rida, Yucat\xE1n</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/horario.svg"}" alt="${"horario"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Horario: Lunes a Viernes de 9am a 7 pm / Sabados de 9:00am a 2:00pm</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/telefono.svg"}" alt="${"telefono"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Tel(s). 9999238380 <br> ventascentro@manueldelgado.mx</p></div></div></div>
+
+
+     
+     <div class="${"sucursal layout-row svelte-1vuywbf"}"><div class="${"slider svelte-1vuywbf"}"><img src="${"/img/sucursales/cancun2.jpeg"}" alt="${"cancun 2"}" class="${"svelte-1vuywbf"}">
+     	 	 
+     	 	 
+     	 	 <div class="${"prev svelte-1vuywbf"}"><img src="${"/img/arrow-left.svg"}" alt="${"prev"}" class="${"svelte-1vuywbf"}"></div>
+     	 	 <div class="${"next svelte-1vuywbf"}"><img src="${"/img/arrow-right.svg"}" alt="${"next"}" class="${"svelte-1vuywbf"}"></div></div>
+     	 <div class="${"infoHolder svelte-1vuywbf"}"><h3 class="${"svelte-1vuywbf"}">Canc\xFAn</h3>
+
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/pinmap.svg"}" alt="${"pinmap"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Av. Uxmal, No. 108 por Chich\xE9n Itz\xE1 Canc\xFAn, Quintana Roo</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/horario.svg"}" alt="${"horario"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Horario: Lunes a Viernes de 9am a 7 pm / Sabados de 9:00am a 1:00pm</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/telefono.svg"}" alt="${"telefono"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Tel(s). (998) 884-8050 <br> ventascancun@delgadoycia.mx</p></div></div></div>
+
+
+     
+     <div class="${"sucursal layout-row svelte-1vuywbf"}"><div class="${"slider svelte-1vuywbf"}"><img src="${"/img/sucursales/playadelcarmen.jpeg"}" alt="${"playa del carmen "}" class="${"svelte-1vuywbf"}">
+     	 	 
+     	 	 
+     	 	 <div class="${"prev svelte-1vuywbf"}"><img src="${"/img/arrow-left.svg"}" alt="${"prev"}" class="${"svelte-1vuywbf"}"></div>
+     	 	 <div class="${"next svelte-1vuywbf"}"><img src="${"/img/arrow-right.svg"}" alt="${"next"}" class="${"svelte-1vuywbf"}"></div></div>
+     	 <div class="${"infoHolder svelte-1vuywbf"}"><h3 class="${"svelte-1vuywbf"}">PLAYA DEL CARMEN</h3>
+
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/pinmap.svg"}" alt="${"pinmap"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Calle 45, lote 3, Manzana 10 entre 30 y 34 Playa del Carmen, Quintana Roo</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/horario.svg"}" alt="${"horario"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Horario: Lunes a Viernes de 9am a 7 pm / Sabados de 9:00am a 1:00pm</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/telefono.svg"}" alt="${"telefono"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Tel(s). (984) 873-3479 <br> ventasplaya@delgadoycia.mx</p></div></div></div>
+
+
+     
+     <div class="${"sucursal layout-row svelte-1vuywbf"}"><div class="${"slider svelte-1vuywbf"}"><img src="${"/img/sucursales/chetumal.jpg"}" alt="${"chetumal"}" class="${"svelte-1vuywbf"}">
+     	 	 
+     	 	 <div class="${"prev svelte-1vuywbf"}"><img src="${"/img/arrow-left.svg"}" alt="${"prev"}" class="${"svelte-1vuywbf"}"></div>
+     	 	 <div class="${"next svelte-1vuywbf"}"><img src="${"/img/arrow-right.svg"}" alt="${"next"}" class="${"svelte-1vuywbf"}"></div></div>
+     	 <div class="${"infoHolder svelte-1vuywbf"}"><h3 class="${"svelte-1vuywbf"}">CHETUMAL</h3>
+
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/pinmap.svg"}" alt="${"pinmap"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">marcador google maps manuel delgado Av. Venustiano Carranza 233, por Av. Benito Juarez Col. Centro. Chetumal, Quintana Roo</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/horario.svg"}" alt="${"horario"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Horario: Lunes a Viernes de 9am a 7 pm / Sabados de 9:00am a 2:00pm</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/telefono.svg"}" alt="${"telefono"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Tel(s). (983) 832-2323 <br> ventaschetumal@delgadoycia.mx</p></div></div></div>
+
+
+     
+     <div class="${"sucursal layout-row svelte-1vuywbf"}"><div class="${"slider svelte-1vuywbf"}"><img src="${"/img/sucursales/campeche.jpeg"}" alt="${"campeche"}" class="${"svelte-1vuywbf"}">
+     	 	 
+     	 	 
+     	 	 <div class="${"prev svelte-1vuywbf"}"><img src="${"/img/arrow-left.svg"}" alt="${"prev"}" class="${"svelte-1vuywbf"}"></div>
+     	 	 <div class="${"next svelte-1vuywbf"}"><img src="${"/img/arrow-right.svg"}" alt="${"next"}" class="${"svelte-1vuywbf"}"></div></div>
+     	 <div class="${"infoHolder svelte-1vuywbf"}"><h3 class="${"svelte-1vuywbf"}">Campeche</h3>
+
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/pinmap.svg"}" alt="${"pinmap"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Avenida luis Donaldo Colosio lote 12 Entre Calle Ciruelo y Calle Belem Fracc. San juan Campeche, Campeche </p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/horario.svg"}" alt="${"horario"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Horario: Lunes a Viernes de 9am a 7 pm / Sabados de 9:00am a 2:00pm</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/telefono.svg"}" alt="${"telefono"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Tel(s). (981) 811-11109 <br> ventascampeche@delgadoycia.mx</p></div></div></div>
+
+
+     
+     <div class="${"sucursal layout-row svelte-1vuywbf"}"><div class="${"slider svelte-1vuywbf"}"><img src="${"/img/sucursales/centrodistribucion.jpg"}" alt="${"centro de distribucion"}" class="${"svelte-1vuywbf"}">
+     	 	
+     	 	 
+     	 	 <div class="${"prev svelte-1vuywbf"}"><img src="${"/img/arrow-left.svg"}" alt="${"prev"}" class="${"svelte-1vuywbf"}"></div>
+     	 	 <div class="${"next svelte-1vuywbf"}"><img src="${"/img/arrow-right.svg"}" alt="${"next"}" class="${"svelte-1vuywbf"}"></div></div>
+     	 <div class="${"infoHolder svelte-1vuywbf"}"><h3 class="${"svelte-1vuywbf"}">centro de distribucion</h3>
+
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/pinmap.svg"}" alt="${"pinmap"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">CARRETERA PROGRESO KM 19.5 ENTRADA TAMANCHE M\xE9rida, Yucat\xE1n</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/horario.svg"}" alt="${"horario"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Horario:  Lunes a Viernes de 9am a 6:30 pm / Sabados de 9:00am a 2:00pm</p></div>
+         <div class="${"svelte-1vuywbf"}"><img src="${"/img/telefono.svg"}" alt="${"telefono"}" class="${"svelte-1vuywbf"}">
+         	<p class="${"svelte-1vuywbf"}">Tel(s). 9992 782777 <br> atencion@delgadoycia.mx</p></div></div></div></div>
+	<div class="${"col col2 svelte-1vuywbf"}"><iframe src="${"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20154.740016717802!2d-86.84050594881973!3d21.16708925039532!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf5e15ed82a0317a3!2sManuel%20Delgado!5e0!3m2!1ses-419!2smx!4v1630373939182!5m2!1ses-419!2smx"}" style="${"border:0;"}" allowfullscreen="${""}" loading="${"lazy"}" class="${"svelte-1vuywbf"}"></iframe></div>
+</section>`;
+});
+var css$b = {
+  code: "main.svelte-rgceyd{max-width:1440px;margin:0px auto}",
+  map: `{"version":3,"file":"locations.svelte","sources":["locations.svelte"],"sourcesContent":["<script context=\\"module\\">\\r\\n\\texport const prerender = true;\\r\\n<\/script>\\r\\n\\r\\n<script>\\r\\n\\timport LocationList from '$lib/LocationList.svelte';\\r\\n\\timport ContactRibbon from '$lib/ContactRibbon.svelte';\\r\\n<\/script>\\r\\n\\r\\n<svelte:head>\\r\\n\\t<title>Sucursales - Manuel Delgado</title>\\r\\n</svelte:head>\\r\\n\\r\\n\\r\\n<main>\\r\\n\\t<LocationList />\\r\\n\\t\\r\\n</main>\\r\\n<ContactRibbon />\\r\\n\\r\\n<style>\\r\\n\\tmain{\\r\\n\\t\\tmax-width: 1440px;\\r\\n\\t\\tmargin: 0px auto;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AAqBC,kBAAI,CAAC,AACJ,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,GAAG,CAAC,IAAI,AACjB,CAAC"}`
+};
+var prerender$3 = true;
+var Locations = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  $$result.css.add(css$b);
+  return `${$$result.head += `${$$result.title = `<title>Sucursales - Manuel Delgado</title>`, ""}`, ""}
+
+
+<main class="${"svelte-rgceyd"}">${validate_component(LocationList, "LocationList").$$render($$result, {}, {}, {})}</main>
+${validate_component(ContactRibbon, "ContactRibbon").$$render($$result, {}, {}, {})}`;
+});
+var locations = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Locations,
+  prerender: prerender$3
+});
+var css$a = {
   code: "p.svelte-180exj6{font-size:13px;font-weight:bold;color:#757575}a.svelte-180exj6{color:#757575}",
   map: `{"version":3,"file":"BreadCrumbs.svelte","sources":["BreadCrumbs.svelte"],"sourcesContent":["<script>\\r\\n\\texport let routes = [\\r\\n\\t\\t{label: 'Inicio', link: '/'},\\r\\n\\t\\t{label: 'Escritorios', link: '/product'},\\r\\n\\t]\\r\\n<\/script>\\r\\n<p>\\r\\n{#each routes as route, i }\\r\\n\\t<a href=\\"{route.link}\\">{route.label}</a>\\r\\n\\t{#if i !== routes.length - 1}\\r\\n\\t\\t&nbsp;/&nbsp;&nbsp;\\r\\n\\t{/if}\\r\\n{/each}\\r\\n</p>\\r\\n\\r\\n<style>\\r\\n\\tp{\\r\\n\\t\\tfont-size: 13px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tcolor: #757575;\\r\\n\\t}\\r\\n\\ta{\\r\\n\\t\\tcolor: #757575;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AAgBC,gBAAC,CAAC,AACD,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,KAAK,CAAE,OAAO,AACf,CAAC,AACD,gBAAC,CAAC,AACD,KAAK,CAAE,OAAO,AACf,CAAC"}`
 };
@@ -3061,7 +3583,7 @@ var BreadCrumbs = create_ssr_component(($$result, $$props, $$bindings, slots) =>
   let { routes = [{ label: "Inicio", link: "/" }, { label: "Escritorios", link: "/product" }] } = $$props;
   if ($$props.routes === void 0 && $$bindings.routes && routes !== void 0)
     $$bindings.routes(routes);
-  $$result.css.add(css$c);
+  $$result.css.add(css$a);
   return `<p class="${"svelte-180exj6"}">${each(routes, (route, i) => `<a${add_attribute("href", route.link, 0)} class="${"svelte-180exj6"}">${escape2(route.label)}</a>
 	${i !== routes.length - 1 ? `\xA0/\xA0\xA0` : ``}`)}
 </p>`;
@@ -3069,7 +3591,7 @@ var BreadCrumbs = create_ssr_component(($$result, $$props, $$bindings, slots) =>
 var ProductNav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return ``;
 });
-var css$b = {
+var css$9 = {
   code: "main.svelte-1dfyygb{max-width:1312px;margin:20px auto}",
   map: `{"version":3,"file":"products.svelte","sources":["products.svelte"],"sourcesContent":["<script context=\\"module\\">\\r\\n\\texport const prerender = true;\\r\\n<\/script>\\r\\n\\r\\n<script>\\r\\n\\timport ContactRibbon from '$lib/ContactRibbon.svelte';\\r\\n\\timport BreadCrumbs from '$lib/BreadCrumbs.svelte';\\r\\n\\timport ProductListing from '$lib/ProductListing.svelte';\\r\\n\\timport ProductNav from '$lib/ProductNav.svelte';\\r\\n\\r\\n\\tlet routes = [\\r\\n\\t\\t{label: 'Inicio', link: '/'},\\r\\n\\t\\t{label: 'Productos', link: '/products'},\\r\\n\\t]\\r\\n\\tlet products = [1,2,3,4,5,6,1,2,3];\\r\\n<\/script>\\r\\n\\r\\n<svelte:head>\\r\\n\\t<title>Productos - Manuel Delgado</title>\\r\\n</svelte:head>\\r\\n<main>\\r\\n\\t<BreadCrumbs {routes} />\\r\\n\\t<ProductNav />\\r\\n\\t<ProductListing {products}/>\\r\\n</main>\\r\\n<ContactRibbon />\\r\\n\\r\\n<style>\\r\\n\\tmain{\\r\\n\\t\\tmax-width: 1312px;\\r\\n\\t\\tmargin: 20px auto;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AA4BC,mBAAI,CAAC,AACJ,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,IAAI,CAAC,IAAI,AAClB,CAAC"}`
 };
@@ -3077,7 +3599,7 @@ var prerender$2 = true;
 var Products = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let routes = [{ label: "Inicio", link: "/" }, { label: "Productos", link: "/products" }];
   let products2 = [1, 2, 3, 4, 5, 6, 1, 2, 3];
-  $$result.css.add(css$b);
+  $$result.css.add(css$9);
   return `${$$result.head += `${$$result.title = `<title>Productos - Manuel Delgado</title>`, ""}`, ""}
 <main class="${"svelte-1dfyygb"}">${validate_component(BreadCrumbs, "BreadCrumbs").$$render($$result, { routes }, {}, {})}
 	${validate_component(ProductNav, "ProductNav").$$render($$result, {}, {}, {})}
@@ -3090,16 +3612,16 @@ var products = /* @__PURE__ */ Object.freeze({
   "default": Products,
   prerender: prerender$2
 });
-var css$a = {
+var css$8 = {
   code: 'section.svelte-ggdg73.svelte-ggdg73.svelte-ggdg73{color:white;padding:9px 0 100px}h3.svelte-ggdg73.svelte-ggdg73.svelte-ggdg73{color:white;font-size:15.3px;line-height:18.5px;font-weight:bold;margin-bottom:12px}h4.svelte-ggdg73.svelte-ggdg73.svelte-ggdg73{font-size:15.3px;line-height:18.5px;font-weight:bold;margin-bottom:12px;letter-spacing:1.6px}.layout-col.svelte-ggdg73.svelte-ggdg73.svelte-ggdg73{-webkit-box-sizing:border-box;box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.layout-row.svelte-ggdg73.svelte-ggdg73.svelte-ggdg73{-webkit-box-sizing:border-box;box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-ms-flex-line-pack:start;align-content:flex-start}.layout-row.svelte-ggdg73>.svelte-ggdg73.svelte-ggdg73,.layout-col.svelte-ggdg73>.svelte-ggdg73.svelte-ggdg73{max-width:100%;-webkit-box-sizing:border-box;box-sizing:border-box}.col2.svelte-ggdg73.svelte-ggdg73.svelte-ggdg73{width:calc(50% - 50px);margin-left:50px}.col2.svelte-ggdg73 p.svelte-ggdg73.svelte-ggdg73{font-size:13px}.col2.svelte-ggdg73 h4.svelte-ggdg73.svelte-ggdg73,.col2.svelte-ggdg73 p.svelte-ggdg73.svelte-ggdg73{color:#757575}.col2.svelte-ggdg73 form .default-input.svelte-ggdg73.svelte-ggdg73{width:100%;color:#a2a2a2;border-bottom:3px solid #d8d8d8;font-size:11px}.col2.svelte-ggdg73 form.svelte-ggdg73>div.svelte-ggdg73{position:relative}.col2.svelte-ggdg73 form [name="email"].svelte-ggdg73.svelte-ggdg73,.col2.svelte-ggdg73 form [name="telefono"].svelte-ggdg73.svelte-ggdg73{padding-left:40px}.col2.svelte-ggdg73 form>div.svelte-ggdg73 img.svelte-ggdg73{width:25px;height:25px;position:absolute;left:2px;top:0;bottom:5px;margin:auto}.col2.svelte-ggdg73 .button.svelte-ggdg73.svelte-ggdg73{margin-top:20px}.col1.svelte-ggdg73.svelte-ggdg73.svelte-ggdg73{position:relative;width:calc(50% - 50px);margin-right:50px}.col1.svelte-ggdg73>img.svelte-ggdg73.svelte-ggdg73{object-fit:cover;position:absolute;width:100%;height:100%}.col1.svelte-ggdg73 div.svelte-ggdg73.svelte-ggdg73{min-height:329px;z-index:1;position:relative;padding:20px}.col1.svelte-ggdg73 div.svelte-ggdg73 img.svelte-ggdg73{width:15px;height:auto;margin-top:42px}.col1.svelte-ggdg73 div.svelte-ggdg73 .button.svelte-ggdg73{background-color:white;margin-top:43px}@media only screen and (max-width: 680px){.col1.svelte-ggdg73.svelte-ggdg73.svelte-ggdg73,.col2.svelte-ggdg73.svelte-ggdg73.svelte-ggdg73{width:calc(100%);margin:0 15px 20px}}',
-  map: `{"version":3,"file":"ContactForm.svelte","sources":["ContactForm.svelte"],"sourcesContent":["<section class=\\"layout-row\\">\\r\\n\\t<div class=\\"col col1\\">\\r\\n        <img src=\\"/img/contacto.jpg\\" alt=\\"contacto\\" >\\r\\n        <div class=\\"layout-col\\">\\r\\n          <img src=\\"/img/pinmap.png\\" alt=\\"pinmap\\" >\\r\\n\\t\\t  <h3>Te esperamos</h3>\\r\\n\\t\\t  <a class=\\"button\\" href=\\"/\\">VER SUCURSALES</a>\\r\\n\\t    </div>\\r\\n\\t</div>\\r\\n\\t<div class=\\"col col2\\">\\r\\n\\t\\t<h4>CONT\xC1CTANOS</h4>\\r\\n\\t\\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\\r\\n\\r\\n\\t\\t<form action='/'>\\r\\n\\t      \\r\\n\\t      <div>\\r\\n\\t      \\t<img src=\\"/img/mail.svg\\" alt=\\"mail\\" >\\r\\n\\t\\t    <input type=\\"text\\" name=\\"email\\" placeholder=\\"CORREO\\" class=\\"default-input\\" />\\r\\n\\t\\t  </div>\\r\\n\\t\\t  <div>\\r\\n\\t\\t  \\t<img src=\\"/img/telefono.svg\\" alt=\\"telefono\\" >\\r\\n\\t\\t    <input type=\\"text\\" name=\\"telefono\\" placeholder=\\"TEL\xC9FONO\\" class=\\"default-input\\" />\\r\\n\\t\\t  </div>\\r\\n\\r\\n\\t\\t  <input type=\\"text\\" name=\\"mensaje\\" placeholder=\\"MENSAJE\\" class=\\"default-input\\" />\\r\\n\\r\\n\\t\\t  <input type=\\"submit\\" value=\\"Enviar\\"  class=\\"button\\" />\\r\\n        </form>\\r\\n\\t</div>\\r\\n</section>\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n<style>\\r\\n    \\r\\n\\tsection{\\r\\n\\t\\t/*background-image: linear-gradient(45deg, #396BC2, #688ECC, #00477D);*/\\r\\n\\t\\tcolor: white;\\r\\n\\t\\tpadding: 9px 0 100px;\\r\\n\\t}\\r\\n\\t/*section div{\\r\\n\\t\\tmax-width: 1143px;\\r\\n\\t\\tmargin: 10px auto;\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tjustify-content: space-between;\\r\\n\\t}*/\\r\\n\\th3{\\r\\n\\t\\tcolor: white;\\r\\n\\t\\tfont-size: 15.3px;\\r\\n\\t\\tline-height: 18.5px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tmargin-bottom: 12px;\\r\\n\\t}\\r\\n\\th4{\\r\\n\\t\\tfont-size: 15.3px;\\r\\n\\t\\tline-height: 18.5px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tmargin-bottom: 12px;\\r\\n\\t\\tletter-spacing: 1.6px;\\r\\n\\t}\\r\\n    \\r\\n    .layout-col{\\r\\n       -webkit-box-sizing: border-box;\\r\\n       box-sizing: border-box;\\r\\n       display: -webkit-box;\\r\\n       display: -ms-flexbox;\\r\\n       display: flex;\\r\\n       \\r\\n       -webkit-box-pack: start;\\r\\n       -ms-flex-pack: start;\\r\\n       justify-content: flex-start;\\r\\n\\r\\n       -webkit-box-align: center;\\r\\n       -ms-flex-align: center;\\r\\n       align-items: center;\\r\\n       -ms-flex-line-pack:center;\\r\\n       align-content:center;\\r\\n\\r\\n       -webkit-box-orient: vertical;\\r\\n       -webkit-box-direction: normal;\\r\\n       -ms-flex-direction: column;\\r\\n       flex-direction: column;\\r\\n    }\\r\\n\\t.layout-row{\\r\\n\\t\\t-webkit-box-sizing: border-box;\\r\\n        box-sizing: border-box;\\r\\n        display: -webkit-box;\\r\\n        display: -ms-flexbox;\\r\\n        display: flex;\\r\\n\\r\\n        -webkit-box-orient: horizontal;\\r\\n        -webkit-box-direction: normal;\\r\\n        -ms-flex-direction: row;\\r\\n        flex-direction: row;\\r\\n      \\r\\n        -ms-flex-wrap: wrap;\\r\\n        flex-wrap: wrap;\\r\\n      \\r\\n        -webkit-box-pack: start;\\r\\n        -ms-flex-pack: start;\\r\\n      \\r\\n        justify-content: flex-start;\\r\\n        -webkit-box-align: start;\\r\\n        -ms-flex-align: start;\\r\\n        align-items: flex-start;\\r\\n        -ms-flex-line-pack: start;\\r\\n        align-content: flex-start; \\r\\n\\t}\\r\\n\\t.layout-row > *,\\r\\n\\t.layout-col > *{\\r\\n      max-width: 100%;\\r\\n      -webkit-box-sizing: border-box;\\r\\n      box-sizing: border-box;\\r\\n    }\\r\\n\\t.col2{\\r\\n\\t   width: calc(50% - 50px);\\r\\n       margin-left: 50px;\\r\\n\\t}\\r\\n\\t.col2 p{\\r\\n\\t\\tfont-size: 13px;\\r\\n\\t}\\r\\n\\t.col2 h4, \\r\\n\\t.col2 p{\\r\\n      color: #757575;\\r\\n\\t}\\r\\n\\t.col2 form .default-input{\\r\\n      width: 100%;\\r\\n      color: #a2a2a2;\\r\\n      border-bottom: 3px solid #d8d8d8;\\r\\n      font-size: 11px;\\r\\n\\t}\\r\\n\\t.col2 form > div{\\r\\n\\t  position: relative;\\r\\n\\t}\\r\\n\\t.col2 form [name=\\"email\\"],\\r\\n\\t.col2 form [name=\\"telefono\\"]{\\r\\n\\t  padding-left: 40px;\\r\\n\\t}\\r\\n\\t.col2 form > div img{\\r\\n      width: 25px;\\r\\n      height: 25px;\\r\\n      position: absolute;\\r\\n      left: 2px;\\r\\n      top: 0;\\r\\n      bottom: 5px;\\r\\n      margin: auto;\\r\\n\\t}\\r\\n\\t.col2 .button{\\r\\n\\t\\tmargin-top: 20px;\\r\\n\\t}\\r\\n    \\r\\n    .col1{\\r\\n       position: relative;\\r\\n       width: calc(50% - 50px);\\r\\n       margin-right: 50px;\\r\\n    }\\r\\n\\t.col1 > img{\\r\\n\\t   object-fit: cover;\\r\\n\\t   position: absolute;\\r\\n\\t   width: 100%;\\r\\n\\t   height: 100%;\\r\\n\\r\\n\\t}\\r\\n\\t.col1 div{\\r\\n\\t\\tmin-height: 329px;\\r\\n\\t\\tz-index: 1;\\r\\n\\t\\tposition: relative;\\r\\n\\t\\tpadding: 20px;\\r\\n\\t}\\r\\n\\t.col1 div img{\\r\\n\\t\\twidth: 15px;\\r\\n        height: auto;\\r\\n        margin-top: 42px;\\r\\n\\t}\\r\\n\\t.col1 div .button{\\r\\n        background-color: white;\\r\\n        margin-top: 43px;\\r\\n\\t}\\r\\n\\r\\n\\r\\n\\t@media only screen and (max-width: 680px){\\r\\n      .col1,\\r\\n      .col2{\\r\\n        width: calc(100%);\\r\\n        margin:  0 15px 20px;\\r\\n      }\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"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"}`
+  map: `{"version":3,"file":"ContactForm.svelte","sources":["ContactForm.svelte"],"sourcesContent":["<section class=\\"layout-row\\">\\r\\n\\t<div class=\\"col col1\\">\\r\\n        <img src=\\"/img/contacto.jpg\\" alt=\\"contacto\\" >\\r\\n        <div class=\\"layout-col\\">\\r\\n          <img src=\\"/img/pinmap.png\\" alt=\\"pinmap\\" >\\r\\n\\t\\t  <h3>Te esperamos</h3>\\r\\n\\t\\t  <a class=\\"button\\" href=\\"/locations\\">VER SUCURSALES</a>\\r\\n\\t    </div>\\r\\n\\t</div>\\r\\n\\t<div class=\\"col col2\\">\\r\\n\\t\\t<h4>CONT\xC1CTANOS</h4>\\r\\n\\t\\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\\r\\n\\r\\n\\t\\t<form action='/'>\\r\\n\\t      \\r\\n\\t      <div>\\r\\n\\t      \\t<img src=\\"/img/mail.svg\\" alt=\\"mail\\" >\\r\\n\\t\\t    <input type=\\"text\\" name=\\"email\\" placeholder=\\"CORREO\\" class=\\"default-input\\" />\\r\\n\\t\\t  </div>\\r\\n\\t\\t  <div>\\r\\n\\t\\t  \\t<img src=\\"/img/telefono.svg\\" alt=\\"telefono\\" >\\r\\n\\t\\t    <input type=\\"text\\" name=\\"telefono\\" placeholder=\\"TEL\xC9FONO\\" class=\\"default-input\\" />\\r\\n\\t\\t  </div>\\r\\n\\r\\n\\t\\t  <input type=\\"text\\" name=\\"mensaje\\" placeholder=\\"MENSAJE\\" class=\\"default-input\\" />\\r\\n\\r\\n\\t\\t  <input type=\\"submit\\" value=\\"Enviar\\"  class=\\"button\\" />\\r\\n        </form>\\r\\n\\t</div>\\r\\n</section>\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n<style>\\r\\n    \\r\\n\\tsection{\\r\\n\\t\\t/*background-image: linear-gradient(45deg, #396BC2, #688ECC, #00477D);*/\\r\\n\\t\\tcolor: white;\\r\\n\\t\\tpadding: 9px 0 100px;\\r\\n\\t}\\r\\n\\t/*section div{\\r\\n\\t\\tmax-width: 1143px;\\r\\n\\t\\tmargin: 10px auto;\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tjustify-content: space-between;\\r\\n\\t}*/\\r\\n\\th3{\\r\\n\\t\\tcolor: white;\\r\\n\\t\\tfont-size: 15.3px;\\r\\n\\t\\tline-height: 18.5px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tmargin-bottom: 12px;\\r\\n\\t}\\r\\n\\th4{\\r\\n\\t\\tfont-size: 15.3px;\\r\\n\\t\\tline-height: 18.5px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tmargin-bottom: 12px;\\r\\n\\t\\tletter-spacing: 1.6px;\\r\\n\\t}\\r\\n    \\r\\n    .layout-col{\\r\\n       -webkit-box-sizing: border-box;\\r\\n       box-sizing: border-box;\\r\\n       display: -webkit-box;\\r\\n       display: -ms-flexbox;\\r\\n       display: flex;\\r\\n       \\r\\n       -webkit-box-pack: start;\\r\\n       -ms-flex-pack: start;\\r\\n       justify-content: flex-start;\\r\\n\\r\\n       -webkit-box-align: center;\\r\\n       -ms-flex-align: center;\\r\\n       align-items: center;\\r\\n       -ms-flex-line-pack:center;\\r\\n       align-content:center;\\r\\n\\r\\n       -webkit-box-orient: vertical;\\r\\n       -webkit-box-direction: normal;\\r\\n       -ms-flex-direction: column;\\r\\n       flex-direction: column;\\r\\n    }\\r\\n\\t.layout-row{\\r\\n\\t\\t-webkit-box-sizing: border-box;\\r\\n        box-sizing: border-box;\\r\\n        display: -webkit-box;\\r\\n        display: -ms-flexbox;\\r\\n        display: flex;\\r\\n\\r\\n        -webkit-box-orient: horizontal;\\r\\n        -webkit-box-direction: normal;\\r\\n        -ms-flex-direction: row;\\r\\n        flex-direction: row;\\r\\n      \\r\\n        -ms-flex-wrap: wrap;\\r\\n        flex-wrap: wrap;\\r\\n      \\r\\n        -webkit-box-pack: start;\\r\\n        -ms-flex-pack: start;\\r\\n      \\r\\n        justify-content: flex-start;\\r\\n        -webkit-box-align: start;\\r\\n        -ms-flex-align: start;\\r\\n        align-items: flex-start;\\r\\n        -ms-flex-line-pack: start;\\r\\n        align-content: flex-start; \\r\\n\\t}\\r\\n\\t.layout-row > *,\\r\\n\\t.layout-col > *{\\r\\n      max-width: 100%;\\r\\n      -webkit-box-sizing: border-box;\\r\\n      box-sizing: border-box;\\r\\n    }\\r\\n\\t.col2{\\r\\n\\t   width: calc(50% - 50px);\\r\\n       margin-left: 50px;\\r\\n\\t}\\r\\n\\t.col2 p{\\r\\n\\t\\tfont-size: 13px;\\r\\n\\t}\\r\\n\\t.col2 h4, \\r\\n\\t.col2 p{\\r\\n      color: #757575;\\r\\n\\t}\\r\\n\\t.col2 form .default-input{\\r\\n      width: 100%;\\r\\n      color: #a2a2a2;\\r\\n      border-bottom: 3px solid #d8d8d8;\\r\\n      font-size: 11px;\\r\\n\\t}\\r\\n\\t.col2 form > div{\\r\\n\\t  position: relative;\\r\\n\\t}\\r\\n\\t.col2 form [name=\\"email\\"],\\r\\n\\t.col2 form [name=\\"telefono\\"]{\\r\\n\\t  padding-left: 40px;\\r\\n\\t}\\r\\n\\t.col2 form > div img{\\r\\n      width: 25px;\\r\\n      height: 25px;\\r\\n      position: absolute;\\r\\n      left: 2px;\\r\\n      top: 0;\\r\\n      bottom: 5px;\\r\\n      margin: auto;\\r\\n\\t}\\r\\n\\t.col2 .button{\\r\\n\\t\\tmargin-top: 20px;\\r\\n\\t}\\r\\n    \\r\\n    .col1{\\r\\n       position: relative;\\r\\n       width: calc(50% - 50px);\\r\\n       margin-right: 50px;\\r\\n    }\\r\\n\\t.col1 > img{\\r\\n\\t   object-fit: cover;\\r\\n\\t   position: absolute;\\r\\n\\t   width: 100%;\\r\\n\\t   height: 100%;\\r\\n\\r\\n\\t}\\r\\n\\t.col1 div{\\r\\n\\t\\tmin-height: 329px;\\r\\n\\t\\tz-index: 1;\\r\\n\\t\\tposition: relative;\\r\\n\\t\\tpadding: 20px;\\r\\n\\t}\\r\\n\\t.col1 div img{\\r\\n\\t\\twidth: 15px;\\r\\n        height: auto;\\r\\n        margin-top: 42px;\\r\\n\\t}\\r\\n\\t.col1 div .button{\\r\\n        background-color: white;\\r\\n        margin-top: 43px;\\r\\n\\t}\\r\\n\\r\\n\\r\\n\\t@media only screen and (max-width: 680px){\\r\\n      .col1,\\r\\n      .col2{\\r\\n        width: calc(100%);\\r\\n        margin:  0 15px 20px;\\r\\n      }\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"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"}`
 };
 var ContactForm = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$a);
+  $$result.css.add(css$8);
   return `<section class="${"layout-row svelte-ggdg73"}"><div class="${"col col1 svelte-ggdg73"}"><img src="${"/img/contacto.jpg"}" alt="${"contacto"}" class="${"svelte-ggdg73"}">
         <div class="${"layout-col svelte-ggdg73"}"><img src="${"/img/pinmap.png"}" alt="${"pinmap"}" class="${"svelte-ggdg73"}">
 		  <h3 class="${"svelte-ggdg73"}">Te esperamos</h3>
-		  <a class="${"button svelte-ggdg73"}" href="${"/"}">VER SUCURSALES</a></div></div>
+		  <a class="${"button svelte-ggdg73"}" href="${"/locations"}">VER SUCURSALES</a></div></div>
 	<div class="${"col col2 svelte-ggdg73"}"><h4 class="${"svelte-ggdg73"}">CONT\xC1CTANOS</h4>
 		<p class="${"svelte-ggdg73"}">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
@@ -3113,13 +3635,13 @@ var ContactForm = create_ssr_component(($$result, $$props, $$bindings, slots) =>
 		  <input type="${"submit"}" value="${"Enviar"}" class="${"button svelte-ggdg73"}"></form></div>
 </section>`;
 });
-var css$9 = {
+var css$7 = {
   code: "main.svelte-1fnc3j6{max-width:1084px;margin:38px auto}",
   map: `{"version":3,"file":"contact.svelte","sources":["contact.svelte"],"sourcesContent":["<script context=\\"module\\">\\r\\n\\texport const prerender = true;\\r\\n<\/script>\\r\\n\\r\\n<script>\\r\\n\\timport ContactForm from '$lib/ContactForm.svelte';\\r\\n\\timport ContactRibbon from '$lib/ContactRibbon.svelte';\\r\\n<\/script>\\r\\n\\r\\n<svelte:head>\\r\\n\\t<title>Contacto - Manuel Delgado</title>\\r\\n</svelte:head>\\r\\n\\r\\n\\r\\n<main>\\r\\n\\t<ContactForm />\\r\\n\\t\\r\\n</main>\\r\\n<ContactRibbon />\\r\\n\\r\\n<style>\\r\\n\\tmain{\\r\\n\\t\\tmax-width: 1084px;\\r\\n\\t\\tmargin: 38px auto;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AAqBC,mBAAI,CAAC,AACJ,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,IAAI,CAAC,IAAI,AAClB,CAAC"}`
 };
 var prerender$1 = true;
 var Contact = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$9);
+  $$result.css.add(css$7);
   return `${$$result.head += `${$$result.title = `<title>Contacto - Manuel Delgado</title>`, ""}`, ""}
 
 
@@ -3132,38 +3654,56 @@ var contact = /* @__PURE__ */ Object.freeze({
   "default": Contact,
   prerender: prerender$1
 });
-var css$8 = {
+var css$6 = {
   code: "h4.svelte-te28r2.svelte-te28r2{text-transform:uppercase;color:#a2a2a2;font-weight:bold;font-size:11.5px;margin:12px 0 7px}section.svelte-te28r2.svelte-te28r2{display:flex}button.svelte-te28r2.svelte-te28r2{border:2px solid #B7B7B7;width:46px;text-align:center;font-size:30px;line-height:20px;margin:0;padding:0 12px;height:43px;border-radius:0}section.svelte-te28r2 div.svelte-te28r2{width:66px;text-align:center;line-height:39px;border-top:2px solid #B7B7B7;border-bottom:2px solid #B7B7B7;color:black;font-weight:bold}",
-  map: '{"version":3,"file":"QuantityPicker.svelte","sources":["QuantityPicker.svelte"],"sourcesContent":["<script>\\r\\n\\texport let quantity = 1;\\r\\n<\/script>\\r\\n<article>\\r\\n\\t<h4>Cantidad</h4>\\r\\n\\t<section>\\r\\n\\t\\t<button>-</button>\\r\\n\\t\\t<div>{quantity}</div>\\r\\n\\t\\t<button>+</button>\\r\\n\\t</section>\\r\\n</article>\\r\\n<style>\\r\\n\\th4{\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tcolor: #a2a2a2;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tfont-size: 11.5px;\\r\\n\\t\\tmargin: 12px 0 7px;\\r\\n\\t}\\r\\n\\tsection{\\r\\n\\t\\tdisplay: flex;\\r\\n\\t}\\r\\n\\tbutton{\\r\\n\\t\\tborder: 2px solid #B7B7B7;\\r\\n\\t\\twidth: 46px;\\r\\n\\t\\ttext-align: center;\\r\\n\\t\\tfont-size: 30px;\\r\\n\\t\\tline-height: 20px;\\r\\n\\t\\tmargin: 0;\\r\\n\\t\\tpadding: 0 12px;\\r\\n\\t\\theight: 43px;\\r\\n\\t\\tborder-radius: 0;\\r\\n\\t}\\r\\n\\tsection div{\\r\\n\\t\\twidth: 66px;\\r\\n\\t\\ttext-align: center;\\r\\n\\t\\tline-height: 39px;\\r\\n\\t\\tborder-top: 2px solid #B7B7B7;\\r\\n\\t\\tborder-bottom: 2px solid #B7B7B7;\\r\\n\\t\\tcolor: black;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AAYC,8BAAE,CAAC,AACF,cAAc,CAAE,SAAS,CACzB,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,IAAI,CACjB,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,GAAG,AACnB,CAAC,AACD,mCAAO,CAAC,AACP,OAAO,CAAE,IAAI,AACd,CAAC,AACD,kCAAM,CAAC,AACN,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CACzB,KAAK,CAAE,IAAI,CACX,UAAU,CAAE,MAAM,CAClB,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CAAC,IAAI,CACf,MAAM,CAAE,IAAI,CACZ,aAAa,CAAE,CAAC,AACjB,CAAC,AACD,qBAAO,CAAC,iBAAG,CAAC,AACX,KAAK,CAAE,IAAI,CACX,UAAU,CAAE,MAAM,CAClB,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAC7B,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAChC,KAAK,CAAE,KAAK,CACZ,WAAW,CAAE,IAAI,AAElB,CAAC"}'
+  map: '{"version":3,"file":"QuantityPicker.svelte","sources":["QuantityPicker.svelte"],"sourcesContent":["<script>\\r\\n\\texport let max;\\r\\n\\texport let qty;\\r\\n\\texport let clicked = false;\\r\\n\\texport let disable = false;\\r\\n\\t// export let min = 1;\\r\\n    \\r\\n    let updateQty = (num) => {\\r\\n      if(disable == true){\\r\\n        return;\\r\\n      }\\r\\n      qty += num;\\r\\n      if(qty > max){\\r\\n        qty = max;\\r\\n      }\\r\\n      if(qty < 1){\\r\\n        qty = 1;\\r\\n      }\\r\\n      clicked=true;\\r\\n    }\\r\\n\\r\\n    \\r\\n\\r\\n<\/script>\\r\\n\\r\\n<article>\\r\\n\\t<h4>Cantidad</h4>\\r\\n\\t<section>\\r\\n\\t\\t<button on:click=\\"{ () => {updateQty(-1)}}\\">-</button>\\r\\n\\t\\t<div>{qty} / {max}</div>\\r\\n\\t\\t<button on:click=\\"{ () => {updateQty(1)}}\\">+</button>\\r\\n\\t</section>\\r\\n</article>\\r\\n\\r\\n<style>\\r\\n\\th4{\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tcolor: #a2a2a2;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tfont-size: 11.5px;\\r\\n\\t\\tmargin: 12px 0 7px;\\r\\n\\t}\\r\\n\\tsection{\\r\\n\\t\\tdisplay: flex;\\r\\n\\t}\\r\\n\\tbutton{\\r\\n\\t\\tborder: 2px solid #B7B7B7;\\r\\n\\t\\twidth: 46px;\\r\\n\\t\\ttext-align: center;\\r\\n\\t\\tfont-size: 30px;\\r\\n\\t\\tline-height: 20px;\\r\\n\\t\\tmargin: 0;\\r\\n\\t\\tpadding: 0 12px;\\r\\n\\t\\theight: 43px;\\r\\n\\t\\tborder-radius: 0;\\r\\n\\t}\\r\\n\\tsection div{\\r\\n\\t\\twidth: 66px;\\r\\n\\t\\ttext-align: center;\\r\\n\\t\\tline-height: 39px;\\r\\n\\t\\tborder-top: 2px solid #B7B7B7;\\r\\n\\t\\tborder-bottom: 2px solid #B7B7B7;\\r\\n\\t\\tcolor: black;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AAmCC,8BAAE,CAAC,AACF,cAAc,CAAE,SAAS,CACzB,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,IAAI,CACjB,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,GAAG,AACnB,CAAC,AACD,mCAAO,CAAC,AACP,OAAO,CAAE,IAAI,AACd,CAAC,AACD,kCAAM,CAAC,AACN,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CACzB,KAAK,CAAE,IAAI,CACX,UAAU,CAAE,MAAM,CAClB,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CAAC,IAAI,CACf,MAAM,CAAE,IAAI,CACZ,aAAa,CAAE,CAAC,AACjB,CAAC,AACD,qBAAO,CAAC,iBAAG,CAAC,AACX,KAAK,CAAE,IAAI,CACX,UAAU,CAAE,MAAM,CAClB,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAC7B,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAChC,KAAK,CAAE,KAAK,CACZ,WAAW,CAAE,IAAI,AAElB,CAAC"}'
 };
 var QuantityPicker = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { quantity = 1 } = $$props;
-  if ($$props.quantity === void 0 && $$bindings.quantity && quantity !== void 0)
-    $$bindings.quantity(quantity);
-  $$result.css.add(css$8);
+  let { max } = $$props;
+  let { qty } = $$props;
+  let { clicked = false } = $$props;
+  let { disable = false } = $$props;
+  if ($$props.max === void 0 && $$bindings.max && max !== void 0)
+    $$bindings.max(max);
+  if ($$props.qty === void 0 && $$bindings.qty && qty !== void 0)
+    $$bindings.qty(qty);
+  if ($$props.clicked === void 0 && $$bindings.clicked && clicked !== void 0)
+    $$bindings.clicked(clicked);
+  if ($$props.disable === void 0 && $$bindings.disable && disable !== void 0)
+    $$bindings.disable(disable);
+  $$result.css.add(css$6);
   return `<article><h4 class="${"svelte-te28r2"}">Cantidad</h4>
 	<section class="${"svelte-te28r2"}"><button class="${"svelte-te28r2"}">-</button>
-		<div class="${"svelte-te28r2"}">${escape2(quantity)}</div>
+		<div class="${"svelte-te28r2"}">${escape2(qty)} / ${escape2(max)}</div>
 		<button class="${"svelte-te28r2"}">+</button></section>
 </article>`;
 });
-var css$7 = {
-  code: "article.svelte-18zgchz.svelte-18zgchz{margin-left:40px}ul.svelte-18zgchz.svelte-18zgchz{list-style-type:none;display:flex;margin:0;padding:0}li.svelte-18zgchz button.svelte-18zgchz{width:44px;height:43px;border:2px solid #b6b6b6;margin:0 12px 0 0;border-radius:0}h4.svelte-18zgchz.svelte-18zgchz{text-transform:uppercase;color:#a2a2a2;font-weight:bold;font-size:11.5px;margin:12px 0 7px}li.svelte-18zgchz button.selected.svelte-18zgchz{border:6px solid #b6b6b6;width:57px;height:55px;margin-top:-6px;margin-left:-8px;margin-right:4px}",
-  map: `{"version":3,"file":"ColorPicker.svelte","sources":["ColorPicker.svelte"],"sourcesContent":["<script>\\r\\n\\texport let options = ['#DA9458','#282828', '#634E41','#552A1A','#C9C3C3'];\\r\\n\\texport let selected = 1;\\r\\n<\/script>\\r\\n<article>\\r\\n\\t<h4>Color</h4>\\r\\n\\t<ul>\\r\\n\\t\\t{#each options as option,i}\\r\\n\\t\\t\\t<li><button style=\\"background: {option};\\" class:selected={i === selected}></button></li>\\t\\r\\n\\t\\t{/each}\\r\\n\\t</ul>\\r\\n</article>\\r\\n\\r\\n<style>\\r\\n\\tarticle{\\r\\n\\t\\tmargin-left: 40px;\\r\\n\\t}\\r\\n\\tul{\\r\\n\\t\\tlist-style-type: none;\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tmargin: 0;\\r\\n\\t\\tpadding: 0;\\r\\n\\t}\\r\\n\\tli button{\\r\\n\\t\\twidth: 44px;\\r\\n\\t\\theight: 43px;\\r\\n\\t\\tborder: 2px solid #b6b6b6;\\r\\n\\t\\tmargin: 0 12px 0 0;\\r\\n\\t\\tborder-radius: 0;\\r\\n\\t}\\r\\n\\th4{\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tcolor: #a2a2a2;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tfont-size: 11.5px;\\r\\n\\t\\tmargin: 12px 0 7px;\\r\\n\\t}\\r\\n\\tli button.selected{\\r\\n\\t\\tborder: 6px solid #b6b6b6;\\r\\n\\t\\twidth: 57px;\\r\\n\\t\\theight: 55px;\\r\\n\\t\\tmargin-top: -6px;\\r\\n\\t\\tmargin-left: -8px;\\r\\n\\t\\tmargin-right: 4px;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AAcC,qCAAO,CAAC,AACP,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,gCAAE,CAAC,AACF,eAAe,CAAE,IAAI,CACrB,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,AACX,CAAC,AACD,iBAAE,CAAC,qBAAM,CAAC,AACT,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CACzB,MAAM,CAAE,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CAClB,aAAa,CAAE,CAAC,AACjB,CAAC,AACD,gCAAE,CAAC,AACF,cAAc,CAAE,SAAS,CACzB,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,IAAI,CACjB,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,GAAG,AACnB,CAAC,AACD,iBAAE,CAAC,MAAM,wBAAS,CAAC,AAClB,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CACzB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,IAAI,CAChB,WAAW,CAAE,IAAI,CACjB,YAAY,CAAE,GAAG,AAClB,CAAC"}`
+var css$5 = {
+  code: "article.svelte-mijtsa.svelte-mijtsa{margin-left:40px}ul.svelte-mijtsa.svelte-mijtsa{list-style-type:none;display:flex;margin:0;padding:0}li.svelte-mijtsa button.svelte-mijtsa{width:44px;height:43px;border:2px solid #b6b6b6;margin:0 12px 0 0;border-radius:0}h4.svelte-mijtsa.svelte-mijtsa{text-transform:uppercase;color:#a2a2a2;font-weight:bold;font-size:11.5px;margin:12px 0 7px}li.svelte-mijtsa button.selected.svelte-mijtsa{border:6px solid #b6b6b6;width:57px;height:55px;margin-top:-6px;margin-left:-8px;margin-right:4px}li.svelte-mijtsa button.cafe.svelte-mijtsa{background-color:#DA9458}li.svelte-mijtsa button.blanco.svelte-mijtsa{background-color:#C9C3C3}li.svelte-mijtsa button.cafe-obscuro.svelte-mijtsa{background-color:#634E41}li.svelte-mijtsa button.negro.svelte-mijtsa{background-color:#282828}",
+  map: `{"version":3,"file":"ColorPicker.svelte","sources":["ColorPicker.svelte"],"sourcesContent":["<script>\\r\\n\\t// export let options = ['#DA9458','#282828', '#634E41','#552A1A','#C9C3C3'];\\r\\n\\texport let variants;\\r\\n\\texport let selected = 0;\\r\\n\\texport let qty;\\r\\n\\texport let gall;\\r\\n\\texport let images;\\r\\n    \\r\\n\\tlet updateVariant = (num)=>{\\r\\n      selected = num;\\r\\n      qty = 1;\\r\\n      if(gall != null && images != null){\\r\\n        for (let i = images.length - 1; i >= 0; i--) {\\r\\n            if(images[i].node.id == variants[num].image.id){\\r\\n               gall.slideTo(i+1,false,false);\\r\\n               break;\\r\\n            }\\r\\n        }\\r\\n      }\\r\\n\\t}\\r\\n<\/script>\\r\\n<article>\\r\\n\\t<h4>Color</h4>\\r\\n\\t<ul>\\r\\n\\t\\t{#each variants as variant, i}\\r\\n\\t\\t\\t<li><button class=\\"{variant.title.replaceAll(' ', '-')} {selected === i ? 'selected' : ''}\\"  \\r\\n\\t\\t\\t\\t        on:click=\\"{() => {updateVariant(i)} }\\"></button></li>\\t\\r\\n\\t\\t{/each}\\r\\n\\t</ul>\\r\\n</article>\\r\\n\\r\\n<style>\\r\\n\\tarticle{\\r\\n\\t\\tmargin-left: 40px;\\r\\n\\t}\\r\\n\\tul{\\r\\n\\t\\tlist-style-type: none;\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tmargin: 0;\\r\\n\\t\\tpadding: 0;\\r\\n\\t}\\r\\n\\tli button{\\r\\n\\t\\twidth: 44px;\\r\\n\\t\\theight: 43px;\\r\\n\\t\\tborder: 2px solid #b6b6b6;\\r\\n\\t\\tmargin: 0 12px 0 0;\\r\\n\\t\\tborder-radius: 0;\\r\\n\\t}\\r\\n\\th4{\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tcolor: #a2a2a2;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tfont-size: 11.5px;\\r\\n\\t\\tmargin: 12px 0 7px;\\r\\n\\t}\\r\\n\\tli button.selected{\\r\\n\\t\\tborder: 6px solid #b6b6b6;\\r\\n\\t\\twidth: 57px;\\r\\n\\t\\theight: 55px;\\r\\n\\t\\tmargin-top: -6px;\\r\\n\\t\\tmargin-left: -8px;\\r\\n\\t\\tmargin-right: 4px;\\r\\n\\t}\\r\\n\\r\\n\\tli button.cafe{\\r\\n      background-color: #DA9458;\\r\\n\\t}\\r\\n\\tli button.blanco{\\r\\n\\t  background-color: #C9C3C3;\\r\\n\\t}\\r\\n\\tli button.cafe-obscuro{\\r\\n\\t  background-color: #634E41;\\r\\n\\t}\\r\\n\\tli button.negro{\\r\\n\\t  background-color: #282828;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AAgCC,mCAAO,CAAC,AACP,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,8BAAE,CAAC,AACF,eAAe,CAAE,IAAI,CACrB,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,AACX,CAAC,AACD,gBAAE,CAAC,oBAAM,CAAC,AACT,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CACzB,MAAM,CAAE,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CAClB,aAAa,CAAE,CAAC,AACjB,CAAC,AACD,8BAAE,CAAC,AACF,cAAc,CAAE,SAAS,CACzB,KAAK,CAAE,OAAO,CACd,WAAW,CAAE,IAAI,CACjB,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,GAAG,AACnB,CAAC,AACD,gBAAE,CAAC,MAAM,uBAAS,CAAC,AAClB,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CACzB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,UAAU,CAAE,IAAI,CAChB,WAAW,CAAE,IAAI,CACjB,YAAY,CAAE,GAAG,AAClB,CAAC,AAED,gBAAE,CAAC,MAAM,mBAAK,CAAC,AACV,gBAAgB,CAAE,OAAO,AAC9B,CAAC,AACD,gBAAE,CAAC,MAAM,qBAAO,CAAC,AACf,gBAAgB,CAAE,OAAO,AAC3B,CAAC,AACD,gBAAE,CAAC,MAAM,2BAAa,CAAC,AACrB,gBAAgB,CAAE,OAAO,AAC3B,CAAC,AACD,gBAAE,CAAC,MAAM,oBAAM,CAAC,AACd,gBAAgB,CAAE,OAAO,AAC3B,CAAC"}`
 };
 var ColorPicker = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { options: options2 = ["#DA9458", "#282828", "#634E41", "#552A1A", "#C9C3C3"] } = $$props;
-  let { selected: selected2 = 1 } = $$props;
-  if ($$props.options === void 0 && $$bindings.options && options2 !== void 0)
-    $$bindings.options(options2);
-  if ($$props.selected === void 0 && $$bindings.selected && selected2 !== void 0)
-    $$bindings.selected(selected2);
-  $$result.css.add(css$7);
-  return `<article class="${"svelte-18zgchz"}"><h4 class="${"svelte-18zgchz"}">Color</h4>
-	<ul class="${"svelte-18zgchz"}">${each(options2, (option, i) => `<li class="${"svelte-18zgchz"}"><button style="${"background: " + escape2(option) + ";"}" class="${["svelte-18zgchz", i === selected2 ? "selected" : ""].join(" ").trim()}"></button></li>`)}</ul>
+  let { variants } = $$props;
+  let { selected = 0 } = $$props;
+  let { qty } = $$props;
+  let { gall } = $$props;
+  let { images } = $$props;
+  if ($$props.variants === void 0 && $$bindings.variants && variants !== void 0)
+    $$bindings.variants(variants);
+  if ($$props.selected === void 0 && $$bindings.selected && selected !== void 0)
+    $$bindings.selected(selected);
+  if ($$props.qty === void 0 && $$bindings.qty && qty !== void 0)
+    $$bindings.qty(qty);
+  if ($$props.gall === void 0 && $$bindings.gall && gall !== void 0)
+    $$bindings.gall(gall);
+  if ($$props.images === void 0 && $$bindings.images && images !== void 0)
+    $$bindings.images(images);
+  $$result.css.add(css$5);
+  return `<article class="${"svelte-mijtsa"}"><h4 class="${"svelte-mijtsa"}">Color</h4>
+	<ul class="${"svelte-mijtsa"}">${each(variants, (variant, i) => `<li class="${"svelte-mijtsa"}"><button class="${escape2(variant.title.replaceAll(" ", "-")) + " " + escape2(selected === i ? "selected" : "") + " svelte-mijtsa"}"></button></li>`)}</ul>
 </article>`;
 });
-var css$6 = {
+var css$4 = {
   code: "section.svelte-1az4jhk{margin-top:26px}article.svelte-1az4jhk{display:flex;justify-content:space-between;color:#757575;font-size:14px;border-top:2px solid #e4e4e4;padding-top:8px}article.svelte-1az4jhk:last-child{border-bottom:2px solid #e4e4e4}i.svelte-1az4jhk{font-size:30px;float:left;color:#a2a2a2;margin-right:8px;height:50px;position:relative;top:12px}i.icon-envios-01.svelte-1az4jhk{font-size:57px;float:left;top:-5px;height:50px}.label.svelte-1az4jhk{text-transform:uppercase;color:#a2a2a2;font-size:11.5px;font-weight:bold;top:17px;position:relative}.title.svelte-1az4jhk{font-weight:bold}button.svelte-1az4jhk{border:none;font-size:22px;background-color:transparent;margin-bottom:10px}",
   map: `{"version":3,"file":"PolicyInfo.svelte","sources":["PolicyInfo.svelte"],"sourcesContent":["<script>\\r\\n\\tlet policies = [\\r\\n\\t\\t{ icon: 'icon-envios-01', label: 'ENV\xCDOS GRATIS', title:'Politicas de envio'},\\r\\n\\t\\t{ icon: 'icon-devolu-01', label: 'DEVOLUCI\xD3N SIN COSTO', title:'Politicas de devoluci\xF3n'},\\r\\n\\t\\t{ icon: 'icon-garantia-01', label: 'GARANT\xCDA DE UN A\xD1O', title:'Nuestra garant\xEDa'},\\r\\n\\t]\\r\\n<\/script>\\r\\n<section>\\r\\n\\t{#each policies as policy}\\r\\n\\t\\t<article>\\r\\n\\t\\t\\t<div>\\r\\n\\t\\t\\t\\t<i class='{policy.icon}'></i>\\r\\n\\t\\t\\t\\t<span class='label'>{policy.label}</span>\\r\\n\\t\\t\\t</div>\\r\\n\\t\\t\\t<div>\\r\\n\\t\\t\\t\\t<span class='title'>{policy.title}</span>\\r\\n\\t\\t\\t\\t<button>+</button>\\r\\n\\t\\t\\t</div>\\r\\n\\t\\t</article>\\r\\n\\t{/each}\\r\\n</section>\\r\\n\\r\\n<style>\\r\\n\\tsection{\\r\\n\\t\\tmargin-top: 26px;\\r\\n\\t}\\r\\n\\tarticle{\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tjustify-content: space-between;\\r\\n\\t\\tcolor: #757575;\\r\\n\\t\\tfont-size: 14px;\\r\\n\\t\\tborder-top: 2px solid #e4e4e4;\\r\\n\\t\\tpadding-top: 8px;\\r\\n\\t}\\r\\n\\tarticle:last-child{\\r\\n\\t\\tborder-bottom: 2px solid #e4e4e4;\\r\\n\\t}\\r\\n\\ti{\\r\\n\\t\\tfont-size: 30px;\\r\\n\\t\\tfloat:  left;\\r\\n\\t\\tcolor:  #a2a2a2;\\r\\n\\t\\tmargin-right: 8px;\\r\\n\\t\\theight: 50px;\\r\\n\\t\\tposition: relative;\\r\\n\\t\\ttop: 12px;\\r\\n\\t}\\r\\n\\ti.icon-envios-01{\\r\\n\\t\\tfont-size: 57px;\\r\\n\\t\\tfloat: left;\\r\\n\\t\\ttop: -5px;\\r\\n\\t\\theight: 50px;\\r\\n\\t}\\r\\n\\t.label{\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tcolor: #a2a2a2;\\r\\n\\t\\tfont-size: 11.5px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\ttop: 17px;\\r\\n\\t\\tposition: relative;\\r\\n\\t}\\r\\n\\t.title{\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t}\\r\\n\\tbutton{\\r\\n\\t\\tborder: none;\\r\\n\\t\\tfont-size: 22px;\\r\\n\\t\\tbackground-color: transparent;\\r\\n\\t\\tmargin-bottom: 10px;\\r\\n\\t}\\r\\n\\r\\n</style>"],"names":[],"mappings":"AAuBC,sBAAO,CAAC,AACP,UAAU,CAAE,IAAI,AACjB,CAAC,AACD,sBAAO,CAAC,AACP,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,KAAK,CAAE,OAAO,CACd,SAAS,CAAE,IAAI,CACf,UAAU,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAC7B,WAAW,CAAE,GAAG,AACjB,CAAC,AACD,sBAAO,WAAW,CAAC,AAClB,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,AACjC,CAAC,AACD,gBAAC,CAAC,AACD,SAAS,CAAE,IAAI,CACf,KAAK,CAAG,IAAI,CACZ,KAAK,CAAG,OAAO,CACf,YAAY,CAAE,GAAG,CACjB,MAAM,CAAE,IAAI,CACZ,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,IAAI,AACV,CAAC,AACD,CAAC,8BAAe,CAAC,AAChB,SAAS,CAAE,IAAI,CACf,KAAK,CAAE,IAAI,CACX,GAAG,CAAE,IAAI,CACT,MAAM,CAAE,IAAI,AACb,CAAC,AACD,qBAAM,CAAC,AACN,cAAc,CAAE,SAAS,CACzB,KAAK,CAAE,OAAO,CACd,SAAS,CAAE,MAAM,CACjB,WAAW,CAAE,IAAI,CACjB,GAAG,CAAE,IAAI,CACT,QAAQ,CAAE,QAAQ,AACnB,CAAC,AACD,qBAAM,CAAC,AACN,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,qBAAM,CAAC,AACN,MAAM,CAAE,IAAI,CACZ,SAAS,CAAE,IAAI,CACf,gBAAgB,CAAE,WAAW,CAC7B,aAAa,CAAE,IAAI,AACpB,CAAC"}`
 };
@@ -3185,7 +3725,7 @@ var PolicyInfo = create_ssr_component(($$result, $$props, $$bindings, slots) => 
       title: "Nuestra garant\xEDa"
     }
   ];
-  $$result.css.add(css$6);
+  $$result.css.add(css$4);
   return `<section class="${"svelte-1az4jhk"}">${each(policies, (policy) => `<article class="${"svelte-1az4jhk"}"><div><i class="${escape2(null_to_empty(policy.icon)) + " svelte-1az4jhk"}"></i>
 				<span class="${"label svelte-1az4jhk"}">${escape2(policy.label)}</span></div>
 			<div><span class="${"title svelte-1az4jhk"}">${escape2(policy.title)}</span>
@@ -3193,29 +3733,47 @@ var PolicyInfo = create_ssr_component(($$result, $$props, $$bindings, slots) => 
 		</article>`)}
 </section>`;
 });
-var css$5 = {
-  code: "section.svelte-17zq5d3.svelte-17zq5d3{margin:11px 0}section.svelte-17zq5d3 img.svelte-17zq5d3{max-width:553px;width:100%;height:auto}.thumbs.svelte-17zq5d3.svelte-17zq5d3{display:flex;margin:17px 0}.thumbs.svelte-17zq5d3 a.svelte-17zq5d3{display:block;margin-right:15px}.thumbs.svelte-17zq5d3 a.selected.svelte-17zq5d3{border:3px solid #b7b7b7;margin:-3px 9px 0 -5px}.thumbs.svelte-17zq5d3 a img.svelte-17zq5d3{display:block;height:83px;width:83px;object-fit:cover}",
-  map: `{"version":3,"file":"ProductGallery.svelte","sources":["ProductGallery.svelte"],"sourcesContent":["<script>\\r\\n\\texport let images;\\r\\n\\r\\n\\t// if(images == null){\\r\\n\\t//   images = [\\r\\n\\t// \\t{thumb: '/img/temp/product0-thumb.png'},\\r\\n\\t// \\t{thumb: '/img/temp/product0-thumb.png'},\\r\\n\\t// \\t{thumb: '/img/temp/product0-thumb.png'},\\r\\n\\t// \\t{thumb: '/img/temp/product0-thumb.png'},\\r\\n\\t//   ]\\r\\n\\t// }\\r\\n\\r\\n\\tlet selected = 0;\\r\\n\\r\\n<\/script>\\r\\n\\r\\n<section>\\r\\n\\t<img src='{images[0].node.src}' alt='product 0' />\\r\\n\\t<div class='thumbs'>\\r\\n\\t\\t{#each images as image, i}\\r\\n\\t\\t\\t<a href='/' class:selected={i === selected}><img src='{image.node.src}' alt='thumbnail-{i}' /></a>\\r\\n\\t\\t{/each}\\r\\n\\t</div>\\r\\n</section>\\r\\n\\r\\n<style>\\r\\n\\tsection{\\r\\n\\t\\tmargin: 11px 0;\\r\\n\\t}\\r\\n\\tsection img{\\r\\n\\t\\tmax-width: 553px;\\r\\n\\t\\twidth: 100%;\\r\\n\\t\\theight: auto;\\r\\n\\t}\\r\\n\\t.thumbs{\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tmargin: 17px 0;\\r\\n\\t}\\r\\n\\t.thumbs a{\\r\\n\\t\\tdisplay: block;\\r\\n\\t\\tmargin-right: 15px;\\r\\n\\t}\\r\\n\\t.thumbs a.selected{\\r\\n\\t\\tborder: 3px solid #b7b7b7;\\r\\n\\t\\tmargin: -3px 9px 0 -5px;\\r\\n\\t}\\r\\n\\t.thumbs a img{\\r\\n\\t\\tdisplay: block;\\r\\n\\t\\theight: 83px;\\r\\n\\t\\twidth:  83px;\\r\\n\\t\\tobject-fit: cover;\\r\\n\\t}\\r\\n\\r\\n</style>"],"names":[],"mappings":"AA0BC,qCAAO,CAAC,AACP,MAAM,CAAE,IAAI,CAAC,CAAC,AACf,CAAC,AACD,sBAAO,CAAC,kBAAG,CAAC,AACX,SAAS,CAAE,KAAK,CAChB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AACb,CAAC,AACD,qCAAO,CAAC,AACP,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CAAC,CAAC,AACf,CAAC,AACD,sBAAO,CAAC,gBAAC,CAAC,AACT,OAAO,CAAE,KAAK,CACd,YAAY,CAAE,IAAI,AACnB,CAAC,AACD,sBAAO,CAAC,CAAC,wBAAS,CAAC,AAClB,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CACzB,MAAM,CAAE,IAAI,CAAC,GAAG,CAAC,CAAC,CAAC,IAAI,AACxB,CAAC,AACD,sBAAO,CAAC,CAAC,CAAC,kBAAG,CAAC,AACb,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,IAAI,CACZ,KAAK,CAAG,IAAI,CACZ,UAAU,CAAE,KAAK,AAClB,CAAC"}`
+var css$3 = {
+  code: "section.svelte-1ujczw0.svelte-1ujczw0{margin:11px 0}section.svelte-1ujczw0 img.svelte-1ujczw0{max-width:553px;width:100%;height:auto}.thumbs.svelte-1ujczw0.svelte-1ujczw0{margin:17px 0}section.svelte-1ujczw0 .thumbs img.svelte-1ujczw0{display:block;height:83px;width:83px;object-fit:cover;cursor:pointer}.swiper.svelte-1ujczw0.svelte-1ujczw0{max-width:553px}.swiper.svelte-1ujczw0 img.svelte-1ujczw0{border:3px solid rgba(0,0,0,0)}.swiper.svelte-1ujczw0 .swiper-slide-thumb-active img.svelte-1ujczw0{border:3px solid #b7b7b7}",
+  map: `{"version":3,"file":"ProductGallery.svelte","sources":["ProductGallery.svelte"],"sourcesContent":["<link\\r\\n  rel=\\"stylesheet\\"\\r\\n  href=\\"https://unpkg.com/swiper@7/swiper-bundle.min.css\\"\\r\\n/>\\r\\n<script>\\r\\n\\r\\n\\texport let images;\\r\\n\\texport let thumbs;\\r\\n\\texport let gall;\\r\\n\\r\\n\\timport { onMount } from 'svelte'\\r\\n\\tlet swiper;\\r\\n\\tonMount(async () => {\\r\\n\\t\\tswiper = (await import('https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js')).default;\\r\\n\\r\\n\\t\\tthumbs = new swiper('.thumbs',{\\r\\n      \\t// loop: true,\\r\\n         spaceBetween: 10,\\r\\n         slidesPerView: 6,\\r\\n         freeMode: true,\\r\\n         watchSlidesProgress: true,\\r\\n      });\\r\\n\\t\\tgall = new swiper('.mainGall',{\\r\\n      \\tslidesPerView:1,\\r\\n         loop: true,\\r\\n         centeredSlides: true,\\r\\n         spaceBetween: 0,\\r\\n         thumbs: {\\r\\n          swiper: thumbs,\\r\\n         },\\r\\n      });\\r\\n\\r\\n\\t});\\r\\n\\r\\n\\tlet selected = 0;\\r\\n   \\r\\n  \\r\\n   \\r\\n<\/script>\\r\\n\\r\\n\\r\\n\\r\\n<section>\\r\\n\\t\\r\\n\\r\\n\\t<!-- <img src='{images[0].node.src}' alt='product 0' /> -->\\r\\n\\t\\r\\n\\r\\n\\t<div class=\\"swiper mainGall\\">\\r\\n\\t\\t<div class=\\"swiper-wrapper\\">\\r\\n        {#each images as image, i}\\r\\n\\t    \\t<div class=\\"swiper-slide\\"><img src='{image.node.src}' alt='thumbnail-{i}' /></div>\\r\\n\\t     {/each}\\r\\n      </div>\\r\\n   </div>\\r\\n\\r\\n   <div class=\\"swiper thumbs\\">\\r\\n   \\t<div class=\\"swiper-wrapper\\">\\r\\n\\t\\t  {#each images as image, i}\\r\\n\\t\\t  \\t<div class=\\"swiper-slide\\"><img src='{image.node.src}' alt='thumbnail-{i}' /></div>\\r\\n\\t\\t  {/each}\\r\\n\\t   </div>\\r\\n\\t</div>\\r\\n</section>\\r\\n\\r\\n<style>\\r\\n\\tsection{\\r\\n\\t\\tmargin: 11px 0;\\r\\n\\t}\\r\\n\\tsection img{\\r\\n\\t\\tmax-width: 553px;\\r\\n\\t\\twidth: 100%;\\r\\n\\t\\theight: auto;\\r\\n\\t}\\r\\n\\t.thumbs{\\r\\n\\t\\tmargin: 17px 0;\\r\\n\\t}\\r\\n\\t\\r\\n\\tsection .thumbs img{\\r\\n\\t\\tdisplay: block;\\r\\n\\t\\theight: 83px;\\r\\n\\t\\twidth:  83px;\\r\\n\\t\\tobject-fit: cover;\\r\\n\\t\\tcursor: pointer;\\r\\n\\t}\\r\\n   \\r\\n   .swiper{\\r\\n   \\tmax-width: 553px;\\r\\n   }\\r\\n   .swiper img{\\r\\n      border: 3px solid rgba(0,0,0,0);\\r\\n   }\\r\\n   .swiper .swiper-slide-thumb-active img{\\r\\n\\t\\tborder: 3px solid #b7b7b7;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AAkEC,qCAAO,CAAC,AACP,MAAM,CAAE,IAAI,CAAC,CAAC,AACf,CAAC,AACD,sBAAO,CAAC,kBAAG,CAAC,AACX,SAAS,CAAE,KAAK,CAChB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AACb,CAAC,AACD,qCAAO,CAAC,AACP,MAAM,CAAE,IAAI,CAAC,CAAC,AACf,CAAC,AAED,sBAAO,CAAC,OAAO,CAAC,kBAAG,CAAC,AACnB,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,IAAI,CACZ,KAAK,CAAG,IAAI,CACZ,UAAU,CAAE,KAAK,CACjB,MAAM,CAAE,OAAO,AAChB,CAAC,AAEC,qCAAO,CAAC,AACP,SAAS,CAAE,KAAK,AACjB,CAAC,AACD,sBAAO,CAAC,kBAAG,CAAC,AACT,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,AAClC,CAAC,AACD,sBAAO,CAAC,0BAA0B,CAAC,kBAAG,CAAC,AACxC,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,AAC1B,CAAC"}`
 };
-var selected = 0;
 var ProductGallery = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { images } = $$props;
+  let { thumbs } = $$props;
+  let { gall } = $$props;
   if ($$props.images === void 0 && $$bindings.images && images !== void 0)
     $$bindings.images(images);
-  $$result.css.add(css$5);
-  return `<section class="${"svelte-17zq5d3"}"><img${add_attribute("src", images[0].node.src, 0)} alt="${"product 0"}" class="${"svelte-17zq5d3"}">
-	<div class="${"thumbs svelte-17zq5d3"}">${each(images, (image, i) => `<a href="${"/"}" class="${["svelte-17zq5d3", i === selected ? "selected" : ""].join(" ").trim()}"><img${add_attribute("src", image.node.src, 0)} alt="${"thumbnail-" + escape2(i)}" class="${"svelte-17zq5d3"}"></a>`)}</div>
+  if ($$props.thumbs === void 0 && $$bindings.thumbs && thumbs !== void 0)
+    $$bindings.thumbs(thumbs);
+  if ($$props.gall === void 0 && $$bindings.gall && gall !== void 0)
+    $$bindings.gall(gall);
+  $$result.css.add(css$3);
+  return `<link rel="${"stylesheet"}" href="${"https://unpkg.com/swiper@7/swiper-bundle.min.css"}">
+
+
+
+
+<section class="${"svelte-1ujczw0"}">
+	
+
+	<div class="${"swiper mainGall svelte-1ujczw0"}"><div class="${"swiper-wrapper"}">${each(images, (image, i) => `<div class="${"swiper-slide"}"><img${add_attribute("src", image.node.src, 0)} alt="${"thumbnail-" + escape2(i)}" class="${"svelte-1ujczw0"}"></div>`)}</div></div>
+
+   <div class="${"swiper thumbs svelte-1ujczw0"}"><div class="${"swiper-wrapper"}">${each(images, (image, i) => `<div class="${"swiper-slide"}"><img${add_attribute("src", image.node.src, 0)} alt="${"thumbnail-" + escape2(i)}" class="${"svelte-1ujczw0"}"></div>`)}</div></div>
 </section>`;
 });
-var css$4 = {
+var css$2 = {
   code: "main.svelte-1d56od4.svelte-1d56od4{display:flex;flex-wrap:wrap;flex-direction:row-reverse;justify-content:space-between}section.svelte-1d56od4.svelte-1d56od4:first-child{width:477px}h1.svelte-1d56od4.svelte-1d56od4{text-transform:uppercase;font-size:31px;margin:4px 0 0;color:#757575}h3.svelte-1d56od4.svelte-1d56od4{font-size:13px;font-weight:bold;margin:0;line-height:13px;color:#757575}.options.svelte-1d56od4.svelte-1d56od4{display:flex}.tag.svelte-1d56od4.svelte-1d56od4{margin-top:16px}.price.svelte-1d56od4.svelte-1d56od4{margin:3px 0}.button.svelte-1d56od4.svelte-1d56od4{display:inline-block;font-size:11.5px;color:black;margin:27px 12px 10px 0;padding:12px 17px 9px 18px}.files.svelte-1d56od4.svelte-1d56od4{display:flex;margin:16px 0 45px}.files.svelte-1d56od4 .button.svelte-1d56od4{color:#a2a2a2;padding:12px 0 13px;width:162px;text-align:center}.description.svelte-1d56od4.svelte-1d56od4{font-size:13px}.description.svelte-1d56od4 p.svelte-1d56od4{margin:6px 0 22px;line-height:1.38}.description.svelte-1d56od4 .note.svelte-1d56od4{font-size:11px;font-weight:bold;font-style:italic}",
-  map: `{"version":3,"file":"ProductDetail.svelte","sources":["ProductDetail.svelte"],"sourcesContent":["<script>\\r\\n\\timport QuantityPicker from '$lib/QuantityPicker.svelte';\\r\\n\\timport ColorPicker from '$lib/ColorPicker.svelte';\\r\\n\\timport PolicyInfo from '$lib/PolicyInfo.svelte';\\r\\n\\timport ProductGallery from '$lib/ProductGallery.svelte';\\r\\n    \\r\\n  export let product;\\r\\n\\r\\n  console.log(product);\\r\\n\\r\\n  let quantity = 0;\\r\\n  let productVariants = [];\\r\\n  let selectedProduct;\\r\\n  let currCode;\\r\\n\\r\\n  if(product != null){\\r\\n    productVariants = product.variants.edges.map((v) => v.node);\\r\\n    selectedProduct = productVariants[0].id;\\r\\n    currCode = productVariants[0].priceV2.currencyCode;\\r\\n  }\\r\\n  \\r\\n  // obtener el mejor descuento de las variantes\\r\\n  let bestDiscount = 0;\\r\\n  for(let variant of productVariants){\\r\\n    if(variant.compareAtPrice != null){\\r\\n      let temp = (100/variant.compareAtPrice*variant.priceV2.amount).toFixed(0); \\r\\n      if(temp > bestDiscount){\\r\\n        bestDiscount = temp;\\r\\n      }\\r\\n    }\\r\\n  }\\r\\n\\r\\n  // console.log(productVariants);\\r\\n<\/script>\\r\\n<main>\\r\\n\\t{#if product != null}\\r\\n\\t<section>\\r\\n\\t\\t<h1>{product.title}</h1>\\r\\n\\r\\n\\t\\t    {#if productVariants.length < 1 && productVariants[0].sku != null}\\r\\n          <h3>SKU: {productVariants[0].sku}</h3>\\r\\n        {/if}\\r\\n        \\r\\n        {#if bestDiscount > 0}\\r\\n          <p class='tag'>{bestDiscount}% de desc.</p>\\r\\n        {/if }\\r\\n        \\r\\n        <p class='price'>\\r\\n\\t        {#if productVariants.length > 1}\\r\\n    \\t      <strong>{product.priceRange.minVariantPrice} {currCode} - {product.priceRange.maxVariantPrice} {currCode}</strong>\\r\\n    \\t    {:else}\\r\\n              <strong>{productVariants[0].priceV2.amount} {currCode}</strong>\\r\\n              {#if productVariants[0].compareAtPrice != null}\\r\\n              <span class='original-price'>{productVariants[0].compareAtPrice} {currCode}</span>\\r\\n              {/if}\\r\\n            {/if}\\r\\n   \\t\\t</p>\\r\\n   \\t\\t\\r\\n   \\t\\t<div class='options'>\\r\\n\\t        <QuantityPicker />\\r\\n\\t        <ColorPicker />\\r\\n    \\t</div>\\r\\n\\r\\n\\t    <div class='cart-options'>\\r\\n\\t        <a href='/' class='button mute'>A\xF1adir al carrito </a>\\r\\n\\t        <a href='/' class='button'>Comprar ahora </a>\\r\\n\\t    </div>\\r\\n\\r\\n\\t    <PolicyInfo />\\r\\n\\t    \\r\\n\\t    <div class='files'>\\r\\n\\t\\t    <a href='/' class='button mute'>ficha tecnica</a>\\r\\n\\t\\t    <a href='/' class='button mute'>armado</a>\\r\\n\\t\\t</div>\\r\\n\\r\\n\\t\\t<div class='description'>\\r\\n\\t\\t    {product.description}\\r\\n\\t\\t\\t<p class='note'>Los precios no incluyen IVA</p>\\r\\n\\t\\t</div>\\r\\n\\t</section>\\r\\n\\t<section>\\r\\n\\t\\t<ProductGallery images={product.images.edges}/>\\r\\n\\t</section>\\r\\n  {/if}\\r\\n</main>\\r\\n\\r\\n<style>\\r\\nmain{\\r\\n\\tdisplay: flex;\\r\\n\\tflex-wrap: wrap;\\r\\n\\tflex-direction: row-reverse;\\r\\n\\tjustify-content: space-between;\\r\\n}\\r\\nsection:first-child{\\r\\n\\twidth: 477px;\\r\\n}\\t\\r\\nh1{\\r\\n\\ttext-transform: uppercase;\\r\\n\\tfont-size: 31px;\\r\\n\\tmargin: 4px 0 0;\\r\\n\\tcolor: #757575;\\r\\n}\\r\\nh3{\\r\\n\\tfont-size: 13px;\\r\\n\\tfont-weight: bold;\\r\\n\\tmargin: 0;\\r\\n\\tline-height: 13px;\\r\\n\\tcolor: #757575;\\r\\n}\\r\\nh4{\\r\\n\\tcolor: #757575;\\r\\n\\ttext-transform: uppercase;\\r\\n}\\r\\n.options{\\r\\n\\tdisplay: flex;\\r\\n}\\r\\n.tag{\\r\\n\\tmargin-top: 16px;\\r\\n}\\r\\n.price{\\r\\n\\tmargin: 3px 0;\\r\\n}\\r\\n.button{\\r\\n\\tdisplay: inline-block;\\r\\n\\tfont-size: 11.5px;\\r\\n\\tcolor: black;\\r\\n\\tmargin: 27px 12px 10px 0;\\r\\n\\tpadding: 12px 17px 9px 18px;\\r\\n}\\r\\n\\r\\n.files{\\r\\n\\tdisplay: flex;\\r\\n\\tmargin: 16px 0 45px;\\r\\n}\\r\\n.files .button{\\r\\n\\tcolor: #a2a2a2;\\r\\n\\tpadding: 12px 0 13px;\\r\\n\\twidth: 162px;\\r\\n\\ttext-align: center;\\r\\n}\\r\\n.description{\\r\\n\\tfont-size: 13px;\\r\\n}\\r\\n.description p{\\r\\n\\tmargin: 6px 0 22px;\\r\\n\\tline-height: 1.38;\\r\\n}\\r\\n.description ul{\\r\\n\\tlist-style-type: none;\\r\\n\\tpadding: 0;\\r\\n\\tline-height: 1.58;\\r\\n}\\r\\n.description .note{\\r\\n\\tfont-size: 11px;\\r\\n\\tfont-weight: bold;\\r\\n\\tfont-style: italic;\\r\\n}\\r\\n\\r\\n</style>"],"names":[],"mappings":"AAuFA,kCAAI,CAAC,AACJ,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,CACf,cAAc,CAAE,WAAW,CAC3B,eAAe,CAAE,aAAa,AAC/B,CAAC,AACD,qCAAO,YAAY,CAAC,AACnB,KAAK,CAAE,KAAK,AACb,CAAC,AACD,gCAAE,CAAC,AACF,cAAc,CAAE,SAAS,CACzB,SAAS,CAAE,IAAI,CACf,MAAM,CAAE,GAAG,CAAC,CAAC,CAAC,CAAC,CACf,KAAK,CAAE,OAAO,AACf,CAAC,AACD,gCAAE,CAAC,AACF,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,MAAM,CAAE,CAAC,CACT,WAAW,CAAE,IAAI,CACjB,KAAK,CAAE,OAAO,AACf,CAAC,AAKD,sCAAQ,CAAC,AACR,OAAO,CAAE,IAAI,AACd,CAAC,AACD,kCAAI,CAAC,AACJ,UAAU,CAAE,IAAI,AACjB,CAAC,AACD,oCAAM,CAAC,AACN,MAAM,CAAE,GAAG,CAAC,CAAC,AACd,CAAC,AACD,qCAAO,CAAC,AACP,OAAO,CAAE,YAAY,CACrB,SAAS,CAAE,MAAM,CACjB,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,IAAI,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,CACxB,OAAO,CAAE,IAAI,CAAC,IAAI,CAAC,GAAG,CAAC,IAAI,AAC5B,CAAC,AAED,oCAAM,CAAC,AACN,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,IAAI,AACpB,CAAC,AACD,qBAAM,CAAC,sBAAO,CAAC,AACd,KAAK,CAAE,OAAO,CACd,OAAO,CAAE,IAAI,CAAC,CAAC,CAAC,IAAI,CACpB,KAAK,CAAE,KAAK,CACZ,UAAU,CAAE,MAAM,AACnB,CAAC,AACD,0CAAY,CAAC,AACZ,SAAS,CAAE,IAAI,AAChB,CAAC,AACD,2BAAY,CAAC,gBAAC,CAAC,AACd,MAAM,CAAE,GAAG,CAAC,CAAC,CAAC,IAAI,CAClB,WAAW,CAAE,IAAI,AAClB,CAAC,AAMD,2BAAY,CAAC,oBAAK,CAAC,AAClB,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,MAAM,AACnB,CAAC"}`
+  map: `{"version":3,"file":"ProductDetail.svelte","sources":["ProductDetail.svelte"],"sourcesContent":["<script>\\r\\n\\timport QuantityPicker from '$lib/QuantityPicker.svelte';\\r\\n\\timport ColorPicker from '$lib/ColorPicker.svelte';\\r\\n\\timport PolicyInfo from '$lib/PolicyInfo.svelte';\\r\\n\\timport ProductGallery from '$lib/ProductGallery.svelte';\\r\\n    \\r\\n  export let product;\\r\\n  export let addToCart;\\r\\n\\r\\n  console.log(product);\\r\\n\\r\\n  let qty = 1;\\r\\n  let productVariants = [];\\r\\n  let selectedProduct;\\r\\n  let selected = 0;\\r\\n  let currCode;\\r\\n  let gall;\\r\\n\\r\\n  if(product != null){\\r\\n    productVariants = product.variants.edges.map((v) => v.node);\\r\\n    selectedProduct = productVariants[0].id;\\r\\n    currCode = productVariants[0].priceV2.currencyCode;\\r\\n  }\\r\\n  \\r\\n  // obtener el mejor descuento de las variantes\\r\\n  let bestDiscount = 0;\\r\\n  let bestVariant = {};\\r\\n  for(let variant of productVariants){\\r\\n    if(variant.compareAtPrice != null){\\r\\n      let temp = (100/variant.compareAtPrice*variant.priceV2.amount).toFixed(0); \\r\\n      if(temp >= bestDiscount){\\r\\n        bestDiscount = temp;\\r\\n        bestVariant = {\\"amount\\":variant.priceV2.amount,\\"compare\\": variant.compareAtPrice};\\r\\n      }\\r\\n    }\\r\\n  }\\r\\n\\r\\n  let getDiscount = function(num){\\r\\n    let variant = productVariants[num];\\r\\n\\r\\n    if(variant.compareAtPrice != null){\\r\\n      let temp = (100/variant.compareAtPrice*variant.priceV2.amount).toFixed(0); \\r\\n      return temp;\\r\\n    }\\r\\n    else{\\r\\n    \\treturn 0;\\r\\n    }\\r\\n    \\r\\n  }\\r\\n\\r\\n  // console.log(productVariants);\\r\\n<\/script>\\r\\n<main>\\r\\n\\t{#if product != null}\\r\\n\\t<section>\\r\\n\\t\\t<h1>{product.title}</h1>\\r\\n\\r\\n\\t\\t    {#if productVariants[0].sku != null}\\r\\n          <h3>SKU: {productVariants[0].sku}</h3>\\r\\n        {/if}\\r\\n        \\r\\n        {#if getDiscount(selected) > 0}\\r\\n          <p class='tag'>{getDiscount(selected)}% de desc.</p>\\r\\n        {/if }\\r\\n        \\r\\n        <p class='price'>\\r\\n          <strong>{productVariants[selected].priceV2.amount} {currCode}</strong>\\r\\n          {#if productVariants[selected].compareAtPrice != null}\\r\\n          <span class='original-price'>{productVariants[selected].compareAtPrice} {currCode}</span>\\r\\n          {/if}\\r\\n   \\t\\t</p>\\r\\n   \\t\\t\\r\\n   \\t\\t<div class='options'>\\r\\n\\t        <QuantityPicker   bind:qty={qty} max={productVariants[selected].quantityAvailable}/>\\r\\n\\t        {#if productVariants.length > 0 }\\r\\n\\t          <ColorPicker bind:gall={gall} bind:selected={selected} bind:qty={qty} images={product.images.edges} variants={productVariants} />\\r\\n\\t        {/if}\\r\\n    \\t</div>\\r\\n\\r\\n\\t    <div class='cart-options'>\\r\\n\\t        <a id=\\"addToCart\\" href=\\"#\\"\\r\\n\\t           on:click=\\"{()=>{addToCart(productVariants[selected].id,qty)}}\\" \\r\\n\\t           class='button mute'>A\xF1adir al carrito </a>\\r\\n\\t        <!-- <a href='/' class='button'>Comprar ahora </a> -->\\r\\n\\t    </div>\\r\\n\\r\\n\\t    <PolicyInfo />\\r\\n\\t    \\r\\n\\t    <div class='files'>\\r\\n\\t\\t    <a href='/' class='button mute'>ficha tecnica</a>\\r\\n\\t\\t    <a href='/' class='button mute'>armado</a>\\r\\n\\t\\t</div>\\r\\n\\r\\n\\t\\t<div class='description'>\\r\\n\\t\\t    {product.description}\\r\\n\\t\\t\\t<p class='note'>Los precios no incluyen IVA</p>\\r\\n\\t\\t</div>\\r\\n\\t</section>\\r\\n\\t<section>\\r\\n\\t\\t<ProductGallery bind:gall={gall} images={product.images.edges}/>\\r\\n\\t</section>\\r\\n  {/if}\\r\\n</main>\\r\\n\\r\\n<style>\\r\\nmain{\\r\\n\\tdisplay: flex;\\r\\n\\tflex-wrap: wrap;\\r\\n\\tflex-direction: row-reverse;\\r\\n\\tjustify-content: space-between;\\r\\n}\\r\\nsection:first-child{\\r\\n\\twidth: 477px;\\r\\n}\\t\\r\\nh1{\\r\\n\\ttext-transform: uppercase;\\r\\n\\tfont-size: 31px;\\r\\n\\tmargin: 4px 0 0;\\r\\n\\tcolor: #757575;\\r\\n}\\r\\nh3{\\r\\n\\tfont-size: 13px;\\r\\n\\tfont-weight: bold;\\r\\n\\tmargin: 0;\\r\\n\\tline-height: 13px;\\r\\n\\tcolor: #757575;\\r\\n}\\r\\nh4{\\r\\n\\tcolor: #757575;\\r\\n\\ttext-transform: uppercase;\\r\\n}\\r\\n.options{\\r\\n\\tdisplay: flex;\\r\\n}\\r\\n.tag{\\r\\n\\tmargin-top: 16px;\\r\\n}\\r\\n.price{\\r\\n\\tmargin: 3px 0;\\r\\n}\\r\\n.button{\\r\\n\\tdisplay: inline-block;\\r\\n\\tfont-size: 11.5px;\\r\\n\\tcolor: black;\\r\\n\\tmargin: 27px 12px 10px 0;\\r\\n\\tpadding: 12px 17px 9px 18px;\\r\\n}\\r\\n\\r\\n.files{\\r\\n\\tdisplay: flex;\\r\\n\\tmargin: 16px 0 45px;\\r\\n}\\r\\n.files .button{\\r\\n\\tcolor: #a2a2a2;\\r\\n\\tpadding: 12px 0 13px;\\r\\n\\twidth: 162px;\\r\\n\\ttext-align: center;\\r\\n}\\r\\n.description{\\r\\n\\tfont-size: 13px;\\r\\n}\\r\\n.description p{\\r\\n\\tmargin: 6px 0 22px;\\r\\n\\tline-height: 1.38;\\r\\n}\\r\\n.description ul{\\r\\n\\tlist-style-type: none;\\r\\n\\tpadding: 0;\\r\\n\\tline-height: 1.58;\\r\\n}\\r\\n.description .note{\\r\\n\\tfont-size: 11px;\\r\\n\\tfont-weight: bold;\\r\\n\\tfont-style: italic;\\r\\n}\\r\\n\\r\\n</style>"],"names":[],"mappings":"AAyGA,kCAAI,CAAC,AACJ,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,CACf,cAAc,CAAE,WAAW,CAC3B,eAAe,CAAE,aAAa,AAC/B,CAAC,AACD,qCAAO,YAAY,CAAC,AACnB,KAAK,CAAE,KAAK,AACb,CAAC,AACD,gCAAE,CAAC,AACF,cAAc,CAAE,SAAS,CACzB,SAAS,CAAE,IAAI,CACf,MAAM,CAAE,GAAG,CAAC,CAAC,CAAC,CAAC,CACf,KAAK,CAAE,OAAO,AACf,CAAC,AACD,gCAAE,CAAC,AACF,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,MAAM,CAAE,CAAC,CACT,WAAW,CAAE,IAAI,CACjB,KAAK,CAAE,OAAO,AACf,CAAC,AAKD,sCAAQ,CAAC,AACR,OAAO,CAAE,IAAI,AACd,CAAC,AACD,kCAAI,CAAC,AACJ,UAAU,CAAE,IAAI,AACjB,CAAC,AACD,oCAAM,CAAC,AACN,MAAM,CAAE,GAAG,CAAC,CAAC,AACd,CAAC,AACD,qCAAO,CAAC,AACP,OAAO,CAAE,YAAY,CACrB,SAAS,CAAE,MAAM,CACjB,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,IAAI,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,CACxB,OAAO,CAAE,IAAI,CAAC,IAAI,CAAC,GAAG,CAAC,IAAI,AAC5B,CAAC,AAED,oCAAM,CAAC,AACN,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,IAAI,AACpB,CAAC,AACD,qBAAM,CAAC,sBAAO,CAAC,AACd,KAAK,CAAE,OAAO,CACd,OAAO,CAAE,IAAI,CAAC,CAAC,CAAC,IAAI,CACpB,KAAK,CAAE,KAAK,CACZ,UAAU,CAAE,MAAM,AACnB,CAAC,AACD,0CAAY,CAAC,AACZ,SAAS,CAAE,IAAI,AAChB,CAAC,AACD,2BAAY,CAAC,gBAAC,CAAC,AACd,MAAM,CAAE,GAAG,CAAC,CAAC,CAAC,IAAI,CAClB,WAAW,CAAE,IAAI,AAClB,CAAC,AAMD,2BAAY,CAAC,oBAAK,CAAC,AAClB,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,MAAM,AACnB,CAAC"}`
 };
 var ProductDetail = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { product } = $$props;
+  let { addToCart: addToCart2 } = $$props;
   console.log(product);
+  let qty = 1;
   let productVariants = [];
+  let selected = 0;
   let currCode;
+  let gall;
   if (product != null) {
     productVariants = product.variants.edges.map((v) => v.node);
     productVariants[0].id;
@@ -3225,28 +3783,74 @@ var ProductDetail = create_ssr_component(($$result, $$props, $$bindings, slots) 
   for (let variant of productVariants) {
     if (variant.compareAtPrice != null) {
       let temp = (100 / variant.compareAtPrice * variant.priceV2.amount).toFixed(0);
-      if (temp > bestDiscount) {
+      if (temp >= bestDiscount) {
         bestDiscount = temp;
+        ({
+          "amount": variant.priceV2.amount,
+          "compare": variant.compareAtPrice
+        });
       }
     }
   }
+  let getDiscount = function(num) {
+    let variant = productVariants[num];
+    if (variant.compareAtPrice != null) {
+      let temp = (100 / variant.compareAtPrice * variant.priceV2.amount).toFixed(0);
+      return temp;
+    } else {
+      return 0;
+    }
+  };
   if ($$props.product === void 0 && $$bindings.product && product !== void 0)
     $$bindings.product(product);
-  $$result.css.add(css$4);
-  return `<main class="${"svelte-1d56od4"}">${product != null ? `<section class="${"svelte-1d56od4"}"><h1 class="${"svelte-1d56od4"}">${escape2(product.title)}</h1>
+  if ($$props.addToCart === void 0 && $$bindings.addToCart && addToCart2 !== void 0)
+    $$bindings.addToCart(addToCart2);
+  $$result.css.add(css$2);
+  let $$settled;
+  let $$rendered;
+  do {
+    $$settled = true;
+    $$rendered = `<main class="${"svelte-1d56od4"}">${product != null ? `<section class="${"svelte-1d56od4"}"><h1 class="${"svelte-1d56od4"}">${escape2(product.title)}</h1>
 
-		    ${productVariants.length < 1 && productVariants[0].sku != null ? `<h3 class="${"svelte-1d56od4"}">SKU: ${escape2(productVariants[0].sku)}</h3>` : ``}
+		    ${productVariants[0].sku != null ? `<h3 class="${"svelte-1d56od4"}">SKU: ${escape2(productVariants[0].sku)}</h3>` : ``}
         
-        ${bestDiscount > 0 ? `<p class="${"tag svelte-1d56od4"}">${escape2(bestDiscount)}% de desc.</p>` : ``}
+        ${getDiscount(selected) > 0 ? `<p class="${"tag svelte-1d56od4"}">${escape2(getDiscount(selected))}% de desc.</p>` : ``}
         
-        <p class="${"price svelte-1d56od4"}">${productVariants.length > 1 ? `<strong>${escape2(product.priceRange.minVariantPrice)} ${escape2(currCode)} - ${escape2(product.priceRange.maxVariantPrice)} ${escape2(currCode)}</strong>` : `<strong>${escape2(productVariants[0].priceV2.amount)} ${escape2(currCode)}</strong>
-              ${productVariants[0].compareAtPrice != null ? `<span class="${"original-price"}">${escape2(productVariants[0].compareAtPrice)} ${escape2(currCode)}</span>` : ``}`}</p>
+        <p class="${"price svelte-1d56od4"}"><strong>${escape2(productVariants[selected].priceV2.amount)} ${escape2(currCode)}</strong>
+          ${productVariants[selected].compareAtPrice != null ? `<span class="${"original-price"}">${escape2(productVariants[selected].compareAtPrice)} ${escape2(currCode)}</span>` : ``}</p>
    		
-   		<div class="${"options svelte-1d56od4"}">${validate_component(QuantityPicker, "QuantityPicker").$$render($$result, {}, {}, {})}
-	        ${validate_component(ColorPicker, "ColorPicker").$$render($$result, {}, {}, {})}</div>
+   		<div class="${"options svelte-1d56od4"}">${validate_component(QuantityPicker, "QuantityPicker").$$render($$result, {
+      max: productVariants[selected].quantityAvailable,
+      qty
+    }, {
+      qty: ($$value) => {
+        qty = $$value;
+        $$settled = false;
+      }
+    }, {})}
+	        ${productVariants.length > 0 ? `${validate_component(ColorPicker, "ColorPicker").$$render($$result, {
+      images: product.images.edges,
+      variants: productVariants,
+      gall,
+      selected,
+      qty
+    }, {
+      gall: ($$value) => {
+        gall = $$value;
+        $$settled = false;
+      },
+      selected: ($$value) => {
+        selected = $$value;
+        $$settled = false;
+      },
+      qty: ($$value) => {
+        qty = $$value;
+        $$settled = false;
+      }
+    }, {})}` : ``}</div>
 
-	    <div class="${"cart-options"}"><a href="${"/"}" class="${"button mute svelte-1d56od4"}">A\xF1adir al carrito </a>
-	        <a href="${"/"}" class="${"button svelte-1d56od4"}">Comprar ahora </a></div>
+	    <div class="${"cart-options"}"><a id="${"addToCart"}" href="${"#"}" class="${"button mute svelte-1d56od4"}">A\xF1adir al carrito </a>
+	        </div>
 
 	    ${validate_component(PolicyInfo, "PolicyInfo").$$render($$result, {}, {}, {})}
 	    
@@ -3255,12 +3859,19 @@ var ProductDetail = create_ssr_component(($$result, $$props, $$bindings, slots) 
 
 		<div class="${"description svelte-1d56od4"}">${escape2(product.description)}
 			<p class="${"note svelte-1d56od4"}">Los precios no incluyen IVA</p></div></section>
-	<section class="${"svelte-1d56od4"}">${validate_component(ProductGallery, "ProductGallery").$$render($$result, { images: product.images.edges }, {}, {})}</section>` : ``}
+	<section class="${"svelte-1d56od4"}">${validate_component(ProductGallery, "ProductGallery").$$render($$result, { images: product.images.edges, gall }, {
+      gall: ($$value) => {
+        gall = $$value;
+        $$settled = false;
+      }
+    }, {})}</section>` : ``}
 </main>`;
+  } while (!$$settled);
+  return $$rendered;
 });
-var css$3 = {
+var css$1 = {
   code: "main.svelte-1fnc3j6{max-width:1084px;margin:38px auto}",
-  map: `{"version":3,"file":"[handle].svelte","sources":["[handle].svelte"],"sourcesContent":["<script context=\\"module\\">\\r\\n\\t// export const prerender = true;\\r\\n\\r\\n\\texport let handle;\\r\\n    export async function load(ctx) {\\r\\n    \\t// console.log(ctx.page.params.handle);\\r\\n        handle = ctx.page.params.handle;\\r\\n        return { props: { handle } };\\r\\n    }\\r\\n\\r\\n    // export async function load(ctx) {\\r\\n    //     let handle = ctx.page.params.handle;\\r\\n    //     await getProductDetails(handle);\\r\\n    //     return { props: { productDetails } };\\r\\n    // }\\r\\n<\/script>\\r\\n\\r\\n<script>\\r\\n\\timport BreadCrumbs from '$lib/BreadCrumbs.svelte';\\r\\n\\timport ProductDetail from '$lib/ProductDetail.svelte';\\r\\n\\timport ProductSlider from '$lib/ProductSlider.svelte';\\r\\n\\timport ContactRibbon from '$lib/ContactRibbon.svelte';\\r\\n\\r\\n    import {getProductDetails} from '../../../store';\\r\\n\\r\\n\\texport let productDetails = getProductDetails(handle);\\r\\n<\/script>\\r\\n\\r\\n<svelte:head>\\r\\n\\t<title>Producto - Manuel Delgado</title>\\r\\n</svelte:head>\\r\\n<main>\\r\\n\\t<BreadCrumbs />\\r\\n\\t{#await productDetails}\\r\\n\\t\\t{:then productDetails} \\r\\n\\t      <ProductDetail product={productDetails} />\\r\\n\\t{/await}\\r\\n</main>\\r\\n\\r\\n<ProductSlider title='Articulos recomendados' />\\r\\n<ContactRibbon />\\r\\n\\r\\n<style>\\r\\n\\tmain{\\r\\n\\t\\tmax-width: 1084px;\\r\\n\\t\\tmargin: 38px auto;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AA2CC,mBAAI,CAAC,AACJ,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,IAAI,CAAC,IAAI,AAClB,CAAC"}`
+  map: `{"version":3,"file":"[handle].svelte","sources":["[handle].svelte"],"sourcesContent":["<script context=\\"module\\">\\r\\n\\t// export const prerender = true;\\r\\n\\r\\n\\texport let handle;\\r\\n    export async function load(ctx) {\\r\\n    \\t// console.log(ctx.page.params.handle);\\r\\n        handle = ctx.page.params.handle;\\r\\n        return { props: { handle } };\\r\\n    }\\r\\n\\r\\n    // export async function load(ctx) {\\r\\n    //     let handle = ctx.page.params.handle;\\r\\n    //     await getProductDetails(handle);\\r\\n    //     return { props: { productDetails } };\\r\\n    // }\\r\\n<\/script>\\r\\n\\r\\n<script>\\r\\n\\timport BreadCrumbs from '$lib/BreadCrumbs.svelte';\\r\\n\\timport ProductDetail from '$lib/ProductDetail.svelte';\\r\\n\\timport ProductSlider from '$lib/ProductSlider.svelte';\\r\\n\\timport ContactRibbon from '$lib/ContactRibbon.svelte';\\r\\n\\r\\n    import {getProductDetails, addToCart} from '../../../store';\\r\\n\\r\\n\\texport let productDetails = getProductDetails(handle);\\r\\n<\/script>\\r\\n\\r\\n<svelte:head>\\r\\n\\t<title>Producto - Manuel Delgado</title>\\r\\n</svelte:head>\\r\\n<main>\\r\\n\\t<BreadCrumbs />\\r\\n\\t{#await productDetails}\\r\\n\\t\\t{:then productDetails} \\r\\n\\t      <ProductDetail product={productDetails} addToCart={addToCart}/>\\r\\n\\t{/await}\\r\\n</main>\\r\\n\\r\\n<ProductSlider title='Articulos recomendados' />\\r\\n<ContactRibbon />\\r\\n\\r\\n<style>\\r\\n\\tmain{\\r\\n\\t\\tmax-width: 1084px;\\r\\n\\t\\tmargin: 38px auto;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AA2CC,mBAAI,CAAC,AACJ,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,IAAI,CAAC,IAAI,AAClB,CAAC"}`
 };
 var handle;
 async function load(ctx) {
@@ -3271,7 +3882,7 @@ var U5Bhandleu5D = create_ssr_component(($$result, $$props, $$bindings, slots) =
   let { productDetails = getProductDetails(handle) } = $$props;
   if ($$props.productDetails === void 0 && $$bindings.productDetails && productDetails !== void 0)
     $$bindings.productDetails(productDetails);
-  $$result.css.add(css$3);
+  $$result.css.add(css$1);
   return `${$$result.head += `${$$result.title = `<title>Producto - Manuel Delgado</title>`, ""}`, ""}
 <main class="${"svelte-1fnc3j6"}">${validate_component(BreadCrumbs, "BreadCrumbs").$$render($$result, {}, {}, {})}
 	${function(__value) {
@@ -3280,7 +3891,7 @@ var U5Bhandleu5D = create_ssr_component(($$result, $$props, $$bindings, slots) =
 		`;
     return function(productDetails2) {
       return ` 
-	      ${validate_component(ProductDetail, "ProductDetail").$$render($$result, { product: productDetails2 }, {}, {})}
+	      ${validate_component(ProductDetail, "ProductDetail").$$render($$result, { product: productDetails2, addToCart }, {}, {})}
 	`;
     }(__value);
   }(productDetails)}</main>
@@ -3297,82 +3908,20 @@ var _handle_ = /* @__PURE__ */ Object.freeze({
   },
   load
 });
-var css$2 = {
-  code: "article.svelte-2bm9r.svelte-2bm9r{border:2px solid #b6b6b6;padding:3px 23px 22px 41px;margin-bottom:23px}h3.svelte-2bm9r.svelte-2bm9r{font-size:19.5px;color:#757575;margin:20px 0 7px}section.svelte-2bm9r.svelte-2bm9r{display:flex}img.svelte-2bm9r.svelte-2bm9r{margin-right:33px}.details.svelte-2bm9r.svelte-2bm9r{font-size:13px;text-transform:uppercase;font-weight:bold;line-height:1.54;margin:4px 37px 0 0}.details.svelte-2bm9r p.svelte-2bm9r{margin:0;color:#757575}.tag.svelte-2bm9r.svelte-2bm9r{margin-bottom:1px}.price.svelte-2bm9r.svelte-2bm9r{margin:10px 30px 0 0}",
-  map: `{"version":3,"file":"CartItem.svelte","sources":["CartItem.svelte"],"sourcesContent":["<script>\\r\\n\\timport QuantityPicker from '$lib/QuantityPicker.svelte';\\r\\n\\texport let product;\\r\\n<\/script>\\r\\n\\r\\n<article>\\r\\n\\t<h3>{product.name}</h3>\\r\\n\\t<section>\\r\\n\\t\\t<img src='{product.img}' alt='thumbnail' />\\r\\n\\t\\t<div class='details'>\\r\\n\\t\\t\\t<p>SKU: {product.sku}</p>\\r\\n\\t\\t\\t<p>{product.variant}</p>\\r\\n\\t\\t</div>\\r\\n\\t\\t<div>\\r\\n\\t\\t\\t<p class='tag'>50% de desc.</p>\\r\\n\\t\\t\\t<p class='price'>\\r\\n\\t\\t\\t    <strong>$6,128.44 mx</strong>\\r\\n\\t\\t\\t    <span class='original-price'>$8,128.44 mx</span>\\r\\n\\t\\t\\t</p>\\r\\n\\t\\t</div>\\r\\n\\t\\t<div>\\r\\n\\t        <QuantityPicker />\\r\\n\\t\\t</div>\\r\\n\\t</section>\\r\\n</article>\\r\\n\\r\\n<style>\\r\\n\\tarticle{\\r\\n\\t\\tborder:  2px solid #b6b6b6;\\r\\n\\t\\tpadding: 3px 23px 22px 41px;\\r\\n\\t\\tmargin-bottom: 23px;\\r\\n\\t}\\r\\n\\th3{\\r\\n\\t\\tfont-size: 19.5px;\\r\\n\\t\\tcolor: #757575;\\r\\n\\t\\tmargin: 20px 0 7px;\\r\\n\\t}\\r\\n\\tsection{\\r\\n\\t\\tdisplay: flex;\\r\\n\\t}\\r\\n\\timg{\\r\\n\\t\\tmargin-right: 33px;\\r\\n\\t}\\r\\n\\t.details{\\r\\n\\t\\tfont-size: 13px;\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tline-height: 1.54;\\r\\n\\t\\tmargin: 4px 37px 0 0;\\r\\n\\t}\\r\\n\\t.details p{\\r\\n\\t\\tmargin: 0;\\r\\n\\t\\tcolor: #757575;\\r\\n\\t}\\r\\n\\t.tag{\\r\\n\\t\\tmargin-bottom: 1px;\\r\\n\\t}\\r\\n\\t.price{\\r\\n\\t\\tmargin: 10px 30px 0 0;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AA2BC,iCAAO,CAAC,AACP,MAAM,CAAG,GAAG,CAAC,KAAK,CAAC,OAAO,CAC1B,OAAO,CAAE,GAAG,CAAC,IAAI,CAAC,IAAI,CAAC,IAAI,CAC3B,aAAa,CAAE,IAAI,AACpB,CAAC,AACD,4BAAE,CAAC,AACF,SAAS,CAAE,MAAM,CACjB,KAAK,CAAE,OAAO,CACd,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,GAAG,AACnB,CAAC,AACD,iCAAO,CAAC,AACP,OAAO,CAAE,IAAI,AACd,CAAC,AACD,6BAAG,CAAC,AACH,YAAY,CAAE,IAAI,AACnB,CAAC,AACD,kCAAQ,CAAC,AACR,SAAS,CAAE,IAAI,CACf,cAAc,CAAE,SAAS,CACzB,WAAW,CAAE,IAAI,CACjB,WAAW,CAAE,IAAI,CACjB,MAAM,CAAE,GAAG,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,AACrB,CAAC,AACD,qBAAQ,CAAC,cAAC,CAAC,AACV,MAAM,CAAE,CAAC,CACT,KAAK,CAAE,OAAO,AACf,CAAC,AACD,8BAAI,CAAC,AACJ,aAAa,CAAE,GAAG,AACnB,CAAC,AACD,gCAAM,CAAC,AACN,MAAM,CAAE,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,AACtB,CAAC"}`
-};
-var CartItem = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { product } = $$props;
-  if ($$props.product === void 0 && $$bindings.product && product !== void 0)
-    $$bindings.product(product);
-  $$result.css.add(css$2);
-  return `<article class="${"svelte-2bm9r"}"><h3 class="${"svelte-2bm9r"}">${escape2(product.name)}</h3>
-	<section class="${"svelte-2bm9r"}"><img${add_attribute("src", product.img, 0)} alt="${"thumbnail"}" class="${"svelte-2bm9r"}">
-		<div class="${"details svelte-2bm9r"}"><p class="${"svelte-2bm9r"}">SKU: ${escape2(product.sku)}</p>
-			<p class="${"svelte-2bm9r"}">${escape2(product.variant)}</p></div>
-		<div><p class="${"tag svelte-2bm9r"}">50% de desc.</p>
-			<p class="${"price svelte-2bm9r"}"><strong>$6,128.44 mx</strong>
-			    <span class="${"original-price"}">$8,128.44 mx</span></p></div>
-		<div>${validate_component(QuantityPicker, "QuantityPicker").$$render($$result, {}, {}, {})}</div></section>
-</article>`;
-});
-var css$1 = {
-  code: "article.svelte-qcnpjk.svelte-qcnpjk{border:2px solid #b6b6b6;margin-left:62px}h2.svelte-qcnpjk.svelte-qcnpjk{font-size:35px;text-transform:uppercase;color:#757575;border-bottom:3px solid #d8d8d8;margin:20px 0 10px;text-align:center;padding:0 61px 14px}h2.svelte-qcnpjk i.svelte-qcnpjk{position:relative;top:9px;left:-6px}table.svelte-qcnpjk.svelte-qcnpjk{font-size:15px;font-weight:bold;margin:16px 0 0;color:#757575;width:100%;box-sizing:border-box;padding:0 28px}table.svelte-qcnpjk tr.svelte-qcnpjk{line-height:33px}table.svelte-qcnpjk tr.discount.svelte-qcnpjk{color:#206a2c}table.svelte-qcnpjk tr.total.svelte-qcnpjk{color:black;text-transform:uppercase;font-size:18px;line-height:60px}table.svelte-qcnpjk tr.spacer.svelte-qcnpjk{height:12px}table.svelte-qcnpjk tr.total td.svelte-qcnpjk{border-top:3px solid #d8d8d8}.button.svelte-qcnpjk.svelte-qcnpjk{display:block;margin:12px auto 36px;width:158px;box-sizing:border-box;text-align:center;font-size:11.5px}",
-  map: `{"version":3,"file":"CartSummary.svelte","sources":["CartSummary.svelte"],"sourcesContent":["<article>\\r\\n\\t<h2>\\r\\n\\t\\t<i class='icon-carrito-01'></i>\\r\\n\\t\\tMi Carrito\\r\\n\\t</h2>\\r\\n\\t<table>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<td>Subtotal (8 productos)</td>\\r\\n\\t\\t\\t<td>$6128.44</td>\\r\\n\\t\\t</tr>\\r\\n\\t\\t<tr class='discount'>\\r\\n\\t\\t\\t<td>Descuento</td>\\r\\n\\t\\t\\t<td>$2,000</td>\\r\\n\\t\\t</tr>\\r\\n\\t\\t<tr>\\r\\n\\t\\t\\t<td>Envio</td>\\r\\n\\t\\t\\t<td>$0.00</td>\\r\\n\\t\\t</tr>\\r\\n\\t\\t<tr class='spacer'></tr>\\r\\n\\t\\t<tr class='total'>\\r\\n\\t\\t\\t<td>TOTAL</td>\\r\\n\\t\\t\\t<td>$6128.44</td>\\r\\n\\t\\t</tr>\\r\\n\\t</table>\\r\\n\\t<a href='/' class='button'>Pagar</a>\\r\\n</article>\\r\\n\\r\\n<style>\\r\\n\\r\\n\\tarticle{\\r\\n\\t\\tborder: 2px solid #b6b6b6;\\r\\n\\t\\tmargin-left: 62px;\\r\\n\\t}\\r\\n\\th2{\\r\\n\\t\\tfont-size: 35px;\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tcolor: #757575;\\r\\n\\t\\tborder-bottom: 3px solid #d8d8d8;\\r\\n\\t\\tmargin: 20px 0 10px;\\r\\n\\t\\ttext-align: center;\\r\\n\\t\\tpadding: 0 61px 14px;\\r\\n\\t}\\r\\n\\th2 i{\\r\\n\\t\\tposition: relative;\\r\\n\\t\\ttop: 9px;\\r\\n\\t\\tleft: -6px;\\r\\n\\t}\\r\\n\\ttable{\\r\\n\\t\\tfont-size: 15px;\\r\\n\\t\\tfont-weight: bold;\\r\\n\\t\\tmargin: 16px 0 0;\\r\\n\\t\\tcolor: #757575;\\r\\n\\t\\twidth: 100%;\\r\\n\\t\\tbox-sizing: border-box;\\r\\n\\t\\tpadding: 0 28px;\\r\\n\\t}\\r\\n\\ttable tr{\\r\\n\\t\\tline-height: 33px;\\r\\n\\t}\\r\\n\\ttable tr.discount{\\r\\n\\t\\tcolor: #206a2c;\\r\\n\\t}\\r\\n\\ttable tr.total{\\r\\n\\t\\tcolor: black;\\r\\n\\t\\ttext-transform: uppercase;\\r\\n\\t\\tfont-size: 18px;\\r\\n\\t\\tline-height: 60px;\\r\\n\\t}\\r\\n\\ttable tr.spacer{\\r\\n\\t\\theight: 12px;\\r\\n\\t}\\r\\n\\ttable tr.total td{\\r\\n\\t\\tborder-top: 3px solid #d8d8d8;\\r\\n\\t}\\r\\n\\t.button{\\r\\n\\t\\tdisplay: block;\\r\\n\\t\\tmargin: 12px auto 36px;\\r\\n\\t\\twidth: 158px;\\r\\n\\t\\tbox-sizing: border-box;\\r\\n\\t\\ttext-align: center;\\r\\n\\t\\tfont-size: 11.5px;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AA6BC,mCAAO,CAAC,AACP,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CACzB,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,8BAAE,CAAC,AACF,SAAS,CAAE,IAAI,CACf,cAAc,CAAE,SAAS,CACzB,KAAK,CAAE,OAAO,CACd,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAChC,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,IAAI,CACnB,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,CAAC,CAAC,IAAI,CAAC,IAAI,AACrB,CAAC,AACD,gBAAE,CAAC,eAAC,CAAC,AACJ,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,GAAG,CACR,IAAI,CAAE,IAAI,AACX,CAAC,AACD,iCAAK,CAAC,AACL,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,CAAC,CAChB,KAAK,CAAE,OAAO,CACd,KAAK,CAAE,IAAI,CACX,UAAU,CAAE,UAAU,CACtB,OAAO,CAAE,CAAC,CAAC,IAAI,AAChB,CAAC,AACD,mBAAK,CAAC,gBAAE,CAAC,AACR,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,mBAAK,CAAC,EAAE,uBAAS,CAAC,AACjB,KAAK,CAAE,OAAO,AACf,CAAC,AACD,mBAAK,CAAC,EAAE,oBAAM,CAAC,AACd,KAAK,CAAE,KAAK,CACZ,cAAc,CAAE,SAAS,CACzB,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,AAClB,CAAC,AACD,mBAAK,CAAC,EAAE,qBAAO,CAAC,AACf,MAAM,CAAE,IAAI,AACb,CAAC,AACD,mBAAK,CAAC,EAAE,MAAM,CAAC,gBAAE,CAAC,AACjB,UAAU,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,AAC9B,CAAC,AACD,mCAAO,CAAC,AACP,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,IAAI,CAAC,IAAI,CAAC,IAAI,CACtB,KAAK,CAAE,KAAK,CACZ,UAAU,CAAE,UAAU,CACtB,UAAU,CAAE,MAAM,CAClB,SAAS,CAAE,MAAM,AAClB,CAAC"}`
-};
-var CartSummary = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$1);
-  return `<article class="${"svelte-qcnpjk"}"><h2 class="${"svelte-qcnpjk"}"><i class="${"icon-carrito-01 svelte-qcnpjk"}"></i>
-		Mi Carrito
-	</h2>
-	<table class="${"svelte-qcnpjk"}"><tr class="${"svelte-qcnpjk"}"><td class="${"svelte-qcnpjk"}">Subtotal (8 productos)</td>
-			<td class="${"svelte-qcnpjk"}">$6128.44</td></tr>
-		<tr class="${"discount svelte-qcnpjk"}"><td class="${"svelte-qcnpjk"}">Descuento</td>
-			<td class="${"svelte-qcnpjk"}">$2,000</td></tr>
-		<tr class="${"svelte-qcnpjk"}"><td class="${"svelte-qcnpjk"}">Envio</td>
-			<td class="${"svelte-qcnpjk"}">$0.00</td></tr>
-		<tr class="${"spacer svelte-qcnpjk"}"></tr>
-		<tr class="${"total svelte-qcnpjk"}"><td class="${"svelte-qcnpjk"}">TOTAL</td>
-			<td class="${"svelte-qcnpjk"}">$6128.44</td></tr></table>
-	<a href="${"/"}" class="${"button svelte-qcnpjk"}">Pagar</a>
-</article>`;
-});
 var css = {
   code: "nav.svelte-dfuyl0{max-width:1084px;margin:38px auto}main.svelte-dfuyl0{display:flex;max-width:1350px;margin:0 auto;justify-content:space-between}.button.svelte-dfuyl0{display:inline-block;margin:31px 0 27px;width:236px;text-align:center;font-size:11.5px;padding:13px 0 8px}section.svelte-dfuyl0{margin-bottom:33px}",
-  map: `{"version":3,"file":"cart.svelte","sources":["cart.svelte"],"sourcesContent":["<script context=\\"module\\">\\r\\n\\texport const prerender = true;\\r\\n<\/script>\\r\\n\\r\\n<script>\\r\\n\\timport BreadCrumbs from\\t'$lib/BreadCrumbs.svelte';\\r\\n\\timport ProductSlider from '$lib/ProductSlider.svelte';\\r\\n\\timport ContactRibbon from '$lib/ContactRibbon.svelte';\\r\\n\\timport PolicyInfo from '$lib/PolicyInfo.svelte';\\r\\n\\timport CartItem from '$lib/CartItem.svelte';\\r\\n\\timport CartSummary from '$lib/CartSummary.svelte';\\r\\n\\r\\n\\r\\n\\tlet routes = [\\r\\n\\t\\t{label: 'Inicio', link: '/'},\\r\\n\\t\\t{label: 'Carrito', link: '/cart'},\\r\\n\\t]\\r\\n\\r\\n\\tlet products = [\\r\\n\\t\\t{\\r\\n\\t\\t\\tname : 'MESA MULTIUSOS',\\r\\n\\t\\t\\tsku : 'AL-2627',\\r\\n\\t\\t\\tvariant : 'COLOR CLARO',\\r\\n\\t\\t\\tdiscount : '50%',\\r\\n\\t\\t\\tprice : '',\\r\\n\\t\\t\\tdiscountedPrice : '',\\r\\n\\t\\t\\tquantity : '8',\\r\\n\\t\\t\\timg : '/img/temp/product0-mid.png'\\r\\n\\t\\t},\\r\\n\\t\\t{\\r\\n\\t\\t\\tname : 'MESA MULTIUSOS',\\r\\n\\t\\t\\tsku : 'AL-2627',\\r\\n\\t\\t\\tvariant : 'COLOR CLARO',\\r\\n\\t\\t\\tdiscount : '50%',\\r\\n\\t\\t\\tprice : '',\\r\\n\\t\\t\\tdiscountedPrice : '',\\r\\n\\t\\t\\tquantity : '8',\\r\\n\\t\\t\\timg : '/img/temp/product0-mid.png'\\r\\n\\t\\t}\\r\\n\\t]\\r\\n<\/script>\\r\\n\\r\\n<svelte:head>\\r\\n\\t<title>Carrito - Manuel Delgado</title>\\r\\n</svelte:head>\\r\\n<nav>\\r\\n\\t<BreadCrumbs {routes} />\\r\\n</nav>\\r\\n<main>\\r\\n\\t<section>\\r\\n\\t\\t{#each products as product}\\r\\n\\t\\t\\t<CartItem {product}/>\\r\\n\\t\\t{/each}\\r\\n\\t\\t<a href='/products' class='button mute'>a\xF1adir mas al carrito</a>\\t\\r\\n\\t\\t<PolicyInfo />\\t\\r\\n\\t</section>\\r\\n\\t<section>\\r\\n\\t\\t<CartSummary />\\r\\n\\t</section>\\r\\n</main>\\r\\n<ProductSlider />\\r\\n<ContactRibbon />\\r\\n\\r\\n<style>\\r\\n\\tnav{\\r\\n\\t\\tmax-width: 1084px;\\r\\n\\t\\tmargin: 38px auto;\\r\\n\\t}\\r\\n\\tmain{\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tmax-width: 1350px;\\r\\n\\t\\tmargin: 0 auto;\\r\\n\\t\\tjustify-content: space-between;\\r\\n\\t}\\r\\n\\t.button{\\r\\n\\t\\tdisplay: inline-block;\\r\\n\\t\\tmargin: 31px 0 27px;\\r\\n\\t\\twidth: 236px;\\r\\n\\t\\ttext-align: center;\\r\\n\\t\\tfont-size: 11.5px;\\r\\n\\t\\tpadding: 13px 0 8px;\\r\\n\\t}\\r\\n\\tsection{\\r\\n\\t\\tmargin-bottom: 33px;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AAgEC,iBAAG,CAAC,AACH,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,IAAI,CAAC,IAAI,AAClB,CAAC,AACD,kBAAI,CAAC,AACJ,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,CAAC,CAAC,IAAI,CACd,eAAe,CAAE,aAAa,AAC/B,CAAC,AACD,qBAAO,CAAC,AACP,OAAO,CAAE,YAAY,CACrB,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,IAAI,CACnB,KAAK,CAAE,KAAK,CACZ,UAAU,CAAE,MAAM,CAClB,SAAS,CAAE,MAAM,CACjB,OAAO,CAAE,IAAI,CAAC,CAAC,CAAC,GAAG,AACpB,CAAC,AACD,qBAAO,CAAC,AACP,aAAa,CAAE,IAAI,AACpB,CAAC"}`
+  map: `{"version":3,"file":"cart.svelte","sources":["cart.svelte"],"sourcesContent":["<script context=\\"module\\">\\r\\n\\texport const prerender = true;\\r\\n<\/script>\\r\\n\\r\\n<script>\\r\\n\\timport BreadCrumbs from\\t'$lib/BreadCrumbs.svelte';\\r\\n\\timport ProductSlider from '$lib/ProductSlider.svelte';\\r\\n\\timport ContactRibbon from '$lib/ContactRibbon.svelte';\\r\\n\\timport PolicyInfo from '$lib/PolicyInfo.svelte';\\r\\n\\timport CartItem from '$lib/CartItem.svelte';\\r\\n\\timport CartSummary from '$lib/CartSummary.svelte';\\r\\n\\r\\n\\timport {removeFromCart, updateCart} from '../../store';\\r\\n\\r\\n\\timport { onMount } from 'svelte';\\r\\n\\r\\n\\timport { tick } from \\"svelte\\";\\r\\n    \\r\\n    let done = false;\\r\\n    let cart;\\r\\n    let cartItems = [];\\r\\n    onMount(() => {\\r\\n        // get cart details from localStorage\\r\\n        cart = JSON.parse(localStorage.getItem('cart'));\\r\\n        console.log(cart);\\r\\n        cartItems = cart.lines.edges;\\r\\n\\r\\n    });\\r\\n\\r\\n\\r\\n\\tlet routes = [\\r\\n\\t\\t{label: 'Inicio', link: '/'},\\r\\n\\t\\t{label: 'Carrito', link: '/cart'},\\r\\n\\t]\\r\\n    \\r\\n\\r\\n\\r\\n<\/script>\\r\\n\\r\\n<svelte:head>\\r\\n\\t<title>Carrito - Manuel Delgado</title>\\r\\n</svelte:head>\\r\\n<nav>\\r\\n\\t<BreadCrumbs {routes} />\\r\\n</nav>\\r\\n<main>\\r\\n\\t<section>\\r\\n\\t\\t{#if cart != null}\\r\\n\\t\\t  {#each cartItems as product}\\r\\n\\t\\t\\t<CartItem  product={product} removeFromCart={removeFromCart} updateCart={updateCart}/>\\r\\n\\t\\t  {/each}\\r\\n\\r\\n\\t\\t{/if}\\r\\n\\t\\t<a href='/products' class='button mute'>a\xF1adir mas al carrito</a>\\t\\r\\n\\t\\t<PolicyInfo />\\t\\r\\n\\t</section>\\r\\n\\t<section>\\r\\n\\t\\t{#if cart != null}\\r\\n\\t\\t  <CartSummary estimated={cart.estimatedCost} items={cartItems.length} checkout={cart.checkoutUrl} />\\r\\n\\t\\t{/if}\\r\\n\\t</section>\\r\\n</main>\\r\\n<ProductSlider />\\r\\n<ContactRibbon />\\r\\n\\r\\n<style>\\r\\n\\tnav{\\r\\n\\t\\tmax-width: 1084px;\\r\\n\\t\\tmargin: 38px auto;\\r\\n\\t}\\r\\n\\tmain{\\r\\n\\t\\tdisplay: flex;\\r\\n\\t\\tmax-width: 1350px;\\r\\n\\t\\tmargin: 0 auto;\\r\\n\\t\\tjustify-content: space-between;\\r\\n\\t}\\r\\n\\t.button{\\r\\n\\t\\tdisplay: inline-block;\\r\\n\\t\\tmargin: 31px 0 27px;\\r\\n\\t\\twidth: 236px;\\r\\n\\t\\ttext-align: center;\\r\\n\\t\\tfont-size: 11.5px;\\r\\n\\t\\tpadding: 13px 0 8px;\\r\\n\\t}\\r\\n\\tsection{\\r\\n\\t\\tmargin-bottom: 33px;\\r\\n\\t}\\r\\n</style>"],"names":[],"mappings":"AAkEC,iBAAG,CAAC,AACH,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,IAAI,CAAC,IAAI,AAClB,CAAC,AACD,kBAAI,CAAC,AACJ,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,CAAC,CAAC,IAAI,CACd,eAAe,CAAE,aAAa,AAC/B,CAAC,AACD,qBAAO,CAAC,AACP,OAAO,CAAE,YAAY,CACrB,MAAM,CAAE,IAAI,CAAC,CAAC,CAAC,IAAI,CACnB,KAAK,CAAE,KAAK,CACZ,UAAU,CAAE,MAAM,CAClB,SAAS,CAAE,MAAM,CACjB,OAAO,CAAE,IAAI,CAAC,CAAC,CAAC,GAAG,AACpB,CAAC,AACD,qBAAO,CAAC,AACP,aAAa,CAAE,IAAI,AACpB,CAAC"}`
 };
 var prerender = true;
 var Cart = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let routes = [{ label: "Inicio", link: "/" }, { label: "Carrito", link: "/cart" }];
-  let products2 = [
-    {
-      name: "MESA MULTIUSOS",
-      sku: "AL-2627",
-      variant: "COLOR CLARO",
-      discount: "50%",
-      price: "",
-      discountedPrice: "",
-      quantity: "8",
-      img: "/img/temp/product0-mid.png"
-    },
-    {
-      name: "MESA MULTIUSOS",
-      sku: "AL-2627",
-      variant: "COLOR CLARO",
-      discount: "50%",
-      price: "",
-      discountedPrice: "",
-      quantity: "8",
-      img: "/img/temp/product0-mid.png"
-    }
-  ];
   $$result.css.add(css);
   return `${$$result.head += `${$$result.title = `<title>Carrito - Manuel Delgado</title>`, ""}`, ""}
 <nav class="${"svelte-dfuyl0"}">${validate_component(BreadCrumbs, "BreadCrumbs").$$render($$result, { routes }, {}, {})}</nav>
-<main class="${"svelte-dfuyl0"}"><section class="${"svelte-dfuyl0"}">${each(products2, (product) => `${validate_component(CartItem, "CartItem").$$render($$result, { product }, {}, {})}`)}
+<main class="${"svelte-dfuyl0"}"><section class="${"svelte-dfuyl0"}">${``}
 		<a href="${"/products"}" class="${"button mute svelte-dfuyl0"}">a\xF1adir mas al carrito</a>	
 		${validate_component(PolicyInfo, "PolicyInfo").$$render($$result, {}, {}, {})}</section>
-	<section class="${"svelte-dfuyl0"}">${validate_component(CartSummary, "CartSummary").$$render($$result, {}, {}, {})}</section></main>
+	<section class="${"svelte-dfuyl0"}">${``}</section></main>
 ${validate_component(ProductSlider, "ProductSlider").$$render($$result, {}, {}, {})}
 ${validate_component(ContactRibbon, "ContactRibbon").$$render($$result, {}, {}, {})}`;
 });

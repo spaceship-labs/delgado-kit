@@ -1,12 +1,30 @@
 <script>
-	export let options = ['#DA9458','#282828', '#634E41','#552A1A','#C9C3C3'];
-	export let selected = 1;
+	// export let options = ['#DA9458','#282828', '#634E41','#552A1A','#C9C3C3'];
+	export let variants;
+	export let selected = 0;
+	export let qty;
+	export let gall;
+	export let images;
+    
+	let updateVariant = (num)=>{
+      selected = num;
+      qty = 1;
+      if(gall != null && images != null){
+        for (let i = images.length - 1; i >= 0; i--) {
+            if(images[i].node.id == variants[num].image.id){
+               gall.slideTo(i+1,false,false);
+               break;
+            }
+        }
+      }
+	}
 </script>
 <article>
 	<h4>Color</h4>
 	<ul>
-		{#each options as option,i}
-			<li><button style="background: {option};" class:selected={i === selected}></button></li>	
+		{#each variants as variant, i}
+			<li><button class="{variant.title.replaceAll(' ', '-')} {selected === i ? 'selected' : ''}"  
+				        on:click="{() => {updateVariant(i)} }"></button></li>	
 		{/each}
 	</ul>
 </article>
@@ -42,5 +60,18 @@
 		margin-top: -6px;
 		margin-left: -8px;
 		margin-right: 4px;
+	}
+
+	li button.cafe{
+      background-color: #DA9458;
+	}
+	li button.blanco{
+	  background-color: #C9C3C3;
+	}
+	li button.cafe-obscuro{
+	  background-color: #634E41;
+	}
+	li button.negro{
+	  background-color: #282828;
 	}
 </style>

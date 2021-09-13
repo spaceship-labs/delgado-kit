@@ -21,7 +21,7 @@
 	import ProductSlider from '$lib/ProductSlider.svelte';
 	import ContactRibbon from '$lib/ContactRibbon.svelte';
 
-    import {getProductDetails} from '../../../store';
+    import {getProductDetails, addToCart} from '../../../store';
 
 	export let productDetails = getProductDetails(handle);
 </script>
@@ -33,7 +33,7 @@
 	<BreadCrumbs />
 	{#await productDetails}
 		{:then productDetails} 
-	      <ProductDetail product={productDetails} />
+	      <ProductDetail product={productDetails} addToCart={addToCart}/>
 	{/await}
 </main>
 
