@@ -6,7 +6,7 @@
 	// export let min = 1;
     
     let updateQty = (num) => {
-      if(disable == true){
+      if(disable == true || max == 0){
         return;
       }
       qty += num;
@@ -19,7 +19,9 @@
       clicked=true;
     }
 
-    
+    if(max == 0){
+       qty = 0;
+    }
 
 </script>
 

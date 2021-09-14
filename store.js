@@ -224,17 +224,11 @@ export const getProductDetails = async (handle) => {
 
 export const addToCart = async (itemId,quantity) => {
     // add selected product to cart
+    console.log(quantity);
+    if(quantity == 0){
+      return;
+    }
     try {
-        // const addToCartResponse = await fetch('/src/routes/api/add-to-cart', {
-        //   method: 'POST',
-        //   body: JSON.stringify({
-        //     cartId: localStorage.getItem('cartId'),
-        //     itemId: itemId,
-        //     quantity: quantity
-        //   })
-        // });
-        // const data = await addToCartResponse.json();
-
         let cartId =  localStorage.getItem('cartId');
         if (cartId) {
             console.log('Adding item to existing cart...');
@@ -274,18 +268,6 @@ export const addToCart = async (itemId,quantity) => {
 
 
 export const removeFromCart = async function removeItem(lineId) {
-    // remove item from Shopify cart
-    // const removeItemFromCart = await fetch('/api/remove-from-cart', {
-    //     method: 'POST',
-    //     body: JSON.stringify({
-    //         cartId: localStorage.getItem('cartId'),
-    //         lineId
-    //     })
-    // })
-    //     .then((res) => res.json())
-    //     .then((data) => data);
-
-
     try {
         let cartId =  localStorage.getItem('cartId');
 
@@ -308,7 +290,6 @@ export const removeFromCart = async function removeItem(lineId) {
 }
 
 export const updateCart = async function removeItem(lineId,itemId,quantity) {
-    console.log(quantity);
     try {
         let cartId =  localStorage.getItem('cartId');
         const shopifyResponse = await removeItemFromCart({

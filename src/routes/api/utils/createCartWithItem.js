@@ -17,6 +17,7 @@ export const createCartWithItem = async ({ itemId, quantity }) => {
                 edges {
                   node {
                     id
+                    quantity
                     merchandise {
                       ... on ProductVariant {
                         id
