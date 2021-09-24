@@ -5,7 +5,9 @@
 	export let qty;
 	export let gall;
 	export let images;
+	let hasHex = true;
     
+    //console.log(variants);
 	let updateVariant = (num)=>{
       selected = num;
       qty = 1;
@@ -18,20 +20,51 @@
         }
       }
 	}
+
+	for(let variant of variants){
+       if(variant.metafield == null){
+       	hasHex = false;
+       }
+       else{
+       	 if(variant.metafield.key != 'color'){
+         	hasHex = false;
+         }
+         else{
+         	if(variant.metafield.value == '' || variant.metafield.value == null){
+               hasHex = false;   
+         	}
+         }
+       }
+	}
 </script>
 <article>
-	<h4>Color</h4>
+	{#if hasHex}
+	 <h4>Color</h4>
+	{:else}
+	 <h4>Variantes</h4>
+	{/if}
 	<ul>
+       {#if hasHex}
 		{#each variants as variant, i}
-			<li><button class="{variant.title.replaceAll(' ', '-')} {selected === i ? 'selected' : ''}"  
-				        on:click="{() => {updateVariant(i)} }"></button></li>	
+			 <li><button class="{selected === i ? 'selected' : ''}"  
+				style="{variant.metafield.key == 'color' ? 'background-color:'+variant.metafield.value : 'background-color: '+'#ffff'}"  
+				        on:click="{() => {updateVariant(i)} }" ></button></li>	
+		    
+		    
 		{/each}
+	   {:else}
+	     <select on:change="{() => {updateVariant(this.value)} }">
+	     	{#each variants as variant, i}
+	     	  <option  value="{i}">{variant.title}</option>
+	     	{/each}
+	     </select>
+	   {/if}
 	</ul>
 </article>
 
 <style>
 	article{
-		margin-left: 40px;
+		/*margin-left: 40px;*/
 	}
 	ul{
 		list-style-type: none;

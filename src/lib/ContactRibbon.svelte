@@ -1,5 +1,5 @@
 <section>
-	<div>
+	<div class="layout-row">
 		<h3>Contactanos para mayor información o cotizar piezas de mayoreo</h3>
 		<article>
 			<h4>Gerente de Ventas</h4>
@@ -25,6 +25,7 @@
 		margin: 10px auto;
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: nowrap;
 	}
 	h3{
 		color: white;
@@ -50,5 +51,19 @@
 		font-size: 14.5px;
 		line-height: 1.28;
 		margin: 10px 0;
+	}
+	@media only screen and (max-width: 960px){
+       section div{
+	   	flex-wrap: wrap;
+	   }
+	   h3{
+	   	width: 100%;
+	   	max-width: 100%;
+	   	margin-left: 10px;
+	   }
+	   article{
+         margin-right: 10px;
+         margin-left: 10px;
+	   }
 	}
 </style>

@@ -1,12 +1,12 @@
 <nav>
 	<ul>
-		<li><a href='/' >Ofertas</a></li>
-		<li><a href='/' >Sillas</a></li>
-		<li><a href='/' class='selected' >Escritorios</a></li>
-		<li><a href='/' >Metalico</a></li>
-		<li><a href='/' >Restaurante</a></li>
-		<li><a href='/' >Home Office</a></li>
-		<li><a href='/' >Relampago</a></li>
+		<li><a href='/collection/ofertas' >Ofertas</a></li>
+		<li><a href='/collection/sillas' >Sillas</a></li>
+		<li><a href='/collection/escritorios' >Escritorios</a></li>
+		<li><a href='/collection/metalico' >Metalico</a></li>
+		<li><a href='/collection/restaurante' >Restaurante</a></li>
+		<li><a href='/collection/home-office' >Home Office</a></li>
+		<li><a href='/collection/relampago' >Relampago</a></li>
 	</ul>
 </nav>
 <style>
@@ -33,5 +33,10 @@
 	li a.selected{
 		border-bottom: 4px solid #738dc8;
 		padding: 17px 0 14px;
+	}
+	@media only screen and (max-width: 1140px){
+		nav{
+			display: none;
+		}
 	}
 </style>

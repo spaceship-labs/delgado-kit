@@ -35,6 +35,9 @@
 </article>
 
 <style>
+  article{
+		margin-right: 40px;
+	}
 	h4{
 		text-transform: uppercase;
 		color: #a2a2a2;

@@ -16,50 +16,46 @@ export const getProducts = async () => {
     try {
         const shopifyResponse = await postToShopify({
             query: `{
-         products(sortKey: TITLE, first: 100) {
+         products(sortKey: TITLE, first: 200) {
           edges {
-            node {
-              id
-              handle
-              description
-              title
-              totalInventory
-              productType
-              variants(first: 10) {
-                edges {
-                  node {
-                    id
-                    title
-                    quantityAvailable
-                    sku
-                    priceV2 {
-                      amount
-                      currencyCode
-                    }
-                    compareAtPrice
-                  }
-                }
-              }
-              priceRange {
-                maxVariantPrice {
-                  amount
-                  currencyCode
-                }
-                minVariantPrice {
-                  amount
-                  currencyCode
-                }
-              }
-              images(first: 1) {
-                edges {
-                  node {
-                    src
-                    altText
-                  }
-                }
-              }
-            }
-          }
+                        node {
+                          id
+                          handle
+                          description
+                          title
+                          totalInventory
+                          productType
+                          variants(first: 10) {
+                            edges {
+                              node {
+                                id
+                                title
+                                sku
+                                price
+                                compareAtPrice
+                              }
+                            }
+                          }
+                          priceRange {
+                            maxVariantPrice {
+                              amount
+                              currencyCode
+                            }
+                            minVariantPrice {
+                              amount
+                              currencyCode
+                            }
+                          }
+                          images(first: 1) {
+                            edges {
+                              node {
+                                src
+                                altText
+                              }
+                            }
+                          }
+                        }
+                      }
           pageInfo {
             hasNextPage
           }
@@ -70,7 +66,7 @@ export const getProducts = async () => {
         
 
 
-        // console.log(shopifyResponse);
+        console.log(shopifyResponse);
         return shopifyResponse;
     } catch (error) {
         console.log(error);
@@ -86,7 +82,7 @@ export const getCollection = async (title = null) => {
     try {
         const shopifyResponse = await postToShopify({
             query: `{
-              collections(first: 100) {
+              collections(first: 200) {
                 edges {
                   node {
                     id
@@ -142,10 +138,11 @@ export const getCollection = async (title = null) => {
               `
           });
 
-
+        title = title.replaceAll("-"," ");
         for(let coll of shopifyResponse.collections.edges){
           if(coll.node.title.toUpperCase() == title.toUpperCase()){
-            // console.log(coll.node);
+            console.log(coll.node);
+            console.log(title);
             return coll.node;
           }
         }
@@ -167,14 +164,29 @@ export const getProductDetails = async (handle) => {
             id
             handle
             description
+            descriptionHtml
             title
             totalInventory
+            metafields(first: 4) {
+              edges {
+                node {
+                  key
+                  value
+                  type
+                }
+              }
+            }
             variants(first: 10) {
               edges {
                 node {
                   id
                   title
+                  sku
                   quantityAvailable
+                  metafield(namespace: "my_fields", key: "color") {
+                    value
+                    key
+                  }
                   priceV2 {
                     amount
                     currencyCode
@@ -219,6 +231,8 @@ export const getProductDetails = async (handle) => {
     console.log(error);
   }
 };
+
+
 
 
 

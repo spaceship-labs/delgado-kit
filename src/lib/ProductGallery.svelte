@@ -1,7 +1,4 @@
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-/>
+
 <script>
 
 	export let images;
@@ -16,9 +13,14 @@
 		thumbs = new swiper('.thumbs',{
       	// loop: true,
          spaceBetween: 10,
-         slidesPerView: 6,
+         slidesPerView: 3.5,
          freeMode: true,
          watchSlidesProgress: true,
+         breakpoints: {
+          500: {
+            slidesPerView: 6,
+          },
+         },
       });
 		gall = new swiper('.mainGall',{
       	slidesPerView:1,
@@ -33,8 +35,6 @@
 	});
 
 	let selected = 0;
-   
-  
    
 </script>
 
