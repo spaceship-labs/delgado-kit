@@ -1,26 +1,50 @@
+<script >
+
+
+    import { onMount } from 'svelte'
+    let swiper;
+    let gall;
+    onMount(async () => {
+        swiper = (await import('https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js')).default;
+
+        gall = new swiper('.locationSlider',{
+         slidesPerView:1,
+         loop: false,
+         centeredSlides: false,
+         spaceBetween: 30,
+         navigation: {
+          nextEl: ".next",
+          prevEl: ".prev",
+        },
+        });
+
+    });
+</script>
+
 <section class="layout-row">
 	<div class="col col1">
      <h2>Nuestras sucursales</h2>  
      
      <!-- sucursal -->
      <div class="sucursal layout-row" >
-     	 <div class="slider">
-     	 	 <img src="/img/sucursales/meridanorte.jpg" alt="merida norte" >
-     	 	 <!-- <img src="/img/sucursales/meridanorte2.jpg" alt="merida norte 2" >
-     	 	 <img src="/img/sucursales/meridanorte3.jpg" alt="merida norte 3" >
-     	 	 <img src="/img/sucursales/meridanorte4.jpg" alt="merida norte 4" >
-     	 	 <img src="/img/sucursales/meridanorte5.jpg" alt="merida norte 5" >
-     	 	 <img src="/img/sucursales/meridanorte6.jpg" alt="merida norte 6" >
-     	 	 <img src="/img/sucursales/meridanorte7.jpg" alt="merida norte 7" >
-     	 	 <img src="/img/sucursales/meridanorte8.jpg" alt="merida norte 8" > -->
-     	 	 
+     	 <div class="slider locationSlider">
+            <div class="swiper-wrapper">
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridanorte.jpg" alt="merida norte" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridanorte2.jpg" alt="merida norte 2" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridanorte3.jpg" alt="merida norte 3" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridanorte4.jpg" alt="merida norte 4" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridanorte5.jpg" alt="merida norte 5" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridanorte6.jpg" alt="merida norte 6" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridanorte7.jpg" alt="merida norte 7" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridanorte8.jpg" alt="merida norte 8" ></div>
+     	 	</div> 
      	 	 <div class="prev">
      	 	 	<img src="/img/arrow-left.svg" alt="prev" >
      	 	 </div>
      	 	 <div class="next">
      	 	 	<img src="/img/arrow-right.svg" alt="next" >
      	 	 </div>
-
+            
      	 </div>
      	 <div class="infoHolder" >
      	 	 <h3>Mérida Norte</h3>
@@ -45,19 +69,20 @@
 
      <!-- sucursal -->
      <div class="sucursal layout-row" >
-     	 <div class="slider">
-     	 	 <img src="/img/sucursales/meridareforma.png" alt="merida reforma" >
-     	 	 <!-- <img src="/img/sucursales/meridareforma2.jpg" alt="merida reforma 2" >
-     	 	 <img src="/img/sucursales/meridareforma3.jpg" alt="merida reforma 3" >
-     	 	 <img src="/img/sucursales/meridareforma4.jpg" alt="merida reforma 4" >
-     	 	 <img src="/img/sucursales/meridareforma5.jpg" alt="merida reforma 5" >
-     	 	 <img src="/img/sucursales/meridareforma6.jpg" alt="merida reforma 6" >
-     	 	 <img src="/img/sucursales/meridareforma7.jpg" alt="merida reforma 7" >
-     	 	 <img src="/img/sucursales/meridareforma8.jpg" alt="merida reforma 8" >
-     	 	 <img src="/img/sucursales/meridareforma9.jpg" alt="merida reforma 9" >
-     	 	 <img src="/img/sucursales/meridareforma10.jpg" alt="merida reforma 10" >
-     	 	 <img src="/img/sucursales/meridareforma11.jpg" alt="merida reforma 11" > -->
-     	 	 
+     	 <div class="slider locationSlider">
+            <div class="swiper-wrapper">
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridareforma.png" alt="merida reforma" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridareforma2.jpg" alt="merida reforma 2" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridareforma3.jpg" alt="merida reforma 3" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridareforma4.jpg" alt="merida reforma 4" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridareforma5.jpg" alt="merida reforma 5" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridareforma6.jpg" alt="merida reforma 6" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridareforma7.jpg" alt="merida reforma 7" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridareforma8.jpg" alt="merida reforma 8" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridareforma9.jpg" alt="merida reforma 9" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridareforma10.jpg" alt="merida reforma 10" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridareforma11.jpg" alt="merida reforma 11" ></div>
+     	 	</div>
      	 	 <div class="prev">
      	 	 	<img src="/img/arrow-left.svg" alt="prev" >
      	 	 </div>
@@ -88,13 +113,14 @@
 
      <!-- sucursal -->
      <div class="sucursal layout-row" >
-     	 <div class="slider">
-     	 	 <img src="/img/sucursales/meridacentro.png" alt="merida centro " >
-     	 	 <!-- <img src="/img/sucursales/meridacentro2.png" alt="merida centro 2" >
-     	 	 <img src="/img/sucursales/meridacentro3.jiff" alt="merida centro 3" >
-     	 	 <img src="/img/sucursales/meridacentro4.jiff" alt="merida centro 4" >
-     	 	 <img src="/img/sucursales/meridacentro5.jiff" alt="merida centro 5" > -->
-     	 	 
+     	 <div class="slider locationSlider">
+            <div class="swiper-wrapper">
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridacentro.png" alt="merida centro " ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridacentro2.png" alt="merida centro 2" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridacentro3.jfif" alt="merida centro 3" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridacentro4.jfif" alt="merida centro 4" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/meridacentro5.jfif" alt="merida centro 5" ></div>
+     	 	</div> 
      	 	 <div class="prev">
      	 	 	<img src="/img/arrow-left.svg" alt="prev" >
      	 	 </div>
@@ -125,20 +151,19 @@
 
      <!-- sucursal -->
      <div class="sucursal layout-row" >
-     	 <div class="slider">
-     	 	 <img src="/img/sucursales/cancun2.jpeg" alt="cancun 2" >
-     	 	 <!-- <img src="/img/sucursales/cancun3.jpeg" alt="cancun 3" >
-     	 	 <img src="/img/sucursales/cancun4.jpg" alt="cancun 4" >
-     	 	 <img src="/img/sucursales/cancun5.jpeg" alt="cancun 5" >
-     	 	 <img src="/img/sucursales/cancun6.jpeg" alt="cancun 6" >
-     	 	 <img src="/img/sucursales/cancun7.jpeg" alt="cancun 7" >
-     	 	 <img src="/img/sucursales/cancun8.jpeg" alt="cancun 8" >
-     	 	 <img src="/img/sucursales/cancun9.jpeg" alt="cancun 9" >
-     	 	 <img src="/img/sucursales/cancun10.jpeg" alt="cancun 10" >
-     	 	 <img src="/img/sucursales/cancun11.jpeg" alt="cancun 11" >
-     	 	 <img src="/img/sucursales/cancun12.jpeg" alt="cancun 12" >
-     	 	 <img src="/img/sucursales/cancun13.jpeg" alt="cancun 13" > -->
-     	 	 
+     	 <div class="slider locationSlider">
+            <div class="swiper-wrapper">
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/cancun2.jpeg" alt="cancun 2" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/cancun5.jpeg" alt="cancun 5" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/cancun6.jpeg" alt="cancun 6" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/cancun7.jpeg" alt="cancun 7" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/cancun8.jpeg" alt="cancun 8" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/cancun9.jpeg" alt="cancun 9" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/cancun10.jpeg" alt="cancun 10" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/cancun11.jpeg" alt="cancun 11" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/cancun12.jpeg" alt="cancun 12" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/cancun13.jpeg" alt="cancun 13" ></div>
+     	 	</div> 
      	 	 <div class="prev">
      	 	 	<img src="/img/arrow-left.svg" alt="prev" >
      	 	 </div>
@@ -169,17 +194,18 @@
 
      <!-- sucursal -->
      <div class="sucursal layout-row" >
-     	 <div class="slider">
-     	 	 <img src="/img/sucursales/playadelcarmen.jpeg" alt="playa del carmen " >
-     	 	 <!-- <img src="/img/sucursales/playadelcarmen2.jpeg" alt="playa del carmen 2" >
-     	 	 <img src="/img/sucursales/playadelcarmen3.jpeg" alt="playa del carmen 3" >
-     	 	 <img src="/img/sucursales/playadelcarmen4.jpeg" alt="playa del carmen 4" >
-     	 	 <img src="/img/sucursales/playadelcarmen5.jpeg" alt="playa del carmen 5" >
-     	 	 <img src="/img/sucursales/playadelcarmen6.jpeg" alt="playa del carmen 6" >
-     	 	 <img src="/img/sucursales/playadelcarmen7.jpeg" alt="playa del carmen 7" >
-     	 	 <img src="/img/sucursales/playadelcarmen8.jpeg" alt="playa del carmen 8" >
-     	 	 <img src="/img/sucursales/playadelcarmen9.jpeg" alt="playa del carmen 9" > -->
-     	 	 
+     	 <div class="slider locationSlider">
+            <div class="swiper-wrapper">
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/playadelcarmen.jpeg" alt="playa del carmen " ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/playadelcarmen2.jpeg" alt="playa del carmen 2" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/playadelcarmen3.jpeg" alt="playa del carmen 3" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/playadelcarmen4.jpeg" alt="playa del carmen 4" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/playadelcarmen5.jpeg" alt="playa del carmen 5" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/playadelcarmen6.jpeg" alt="playa del carmen 6" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/playadelcarmen7.jpeg" alt="playa del carmen 7" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/playadelcarmen8.jpeg" alt="playa del carmen 8" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/playadelcarmen9.jpeg" alt="playa del carmen 9" ></div>
+     	 	</div> 
      	 	 <div class="prev">
      	 	 	<img src="/img/arrow-left.svg" alt="prev" >
      	 	 </div>
@@ -210,9 +236,10 @@
 
      <!-- sucursal -->
      <div class="sucursal layout-row" >
-     	 <div class="slider">
-     	 	 <img src="/img/sucursales/chetumal.jpg" alt="chetumal" >
-     	 	 
+     	 <div class="slider locationSlider">
+            <div class="swiper-wrapper">
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/chetumal.jpg" alt="chetumal" ></div>
+     	 	</div> 
      	 	 <div class="prev">
      	 	 	<img src="/img/arrow-left.svg" alt="prev" >
      	 	 </div>
@@ -243,11 +270,12 @@
 
      <!-- sucursal -->
      <div class="sucursal layout-row" >
-     	 <div class="slider">
-     	 	 <img src="/img/sucursales/campeche.jpeg" alt="campeche" >
-     	 	 <!-- <img src="/img/sucursales/campeche2.jpeg" alt="campeche 2" >
-     	 	 <img src="/img/sucursales/campeche3.jpeg" alt="campeche 3" > -->
-     	 	 
+     	 <div class="slider locationSlider">
+            <div class="swiper-wrapper">
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/campeche.jpeg" alt="campeche" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/campeche2.jpeg" alt="campeche 2" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/campeche3.jpeg" alt="campeche 3" ></div>
+     	 	</div> 
      	 	 <div class="prev">
      	 	 	<img src="/img/arrow-left.svg" alt="prev" >
      	 	 </div>
@@ -278,11 +306,12 @@
 
      <!-- sucursal -->
      <div class="sucursal layout-row" >
-     	 <div class="slider">
-     	 	 <img src="/img/sucursales/centrodistribucion.jpg" alt="centro de distribucion" >
-     	 	<!--  <img src="/img/sucursales/centrodistribucion2.jpg" alt="centro de distribucion 2" >
-     	 	 <img src="/img/sucursales/centrodistribucion3.jpg" alt="centro de distribucion 3" > -->
-     	 	 
+     	 <div class="slider locationSlider">
+            <div class="swiper-wrapper">
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/centrodistribucion.jpg" alt="centro de distribucion" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/centrodistribucion2.jpg" alt="centro de distribucion 2" ></div>
+     	 	 <div class="swiper-slide"><img src="/img/sucursales/centrodistribucion3.jpg" alt="centro de distribucion 3" ></div>
+     	 	</div> 
      	 	 <div class="prev">
      	 	 	<img src="/img/arrow-left.svg" alt="prev" >
      	 	 </div>
@@ -339,59 +368,6 @@
 		color: #757575;
 	}
     
-    .layout-col{
-       -webkit-box-sizing: border-box;
-       box-sizing: border-box;
-       display: -webkit-box;
-       display: -ms-flexbox;
-       display: flex;
-       
-       -webkit-box-pack: start;
-       -ms-flex-pack: start;
-       justify-content: flex-start;
-
-       -webkit-box-align: center;
-       -ms-flex-align: center;
-       align-items: center;
-       -ms-flex-line-pack:center;
-       align-content:center;
-
-       -webkit-box-orient: vertical;
-       -webkit-box-direction: normal;
-       -ms-flex-direction: column;
-       flex-direction: column;
-    }
-	.layout-row{
-		-webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row;
-      
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-      
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-      
-        justify-content: flex-start;
-        -webkit-box-align: start;
-        -ms-flex-align: start;
-        align-items: flex-start;
-        -ms-flex-line-pack: start;
-        align-content: flex-start; 
-	}
-	.layout-row > *,
-	.layout-col > *{
-      max-width: 100%;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-    }
 	.col2{
 	   width: 673px;
 	   height: 100vh;
@@ -422,6 +398,10 @@
 		border-radius: 23px;
 		overflow: hidden;
 	}
+    .sucursal .slider .swiper-slide{
+        position: relative;
+        min-height: 220px;
+    }
 	.sucursal .slider img{
 	   object-fit: cover;
 	   position: absolute;

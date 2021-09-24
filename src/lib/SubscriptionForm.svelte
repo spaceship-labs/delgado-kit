@@ -1,12 +1,12 @@
-<form action='/'>
-	<section>
+<form action='/' class="layout-row">
+	<section class="text">
 		<h3>Suscribete a nuestro newsletter</h3>
 		<h4>Recibe ofertas y contenido exclusivo</h4>
 	</section>
-	<section>
+	<section class="input">
 		<input type="text" name="email" placeholder="Escribe tu mail" class="default-input" />
 	</section>
-	<section>
+	<section class="btnHolder">
 		<input type="submit" value="Suscríbete"  class="button" />
 	</section>
 </form>
@@ -20,6 +20,7 @@
 		padding: 0 127px;
 		display: flex;
 		padding-bottom: 41px;
+		flex-wrap: nowrap;
 	}
 	form input{
 		color: white;
@@ -48,5 +49,49 @@
 		font-weight: 500;
 		font-size: 18px;
 		margin: 9px 0;
+	}
+	form section.input{
+		min-width: 296px;
+	}
+	form section.btnHolder{
+		padding-left: 20px;
+	}
+	form section.text{
+		width: 100%;
+		max-width: 500px;
+	}
+	@media only screen and (max-width: 1140px){
+		form{
+			flex-wrap: wrap;
+		}
+		form section.text{
+			width: 100%;
+		}
+		form input{
+		  margin-left: 0;
+		  width: 100%;
+	    }
+	    form section.input{
+	    	width: calc(100% - 220px);
+	    	min-width: calc(100% - 220px);
+	    }
+	    form section.btnHolder{
+	    	padding-left: 0px;
+	    }
+	}
+	@media only screen and (max-width: 960px){
+        form{
+        	padding-left: 20px;
+        	padding-right: 20px;
+        }
+	}
+	@media only screen and (max-width: 500px){
+        form section.input{
+	    	width: calc(100% - 156px);
+	    	min-width: calc(100% - 156px);
+	    }
+	    form input.button{
+	    	padding: 11px 24px;
+	    }
 	}
 </style>

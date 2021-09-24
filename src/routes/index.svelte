@@ -15,8 +15,6 @@
 
 	
 
-   
-
 </script>
 
 <svelte:head>
@@ -29,6 +27,6 @@
 <ProductListing title='Best Buys'  collection="Best Buys"/>
 
 <SubscriptionForm />
-<ProductSlider />
+<ProductSlider title="Nuevos Diseños" collection="Nuevos Diseños" />
 <ContactRibbon />
 

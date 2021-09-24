@@ -1,5 +1,5 @@
 
-export const postToShopify = async ({ query, variables }) => {
+export const postToShopifyAdmin = async ({ query, variables }) => {
     console.log("admin");
     try {
         const result = await fetch("https://manueldelgado.myshopify.com/admin/api/2021-10/graphql.json", {
@@ -7,9 +7,9 @@ export const postToShopify = async ({ query, variables }) => {
             headers: {
                 'Content-Type': 'application/json',
 
-                // 'X-Shopify-Storefront-Access-Token': import.meta.env.VITE_SHOPIFY_STOREFRONT_API_TOKEN,
-                'X-Shopify-Access-Token': import.meta.env.VITE_SHOPIFY_PASSWORD
-                // 'X-Shopify-Access-Token':import.meta.env.VITE_SHOPIFY_STOREFRONT_API_TOKEN
+                // 'X-Shopify-Storefront-Access-Token': "dbba93fbda31ab8784607c08bf3a1f1b",
+                'X-Shopify-Password': import.meta.env.VITE_SHOPIFY_PASSWORD,
+                'X-Shopify-Access-Token':"dbba93fbda31ab8784607c08bf3a1f1b"
             },
             body: JSON.stringify({ query, variables })
         }).then((res) => res.json() );

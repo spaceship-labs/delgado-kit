@@ -22,8 +22,11 @@
 	import ContactRibbon from '$lib/ContactRibbon.svelte';
 
     import {getProductDetails, addToCart} from '../../../store';
-
+    
 	export let productDetails = getProductDetails(handle);
+    
+
+
 </script>
 
 <svelte:head>
@@ -37,7 +40,7 @@
 	{/await}
 </main>
 
-<ProductSlider title='Articulos recomendados' />
+<ProductSlider title='Articulos recomendados' collection="Best Buys"/>
 <ContactRibbon />
 
 <style>

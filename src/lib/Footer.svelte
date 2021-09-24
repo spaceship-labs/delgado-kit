@@ -1,4 +1,4 @@
-<footer>
+<footer class="layout-row">
 	<section>
 		<h4>Síguenos</h4>
 		<p>
@@ -17,13 +17,13 @@
 	<section>
 		<h4>Nuestros Productos</h4>
 		<ul>
-			<li><a href='/'>Sillas</a></li>
-			<li><a href='/'>Escritorios</a></li>
-			<li><a href='/'>Metálicos</a></li>
-			<li><a href='/'>Restaurantes</a></li>
-			<li><a href='/'>Complementos</a></li>
-			<li><a href='/'>Escolar</a></li>
-			<li><a href='/'>Promociones</a></li>
+			<li><a href='/collection/sillas'>Sillas</a></li>
+			<li><a href='/collection/escritorios'>Escritorios</a></li>
+			<li><a href='/collection/metalicos'>Metálicos</a></li>
+			<li><a href='/collection/restaurantes'>Restaurantes</a></li>
+			<li><a href='/collection/complementos'>Complementos</a></li>
+			<li><a href='/collection/escolar'>Escolar</a></li>
+			<li><a href='/collection/promociones'>Promociones</a></li>
 		</ul>
 	</section>
 	<section>
@@ -48,7 +48,8 @@
 		max-width: 1082px;
 		margin: 0 auto;
 		display: flex;
-		padding: 26px 0;
+		padding: 26px 20px;
+		flex-wrap: nowrap;
 	}
 	footer a{
 		color:  #5e5e5e;
@@ -78,5 +79,10 @@
 	}
 	li{
 		margin: 11px 0;
+	}
+	@media only screen and (max-width: 860px){
+       footer{
+       	  flex-wrap: wrap;
+       }
 	}
 </style>

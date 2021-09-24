@@ -1,14 +1,61 @@
 <script >
-	import ProductSummary from '$lib/ProductSummary.svelte';
-	export let title = 'Nuevos diseños';
-	let products = [7,8,9]
+
+
+	import ProductCard from '$lib/ProductCard.svelte';
+    import {getProducts,getCollection} from '../../store';
+
+	export let title;
+    // export let products = getProducts();
+    export let collection = null;
+    
+    //si no recibe collection, regresa todos los productos
+    export let coll = getCollection(collection);
+
+
+    import { onMount } from 'svelte'
+	let swiper;
+	let gall;
+	onMount(async () => {
+		swiper = (await import('https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js')).default;
+
+		gall = new swiper('.productsSlider',{
+      	 slidesPerView:1,
+         loop: false,
+         centeredSlides: false,
+         spaceBetween: 30,
+         breakpoints: {
+          640: {
+            slidesPerView: 1.5,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1344: {
+            slidesPerView: 3,
+          },
+         },
+        });
+
+	});
 </script>
 <section>
-	<h3>{title}</h3>
-	<div class='products'>
-		{#each products as product}
+	{#if title}
+		<h3>{title}</h3>
+	{/if}
+	<div class='products productsSlider swiper'>
+	  <div class="swiper-wrapper">
+		<!-- {#each products as product}
 			<ProductSummary {product}/>
-		{/each}
+		{/each} -->
+		{#await coll}
+		{:then coll} 
+		  {#each coll.products.edges as product}
+		     <div class="swiper-slide">
+		  	   <ProductCard product={product.node} classes="full" />
+		  	 </div>
+		  {/each}
+		{/await}
+	  </div>
 	</div>
 </section>
 <style>
@@ -35,6 +82,8 @@
 		margin: 0 auto;
 		z-index: 1;
 		position: relative;
+		padding-right: 10px;
+		padding-left: 10px;
 	}
 	h3{
 		color: white;
