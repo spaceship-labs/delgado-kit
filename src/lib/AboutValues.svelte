@@ -1,16 +1,16 @@
-<section class="layout-col order-center">
+<section class="layout-col orderC">
     <div class="bannerHolder layout-col">
         <img src="/img/md-about.svg" alt="about us" >
-        <div class="bannerRibbon layout-row order-center">
-             <div class="layout-row order-center">
+        <div class="bannerRibbon layout-row orderC">
+             <div class="layout-row orderC">
                  <img src="/img/CALIDAD-01.svg" alt="calidad" >
                  <h3>Calidad</h3>
              </div>
-             <div class="layout-row order-center">
+             <div class="layout-row orderC">
                  <img src="/img/SEGURIDAD-01.svg" alt="calidad" >
                  <h3>Seguridad</h3>
              </div>
-             <div class="layout-row order-center">
+             <div class="layout-row orderC">
                  <img src="/img/SERVICIO-01.svg" alt="calidad" >
                  <h3>Servicio post-venta</h3>
              </div>
@@ -47,9 +47,7 @@
 
 <style>
     
-	section{
-		padding: 0 0 0 40px;
-	}
+	
 	
 	h2{
 		font-size: 31px;
@@ -61,70 +59,6 @@
 		text-transform: uppercase;
 		color: #757575;
 	}
-    
-    .layout-col{
-       -webkit-box-sizing: border-box;
-       box-sizing: border-box;
-       display: -webkit-box;
-       display: -ms-flexbox;
-       display: flex;
-       
-       -webkit-box-pack: start;
-       -ms-flex-pack: start;
-       justify-content: flex-start;
-
-       -webkit-box-align: center;
-       -ms-flex-align: center;
-       align-items: center;
-       -ms-flex-line-pack:center;
-       align-content:center;
-
-       -webkit-box-orient: vertical;
-       -webkit-box-direction: normal;
-       -ms-flex-direction: column;
-       flex-direction: column;
-    }
-	.layout-row{
-		-webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row;
-      
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-      
-        -webkit-box-pack: start;
-        -ms-flex-pack: start;
-      
-        justify-content: flex-start;
-        -webkit-box-align: start;
-        -ms-flex-align: start;
-        align-items: flex-start;
-        -ms-flex-line-pack: start;
-        align-content: flex-start; 
-	}
-	.layout-row > *,
-	.layout-col > *{
-      max-width: 100%;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-    .order-center{
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -ms-flex-line-pack:center;
-      align-content:center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-    }
 
     .bannerHolder{
         background-color: white;
