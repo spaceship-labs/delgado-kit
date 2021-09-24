@@ -1,6 +1,7 @@
-<script context="module">
+<!-- <script context="module">
 	export const prerender = true;
-</script>
+</script> -->
+
 
 <script>
 	import ContactRibbon from '$lib/ContactRibbon.svelte';
@@ -12,7 +13,7 @@
 		{label: 'Inicio', link: '/'},
 		{label: 'Productos', link: '/products'},
 	]
-	let products = [1,2,3,4,5,6,1,2,3];
+	// let products = [1,2,3,4,5,6,1,2,3];
 </script>
 
 <svelte:head>
@@ -21,7 +22,7 @@
 <main>
 	<BreadCrumbs {routes} />
 	<ProductNav />
-	<ProductListing {products}/>
+	<ProductListing   />
 </main>
 <ContactRibbon />
 

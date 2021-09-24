@@ -9,14 +9,46 @@
         }
     });
 </script>
-<nav>
-	<a href='/' class='main-logo'><img src='/img/logo.png' alt='Manuel Delgado logo principal' /></a>
+<nav >
+    
+    <div class="icons menu">
+    	<a class='menu layout-col orderC' >
+	    	<img src='/img/menu.svg' alt='carrito de compras' />
+	    </a>
+    </div>
+
+    <div class="logoHolder layout-col itemsE">
+	    <a href='/' class='main-logo '></a>
+		<img src='/img/logo.png' alt='Manuel Delgado logo principal' />
+    </div>
+
 	<form><input type="text" name="product-search" placeholder="Buscar Muebles" class="default-input" /></form>
-	<a class='cart' href='/cart'>
+	<a class='cart ' href='/cart'>
 		<img src='/img/cart.png' alt='carrito de compras' />
 		<i>{count}</i>
 	</a>
-	<p>Hola! <a href='/'>Acceder <img src='/img/user.png' alt='usuario'/></a></p>
+	<p class="user">Hola! <a href='/'>Acceder <img src='/img/user.png' alt='usuario'/></a></p>
+
+	<div class="icons layout-row orderE itemsC">
+      <div class="icon layout-col orderC">
+	      <a class='search layout-col orderC' >
+	    	<img src='/img/buscar.svg' alt='buscar' />
+	      </a>
+	  </div>
+
+	  <div class="icon layout-col orderC">
+	      <a class='cart layout-col orderC' href='/cart'>
+	    	<img src='/img/cart.png' alt='carrito de compras' />
+	    	<i>{count}</i>
+	      </a>
+	  </div>
+
+      <div class="icon layout-col orderC">
+	      <a class='user layout-col orderC' href="/" >
+	    	<img src='/img/user.png' alt='usuario' />
+	      </a>
+	  </div>
+	</div>
 </nav>
 <style>
 	nav{
@@ -64,7 +96,7 @@
 		color: white;
 		width: 34px;
 		height: 34px;
-		border-radius: 25px;
+		border-radius: 50%;
 		display: block;
 		line-height: 35px;
 		text-align: center;
@@ -84,7 +116,92 @@
 		position: relative;
 		top: 13px;
 	}
-	.main-logo{
-		margin-bottom: -4px;
+	.logoHolder{
+		max-width: 400px;
+		width: 100%;
+		position: relative;
+	}
+	.logoHolder a{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+	.logoHolder img{
+       width: 100%;
+       height: auto;
+       margin-top: auto;
+	}
+
+	p.user{
+		min-width: 155px;
+	}
+
+
+	.icons{
+	   display: none;
+	   width: 100%;
+	   max-width: 40%;
+	   margin-left: auto;
+	   flex-wrap: nowrap;
+	   padding-top: 10px;
+	   padding-bottom: 10px;
+	   min-width: 220px;
+	}
+	.icons.menu{
+       min-width: unset;
+       margin-left: unset;
+       width: 100%;
+       max-width: 50px;
+	}
+	.icons .icon{
+		height: 50px;
+		width: 50px;
+		margin-left: 20px;
+		border-radius: 50%;
+		background-color:#E5E5E5;
+	}
+	.icons .icon a{
+      width: 27px;
+      height: 27px;
+	}
+	.icons img{
+	   height: auto;
+	   width: 30px;
+	}
+	nav .icons .cart{
+		margin: 0;
+	}
+	nav .icons .cart i{
+		top: -19px;
+		right: -17px;
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+	}
+
+
+	@media only screen and (max-width: 1140px){
+       nav > .user,
+       nav > .cart,
+       nav > form{
+       	display: none;
+       }
+       nav .icons{
+       	display: flex;
+       }
+       .logoHolder img{
+          margin-bottom: auto;
+	   }
+	   nav{
+		padding: 4px 20px 0px 20px;
+	   }
+	}
+	@media only screen and (max-width: 400px){
+      nav .icons{
+      	display: none;
+      }
+      nav .icons.menu{
+      	display: flex;
+      }
 	}
 </style>

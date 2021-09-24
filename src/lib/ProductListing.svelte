@@ -17,7 +17,7 @@
 		<h3 class='strike-header'><span>{title}</span></h3>
 	{/if}
 
-	<section>
+	<section class="layout-row orderS itemsS">
 		{#await coll}
 		{:then coll} 
 		  {#each coll.products.edges as product}

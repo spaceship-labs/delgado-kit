@@ -13,16 +13,16 @@
 		</ul>
 	</nav>
 </section>
-<ul class='ribbon'>
-	<li><i class='icon-envios-01'></i>Envíos Gratis</li>
-	<li><i class='icon-devolu-01'></i>Devolución sin costo</li>
-	<li><i class='icon-tarjeta-01'></i>Meses sin intereses</li>
-	<li><i class='icon-garantia-01'></i>Garantía de un año</li>
+<ul class='ribbon layout-row orderC'>
+	<li class="layout-row orderC"><i class='icon-envios-01'></i>Envíos Gratis</li>
+	<li class="layout-row orderC"><i class='icon-devolu-01'></i>Devolución sin costo</li>
+	<li class="layout-row orderC"><i class='icon-tarjeta-01'></i>Meses sin intereses</li>
+	<li class="layout-row orderC"><i class='icon-garantia-01'></i>Garantía de un año</li>
 </ul>
 <style >	
 	.ribbon{
 		background-image: linear-gradient(45deg, #e08f59, #F89157, #e16d6d);
-		height: 88px;
+		min-height: 88px;
 		max-width: 1300px;
 		margin: 0 auto;
 		display: flex;
@@ -33,17 +33,20 @@
 		color: white;
 		font-weight: bold;
 		font-size: 13.5px;
+		flex-wrap: nowrap;
 	}
 	.ribbon li{
-		padding: 13px 32px 0;
+		padding: 13px 32px;
 		position: relative;
-		line-height: 68px;
+		text-align: center;
+		/*line-height: 68px;*/
 	}
 	.ribbon li i{
 		font-size: 37px;
 		position: relative;
 		top: 4px;
-		left: -9px;
+		/*left: -9px;*/
+		margin: 0 5px;
 		display: block;
 		float: left;
 	}
@@ -51,6 +54,7 @@
 		font-size: 65px;
 		line-height: 37px;
 		top: 0;
+		/*margin-bottom: -10px;*/
 	}
 	nav{
 		margin-top: 62px;
@@ -84,9 +88,13 @@
 		height: 363px;
 	}
 	section .content{
-		width: 762px;
+		max-width: 762px;
+		width: 100%;
 		margin: 0 auto;
 		position:  relative;
+		padding-left: 20px;
+		-webkit-box-sizing: border-box;
+        box-sizing: border-box;
 	}
 	h1{
 		font-size: 60px;
@@ -111,8 +119,50 @@
 		position: absolute;
 		right: 8px;
 		top: -40px;
+		z-index: 1;
 	}
 	section .content p{
 		margin-top: 17px;
+		position:relative;
+		z-index: 2;
+	}
+
+
+	@media only screen and (max-width: 762px){
+        section .content{
+	    	padding-left: 20px;
+	    }
+	    h1{
+	    	 font-size: 7vw;
+             line-height: 7vw;
+             margin: 4vw 0 0.4vw;
+             max-width: 60vw;
+	    }
+	    h2{
+	    	font-size: 4.5vw;
+	    }
+	    h2 strong{
+	    	font-size: 6vw;
+	    }
+	    section{
+	    	height: auto;
+	    }
+	    section .content img{
+	    	right: 8vw;
+            top: 8px;
+            width: 30vw;
+	    	height: auto;
+	    }
+	    section .content p{
+	    	margin-top: 7vw;
+	    }
+	}
+	@media only screen and (max-width: 600px){
+       .ribbon{
+       	 flex-wrap: wrap;
+       }
+       .ribbon > *{
+       	width: 50%;
+       }
 	}
 </style>
