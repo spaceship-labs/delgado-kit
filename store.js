@@ -318,3 +318,85 @@ export const updateCart = async function removeItem(lineId,itemId,quantity) {
     }
 
 }
+
+
+
+
+
+// Get blog
+export const getBlog = async (count = 50) => {
+  try {
+    const shopifyResponse = await postToShopify({
+      query: ` 
+        {
+          blogs(first: 1) {
+            edges {
+              node {
+                articles(first: `+count+`, sortKey: PUBLISHED_AT) {
+                  pageInfo {
+                    hasNextPage
+                    hasPreviousPage
+                  }
+                  edges {
+                    node {
+                      id
+                      image {
+                        src
+                      }
+                      title
+                      handle
+                      publishedAt
+                    }
+                  }
+                }
+                handle
+              }
+            }
+          }
+        }
+      `,
+    });
+    // console.log(shopifyResponse);
+    return shopifyResponse;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+// Get post detail
+export const getPostDetails = async (handle) => {
+  try {
+    const shopifyResponse = await postToShopify({
+      query: ` 
+        {
+          blogs(first: 1) {
+            edges {
+              node {
+                articleByHandle(handle: "`+handle+`") {
+                  image {
+                    src
+                  }
+                  id
+                  handle
+                  contentHtml
+                  seo {
+                    description
+                    title
+                  }
+                  title
+                  publishedAt
+                }
+              }
+            }
+          }
+        }
+      `
+    });
+
+    // console.log(shopifyResponse.blogs.edges[0].node.articleByHandle);
+    return shopifyResponse.blogs.edges[0].node.articleByHandle;
+  } catch (error) {
+    console.log(error);
+  }
+};
