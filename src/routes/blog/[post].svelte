@@ -41,7 +41,7 @@
 	  {#await blog}
 		{:then blog} 
 	      {#each blog.blogs.edges[0].node.articles.edges as postS}
-	        {#if postS.node.handle == post }
+	        {#if postS.node.handle != post }
 	         
 		  	 <ArticleBox post={postS.node} />
 	          
