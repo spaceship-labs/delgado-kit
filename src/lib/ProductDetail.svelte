@@ -66,7 +66,7 @@
     let variant = productVariants[num];
 
     if(variant.compareAtPrice != null){
-      let temp = (100/variant.compareAtPrice*variant.priceV2.amount).toFixed(0); 
+      let temp = 100-(100/variant.compareAtPrice*variant.priceV2.amount).toFixed(0); 
       return temp;
     }
     else{

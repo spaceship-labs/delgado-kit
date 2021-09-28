@@ -1,11 +1,11 @@
 <nav>
   <ul>
     <li><a href="/products">Productos</a></li>
-    <li><a href="/">Proyectos</a></li>
+    <li><a href="/proyectos">Proyectos</a></li>
     <li><a href="/aboutus">Nosotros</a></li>
     <li><a href="/locations">Sucursales</a></li>
     <li><a href="/">Catalogo PDF</a></li>
-    <li><a href="/">Blog</a></li>
+    <li><a href="/blog">Blog</a></li>
     <li><a href="/contact">Contacto</a></li>
   </ul>
 </nav>
