@@ -3,7 +3,7 @@
 		<h1>Nuestro<br>Blog</h1>
 		
 	</div>
-	<img src='/img/contacto.jpg' alt='anuncio' />
+	<img src='/img/BLOG_BANNER.jpg' alt='blog banner' />
 </section>
 <style >	
 	

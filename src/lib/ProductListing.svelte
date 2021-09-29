@@ -1,13 +1,20 @@
 <script>
 	import ProductCard from '$lib/ProductCard.svelte';
     import {getProducts,getCollection} from '../../store';
+    import { onMount } from 'svelte';
 
 	export let title;
     // export let products = getProducts();
     export let collection = null;
     
     //si no recibe collection, regresa todos los productos
-    export let coll = getCollection(collection);
+
+    export let coll;
+
+
+    onMount(async () => {
+      coll = getCollection(collection);
+    });
     
 
 </script>
