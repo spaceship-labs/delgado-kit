@@ -15,7 +15,7 @@
     const match = url.match(regExp);
 
     let temp =  (match && match[2].length === 11) ? match[2] : null;
-    console.log(temp);
+    // console.log(temp);
     return temp;
   }
 
@@ -76,7 +76,7 @@
   }
 
   
-  console.log(video);
+  // console.log(video);
 </script>
 <main class="layout-row">
 	{#if product != null}

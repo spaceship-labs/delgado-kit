@@ -1,12 +1,12 @@
 <nav>
 	<ul>
-		<li><a href='/collection/ofertas' >Ofertas</a></li>
-		<li><a href='/collection/sillas' >Sillas</a></li>
-		<li><a href='/collection/escritorios' >Escritorios</a></li>
-		<li><a href='/collection/metalico' >Metalico</a></li>
-		<li><a href='/collection/restaurante' >Restaurante</a></li>
-		<li><a href='/collection/home-office' >Home Office</a></li>
-		<li><a href='/collection/relampago' >Relampago</a></li>
+		<li><a target="_self" href='/collection/ofertas' >Ofertas</a></li>
+		<li><a target="_self" href='/collection/sillas' >Sillas</a></li>
+		<li><a target="_self" href='/collection/escritorios' >Escritorios</a></li>
+		<li><a target="_self" href='/collection/metalico' >Metalico</a></li>
+		<li><a target="_self" href='/collection/restaurante' >Restaurante</a></li>
+		<li><a target="_self" href='/collection/home-office' >Home Office</a></li>
+		<li><a target="_self" href='/collection/relampago' >Relampago</a></li>
 	</ul>
 </nav>
 <style>

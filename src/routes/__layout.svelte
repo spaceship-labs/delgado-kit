@@ -11,9 +11,8 @@
 	import AnnouncementsNav from '$lib/AnnouncementsNav.svelte';
 	import Footer from '$lib/Footer.svelte';
 
-	// Import Swiper Svelte components
 
-    
+  
 	
 
 </script>

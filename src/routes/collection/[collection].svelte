@@ -2,40 +2,46 @@
 	export let collection;
     export async function load(ctx) {
         collection = ctx.page.params.collection;
-        
         return { props: { collection } };
     }
+    
+    
 </script>
 
-<script>
+<script  >
 	import ContactRibbon from '$lib/ContactRibbon.svelte';
 	import BreadCrumbs from '$lib/BreadCrumbs.svelte';
 	import ProductListing from '$lib/ProductListing.svelte';
 	import ProductNav from '$lib/ProductNav.svelte';
+	import { onMount } from 'svelte';
+    
+    export let collection = null;
 
 	let routes = [
-		{label: 'Inicio', link: '/'},
-		{label: collection, link: '/collection/'+collection},
-	]
+	      	{label: 'Inicio', link: '/'},
+	      	{label: collection, link: '/collection/'+collection},
+	      ]
+
 
 </script>
 
 <svelte:head>
-	{#await collection}
-	{:then collection} 
+	{#if collection}
 	  <title>Collection {collection} - Manuel Delgado</title>
-	{/await}
+	{/if}
 </svelte:head>
 <main>
 	<BreadCrumbs {routes} />
+	{collection}
 	<ProductNav />
-	{#await collection}
-	{:then collection} 
-	  <ProductListing title="" collection={collection}/>
+	{#if collection}
 	  
-	{/await}
+	    <ProductListing title="{collection}" collection={collection}/>
+	  
+	{/if}
 </main>
 <ContactRibbon />
+
 
 <style>
 	main{

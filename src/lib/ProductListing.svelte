@@ -10,11 +10,10 @@
     //si no recibe collection, regresa todos los productos
 
     export let coll;
+    
+    coll = getCollection(collection);
 
-
-    onMount(async () => {
-      coll = getCollection(collection);
-    });
+    
     
 
 </script>
@@ -25,12 +24,14 @@
 	{/if}
 
 	<section class="layout-row orderS itemsS">
+		{#if coll}
 		{#await coll}
 		{:then coll} 
 		  {#each coll.products.edges as product}
 		  	 <ProductCard product={product.node} />
 		  {/each}
 		{/await}
+		{/if}
 	</section>
 
 	
