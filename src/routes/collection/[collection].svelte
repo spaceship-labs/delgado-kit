@@ -15,7 +15,6 @@
 	import ProductNav from '$lib/ProductNav.svelte';
 	import { onMount } from 'svelte';
     
-    export let collection = null;
 
 	let routes = [
 	      	{label: 'Inicio', link: '/'},
@@ -32,13 +31,12 @@
 </svelte:head>
 <main>
 	<BreadCrumbs {routes} />
-	{collection}
 	<ProductNav />
-	{#if collection}
-	  
+	{#await collection}
+	  {:then collection} 
 	    <ProductListing title="{collection}" collection={collection}/>
 	  
-	{/if}
+	{/await}
 </main>
 <ContactRibbon />
 
