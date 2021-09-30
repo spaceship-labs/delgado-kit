@@ -141,8 +141,8 @@ export const getCollection = async (title = null) => {
         title = title.replaceAll("-"," ");
         for(let coll of shopifyResponse.collections.edges){
           if(coll.node.title.toUpperCase() == title.toUpperCase()){
-            console.log(coll.node);
-            console.log(title);
+            // console.log(coll.node);
+            // console.log(title);
             return coll.node;
           }
         }

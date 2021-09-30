@@ -7,7 +7,7 @@
 </script>
 
 <article >
-  <a href="{`/blog/${post.handle}`}" class="">
+  <a href="{`/blog/${post.handle}`}" class=""  target="_self">
     <header class="layout-col orderC itemsS">
         <h4>{post.title}</h4>
         <p>{post.publishedAt.split(':')[0].split('T')[0]}</p>

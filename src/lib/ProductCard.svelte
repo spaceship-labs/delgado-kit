@@ -21,7 +21,7 @@
 
 </script>
 <article class="{classes}">
-<a href="{`/product/${product.handle}`}">
+<a href="{`/product/${product.handle}`}"  target="_self">
     <header class="layout-row orderC">
         <p class='category'>{product.productType}</p>
         {#if bestDiscount > 0}

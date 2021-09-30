@@ -1,13 +1,19 @@
 <script>
 	import ProductCard from '$lib/ProductCard.svelte';
     import {getProducts,getCollection} from '../../store';
+    import { onMount } from 'svelte';
 
 	export let title;
     // export let products = getProducts();
     export let collection = null;
     
     //si no recibe collection, regresa todos los productos
-    export let coll = getCollection(collection);
+
+    export let coll;
+    
+    coll = getCollection(collection);
+
+    
     
 
 </script>
@@ -18,12 +24,14 @@
 	{/if}
 
 	<section class="layout-row orderS itemsS">
+		{#if coll}
 		{#await coll}
 		{:then coll} 
 		  {#each coll.products.edges as product}
 		  	 <ProductCard product={product.node} />
 		  {/each}
 		{/await}
+		{/if}
 	</section>
 
 	
