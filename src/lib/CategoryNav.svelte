@@ -10,6 +10,9 @@
 	</ul>
 </nav>
 <style>
+    nav{
+    	background-color: #253f70;
+    }
 	ul{
 		list-style-type: none;
 		display: flex;
@@ -23,7 +26,7 @@
 	li a{
 		display: block;
 		padding: 17px 15px 18px;
-		color: #757575;
+		color: white;
 		font-weight: bold;
 		font-size: 16px;
 		text-align: center;
