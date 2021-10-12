@@ -9,6 +9,7 @@
         }
     });
 </script>
+<div class="holderNav layout-col orderC">
 <nav >
     
     <div class="icons menu">
@@ -19,7 +20,7 @@
 
     <div class="logoHolder layout-col itemsE">
 	    <a href='/' class='main-logo '></a>
-		<img src='/img/logo.png' alt='Manuel Delgado logo principal' />
+		<img src='/img/logo_md.png' alt='Manuel Delgado logo principal' />
     </div>
 
 	<form><input type="text" name="product-search" placeholder="Buscar Muebles" class="default-input" /></form>
@@ -50,14 +51,27 @@
 	  </div>
 	</div>
 </nav>
+</div>
 <style>
 	nav{
 		display: flex;
-		border-bottom: 2px solid #E5E5E5;
+		/*border-bottom: 2px solid #001a4775;*/
 		margin: 0 auto;
 		max-width: 1359px;
 		padding: 4px 40px 0px 40px;
+		background-color: #253f70;
+		position: relative;
+		width: 100%;
 	}
+	.holderNav{
+		width: 100%;
+		background-color: #253f70;
+		border-bottom: 2px solid #001a4775;
+	}
+	nav a img{
+      filter: invert(100%);
+	}
+
 
 	nav form{
 		margin-left: auto;
@@ -80,7 +94,10 @@
 		position: absolute;
 		right: 65px;
 		top: 45px;
-
+        filter: invert(100%);
+	}
+	nav form input::placeholder{
+		color: white;
 	}
 	nav .cart{
 		margin: 43px 75px 0 0;
@@ -89,7 +106,7 @@
 	nav .cart i{
 		font-style: normal;
 		font-weight: bold;
-		background-color: #001a47;
+		background-color: black;
 		position: absolute;
 		top: -19px;
 		right: -27px;
@@ -104,7 +121,7 @@
 	nav p{
 		font-size: 16px;
 		font-weight: bold;
-		color: #767676;
+		color: white;
 		margin-top: 28px;
 		margin-right: 70px;
 
@@ -130,6 +147,8 @@
        width: 100%;
        height: auto;
        margin-top: auto;
+       max-height: 100px;
+       object-fit: contain;
 	}
 
 	p.user{

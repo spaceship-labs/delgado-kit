@@ -14,7 +14,8 @@
 	form{
 		box-sizing: border-box;
 		max-width: 1308px; 
-		background-image: linear-gradient(to bottom, #2f68cc, #2f68cc), linear-gradient(to top, #000, #1b2952);
+		/*background-image: linear-gradient(to bottom, #2f68cc, #2f68cc), linear-gradient(to top, #000, #1b2952);*/
+		background-color: #253f70;
 		margin: 0 auto;
 		color: white;
 		padding: 0 127px;
