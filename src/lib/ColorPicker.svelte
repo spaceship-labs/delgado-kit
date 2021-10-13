@@ -64,7 +64,7 @@
 
 <style>
 	article{
-		/*margin-left: 40px;*/
+		margin-left: 40px;
 	}
 	ul{
 		list-style-type: none;
